@@ -130,6 +130,16 @@ function set_qdrawer_show($show)
         </q-drawer>
       <?php } ?>
 
+      <?php
+      echo '<script src="https://cdn.jsdelivr.net/npm/quasar@1.12.4/dist/quasar.ie.polyfills.umd' . $minified . '.js"></script>';
+      echo '<script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue' . $minified . '.js"></script>';
+      echo '<script src="https://cdn.jsdelivr.net/npm/quasar@1.12.4/dist/quasar.umd' . $modernEs6 . $minified . '.js"></script>';
+      if ($language != 'en-us')
+        echo '<script src="https://cdn.jsdelivr.net/npm/quasar@1.12.5/dist/lang/' . $language . '.umd' . $minified . '.js"></script>';
+      if ($iconSet != 'material')
+        echo '<script src="https://cdn.jsdelivr.net/npm/quasar@1.12.5/dist/icon-set/' . $iconSet . '.umd' . $minified . '.js"></script>';
+      ?>
+
       <q-page-container>
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             <?php the_content(); ?>
@@ -146,18 +156,9 @@ function set_qdrawer_show($show)
   if (isset($setting['qco'])) echo '';
 
   ?>
-  <?php
-  echo '<script src="https://cdn.jsdelivr.net/npm/quasar@1.12.4/dist/quasar.ie.polyfills.umd' . $minified . '.js"></script>';
-  echo '<script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue' . $minified . '.js"></script>';
-  echo '<script src="https://cdn.jsdelivr.net/npm/quasar@1.12.4/dist/quasar.umd' . $modernEs6 . $minified . '.js"></script>';
-  if ($language != 'en-us')
-    echo '<script src="https://cdn.jsdelivr.net/npm/quasar@1.12.5/dist/lang/' . $language . '.umd' . $minified . '.js"></script>';
-  if ($iconSet != 'material')
-    echo '<script src="https://cdn.jsdelivr.net/npm/quasar@1.12.5/dist/icon-set/' . $iconSet . '.umd' . $minified . '.js"></script>';
-  ?>
 
   <script>
-    new Vue({
+    let vueObject = {
       el: '#q-app',
       data: function() {
         return {
@@ -168,9 +169,11 @@ function set_qdrawer_show($show)
         }
       },
       methods: {
-        to(permalink) {
+        themeRouteTo(permalink) {
           document.location.href = permalink
         }
       }
-    })
+    }
+    if (typeof vm !== 'undefined') vueObject.mixins = [vm]
+    new Vue(vueObject)
   </script>
