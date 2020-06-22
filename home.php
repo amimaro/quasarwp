@@ -131,6 +131,7 @@ function set_qdrawer_show($show)
             <?php } ?>
 
             <q-page-container>
+            
                 <?php if ($setting['frontpage-post-layout'] == 'vertical') { ?>
                     <!-- Vertical Layout -->
                     <div class="q-pa-md row items-start q-gutter-md">
