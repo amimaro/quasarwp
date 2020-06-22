@@ -136,7 +136,7 @@ function set_qdrawer_show($show)
             <q-card-section class="q-pa-lg q-gutter-md">
               <p class="text-h3 text-weight-light"><?php _e('Page not found'); ?> :(</p>
               <div align="right">
-                <q-btn label="<?php _e('Homepage'); ?>" color="primary" @click="to('/')"></q-btn>
+                <q-btn label="<?php _e('Homepage'); ?>" color="primary" @click="themeRouteTo('/')"></q-btn>
               </div>
             </q-card-section>
           </q-card>
@@ -174,7 +174,7 @@ function set_qdrawer_show($show)
         }
       },
       methods: {
-        to(permalink) {
+        themeRouteTo(permalink) {
           document.location.href = permalink
         }
       }

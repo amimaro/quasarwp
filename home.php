@@ -138,7 +138,7 @@ function set_qdrawer_show($show)
                         <?php
                         if (have_posts()) : while (have_posts()) : the_post();
                         ?>
-                                <q-card class="post-card cursor-pointer" v-bind:class="{ 'post-card-vertical': isDesktop }" @click="to('<?php the_permalink(); ?>')">
+                                <q-card class="post-card cursor-pointer" v-bind:class="{ 'post-card-vertical': isDesktop }" @click="themeRouteTo('<?php the_permalink(); ?>')">
                                     <?php if (has_post_thumbnail()) : ?>
                                         <q-img src="<?php the_post_thumbnail_url('smallest'); ?>" :ratio="4/3" alt=""></q-img>
                                     <?php endif ?>
@@ -181,7 +181,7 @@ function set_qdrawer_show($show)
                         <?php
                         if (have_posts()) : while (have_posts()) : the_post();
                         ?>
-                                <q-card v-if="isDesktop" class="post-card post-card-horizontal cursor-pointer" @click="to('<?php the_permalink(); ?>')">
+                                <q-card v-if="isDesktop" class="post-card post-card-horizontal cursor-pointer" @click="themeRouteTo('<?php the_permalink(); ?>')">
                                     <q-card-section horizontal>
                                         <?php if (has_post_thumbnail()) : ?>
                                             <q-img class="col-5" src="<?php the_post_thumbnail_url('smallest'); ?>" :ratio="4/3" alt=""></q-img>
@@ -211,7 +211,7 @@ function set_qdrawer_show($show)
                                         </q-card-section>
                                     </q-card-section>
                                 </q-card>
-                                <q-card v-else class="post-card cursor-pointer" v-bind:class="{ 'post-card-vertical': isDesktop }" @click="to('<?php the_permalink(); ?>')">
+                                <q-card v-else class="post-card cursor-pointer" v-bind:class="{ 'post-card-vertical': isDesktop }" @click="themeRouteTo('<?php the_permalink(); ?>')">
                                     <?php if (has_post_thumbnail()) : ?>
                                         <q-img src="<?php the_post_thumbnail_url('smallest'); ?>" :ratio="4/3" alt=""></q-img>
                                     <?php endif ?>
@@ -281,7 +281,7 @@ function set_qdrawer_show($show)
                 }
             },
             methods: {
-                to(permalink) {
+                themeRouteTo(permalink) {
                     document.location.href = permalink
                 }
             }

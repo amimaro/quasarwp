@@ -218,7 +218,7 @@ function set_qdrawer_show($show)
         }
       },
       methods: {
-        to(permalink) {
+        themeRouteTo(permalink) {
           document.location.href = permalink
         },
         onSubmit(evt) {
