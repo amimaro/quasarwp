@@ -7,7 +7,7 @@ add_filter( 'rest_allow_anonymous_comments', '__return_true' );
 add_action('quasarwp', 'my_theme_setup');
 function my_theme_setup()
 {
-  load_theme_textdomain('quasarwp', get_template_directory() . '/data/languages');
+  load_theme_textdomain('quasarwp', get_template_directory() . '/languages');
 }
 
 if (!get_option('quasarwp-settings')) {
@@ -385,7 +385,7 @@ function quasarwp_settings_page()
         <td>
           <div>
             <?php
-            $iconSets = include('/data/icon-sets.php');
+            $iconSets = include('icon-sets.php');
             ?>
             <select name="quasarwp-settings[icon-set]" id="quasarwp-settings-icon-set">
               <?php
