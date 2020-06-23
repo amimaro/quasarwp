@@ -82,6 +82,11 @@ function set_qdrawer_show($show)
             <?php } ?>
 
             <q-toolbar-title>
+              <?php if (isset($setting['qheader-icon'])) { ?>
+                <q-avatar>
+                  <img src="<?php echo get_site_icon_url(); ?>">
+                </q-avatar>
+              <?php } ?>
               <?php echo get_bloginfo('name'); ?>
             </q-toolbar-title>
 
@@ -101,9 +106,11 @@ function set_qdrawer_show($show)
         <q-footer <?php echo $setting['qfooter-separator']; ?>>
           <q-toolbar>
             <q-toolbar-title>
-              <q-avatar>
-                <img src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg">
-              </q-avatar>
+              <?php if (isset($setting['qfooter-icon'])) { ?>
+                <q-avatar>
+                  <img src="<?php echo get_site_icon_url(); ?>">
+                </q-avatar>
+              <?php } ?>
               <?php echo get_bloginfo('name'); ?>
             </q-toolbar-title>
           </q-toolbar>

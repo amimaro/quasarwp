@@ -15,8 +15,10 @@ if (!get_option('quasarwp-settings')) {
     'layout' => 'hHh Lpr lFf',
     'qheader' => 1,
     'qheader-separator' => 'elevated',
+    'qheader-icon' => 1,
     'qfooter' => 1,
     'qfooter-separator' => 'elevated',
+    'qfooter-icon' => 1,
     'lqdrawer' => 1,
     'lqdrawer-behavior' => 'none',
     'lqdrawer-separator' => 'bordered',
@@ -189,6 +191,11 @@ function quasarwp_settings_page()
               <input name="quasarwp-settings[qheader-reveal]" type="checkbox" value="1" <?php checked(isset($options['qheader-reveal'])); ?> id="quasarwp-settings-qheader-reveal" />
               Header Reveal
             </label>
+            <br>
+            <label for="quasarwp-settings-qheader-icon">
+              <input name="quasarwp-settings[qheader-icon]" type="checkbox" value="1" <?php checked(isset($options['qheader-icon'])); ?> id="quasarwp-settings-qheader-icon" />
+              Show Site Icon
+            </label>
           </div>
           <div style="padding: 10px 0 10px 0;">
             <label for="quasarwp-settings-qheader-separator">Separator type:</label>
@@ -212,6 +219,11 @@ function quasarwp_settings_page()
             <label for="quasarwp-settings-qfooter-reveal">
               <input name="quasarwp-settings[qfooter-reveal]" type="checkbox" value="1" <?php checked(isset($options['qfooter-reveal'])); ?> id="quasarwp-settings-qfooter-reveal" />
               Header Reveal
+            </label>
+            <br>
+            <label for="quasarwp-settings-qfooter-icon">
+              <input name="quasarwp-settings[qfooter-icon]" type="checkbox" value="1" <?php checked(isset($options['qfooter-icon'])); ?> id="quasarwp-settings-qfooter-icon" />
+              Show Site Icon
             </label>
           </div>
           <div style="padding: 10px 0 10px 0;">
