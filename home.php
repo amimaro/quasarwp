@@ -131,7 +131,7 @@ function set_qdrawer_show($show)
             <?php } ?>
 
             <q-page-container>
-            
+
                 <?php if ($setting['frontpage-post-layout'] == 'vertical') { ?>
                     <!-- Vertical Layout -->
                     <div class="q-pa-md row items-start q-gutter-md">
@@ -254,11 +254,27 @@ function set_qdrawer_show($show)
 
     <?php get_footer(); ?>
 
+    <script>
+        window.quasarConfig = {
+            brand: {
+                primary: '#027BE3',
+                secondary: '#26A69A',
+                accent: '#9C27B0',
+
+                dark: '#1d1d1d',
+
+                positive: '#21BA45',
+                negative: '#C10015',
+                info: '#31CCEC',
+                warning: '#F2C037'
+            }
+        }
+    </script>
+
     <?php
-
     if (isset($setting['qco'])) echo '';
-
     ?>
+
     <?php
     echo '<script src="https://cdn.jsdelivr.net/npm/quasar@1.12.4/dist/quasar.ie.polyfills.umd' . $minified . '.js"></script>';
     echo '<script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue' . $minified . '.js"></script>';
