@@ -130,6 +130,21 @@ function set_qdrawer_show($show)
         </q-drawer>
       <?php } ?>
 
+      <script>
+        window.quasarConfig = {
+          brand: {
+            primary: '<?php echo $setting['theme-primary'] ?>',
+            secondary: '<?php echo $setting['theme-secondary'] ?>',
+            accent: '<?php echo $setting['theme-accent'] ?>',
+            dark: '<?php echo $setting['theme-dark'] ?>',
+            positive: '<?php echo $setting['theme-positive'] ?>',
+            negative: '<?php echo $setting['theme-negative'] ?>',
+            info: '<?php echo $setting['theme-info'] ?>',
+            warning: '<?php echo $setting['theme-warning'] ?>'
+          }
+        }
+      </script>
+
       <?php
       echo '<script src="https://cdn.jsdelivr.net/npm/quasar@1.12.4/dist/quasar.ie.polyfills.umd' . $minified . '.js"></script>';
       echo '<script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue' . $minified . '.js"></script>';
@@ -150,12 +165,6 @@ function set_qdrawer_show($show)
   </div>
 
   <?php get_footer(); ?>
-
-  <?php
-
-  if (isset($setting['qco'])) echo '';
-
-  ?>
 
   <script>
     let vueObject = {

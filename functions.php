@@ -2,7 +2,7 @@
 
 // QUASARWP MENU
 
-add_filter( 'rest_allow_anonymous_comments', '__return_true' );
+add_filter('rest_allow_anonymous_comments', '__return_true');
 
 add_action('quasarwp', 'my_theme_setup');
 function my_theme_setup()
@@ -37,6 +37,14 @@ if (!get_option('quasarwp-settings')) {
     'single-show-post-date' => 1,
     'single-show-post-author' => 1,
     'single-show-post-img' => 1,
+    'theme-primary' => '#027BE3',
+    'theme-secondary' => '#26A69A',
+    'theme-accent' => '#9C27B0',
+    'theme-dark' => '#1d1d1d',
+    'theme-positive' => '#21BA45',
+    'theme-negative' => '#C10015',
+    'theme-info' => '#31CCEC',
+    'theme-warning' => '#F2C037',
   ));
 }
 
@@ -397,7 +405,71 @@ function quasarwp_settings_page()
           </div>
         </td>
       </tr>
+      <tr>
+        <th scope="row">Theme:</th>
+        <td>
+          <div>
+            <!-- <input type="text" name="quasarwp-settings[layout]" value="<?php echo $options['layout']; ?>" /> -->
+            <table>
+              <thead>
+                <th>Class</th>
+                <th>Color</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding: 0px;"><label for="quasarwp-theme-primary">Primary</label></td>
+                  <td style="padding: 0px;"><input type="color" id="quasarwp-theme-primary" name="quasarwp-settings[theme-primary]" value="<?php echo $options['theme-primary']; ?>"></td>
+                </tr>
+                <tr>
+                  <td style="padding: 0px;"><label for="quasarwp-theme-secondary">Secondary</label></td>
+                  <td style="padding: 0px;"><input type="color" id="quasarwp-theme-secondary" name="quasarwp-settings[theme-secondary]" value="<?php echo $options['theme-secondary']; ?>"></td>
+                </tr>
+                <tr>
+                  <td style="padding: 0px;"><label for="quasarwp-theme-accent">Accent</label></td>
+                  <td style="padding: 0px;"><input type="color" id="quasarwp-theme-accent" name="quasarwp-settings[theme-accent]" value="<?php echo $options['theme-accent']; ?>"></td>
+                </tr>
+                <tr>
+                  <td style="padding: 0px;"><label for="quasarwp-theme-dark">Dark</label></td>
+                  <td style="padding: 0px;"><input type="color" id="quasarwp-theme-dark" name="quasarwp-settings[theme-dark]" value="<?php echo $options['theme-dark']; ?>"></td>
+                </tr>
+                <tr>
+                  <td style="padding: 0px;"><label for="quasarwp-theme-positive">Positive</label></td>
+                  <td style="padding: 0px;"><input type="color" id="quasarwp-theme-positive" name="quasarwp-settings[theme-positive]" value="<?php echo $options['theme-positive']; ?>"></td>
+                </tr>
+                <tr>
+                  <td style="padding: 0px;"><label for="quasarwp-theme-negative">Negative</label></td>
+                  <td style="padding: 0px;"><input type="color" id="quasarwp-theme-negative" name="quasarwp-settings[theme-negative]" value="<?php echo $options['theme-negative']; ?>"></td>
+                </tr>
+                <tr>
+                  <td style="padding: 0px;"><label for="quasarwp-theme-info">Info</label></td>
+                  <td style="padding: 0px;"><input type="color" id="quasarwp-theme-info" name="quasarwp-settings[theme-info]" value="<?php echo $options['theme-info']; ?>"></td>
+                </tr>
+                <tr>
+                  <td style="padding: 0px;"><label for="quasarwp-theme-warning">Warning</label></td>
+                  <td style="padding: 0px;"><input type="color" id="quasarwp-theme-warning" name="quasarwp-settings[theme-warning]" value="<?php echo $options['theme-warning']; ?>"></td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+            <input type="button" class="button button-secondary" value="Set Default Theme" onclick="setDefaultTheme()">
+          </div>
+        </td>
+      </tr>
     </table>
+
+    <script>
+      const setDefaultTheme = function() {
+        document.getElementById('quasarwp-theme-primary').value = '#027be3'
+        document.getElementById('quasarwp-theme-secondary').value = '#26a69a'
+        document.getElementById('quasarwp-theme-accent').value = '#9c27b0'
+        document.getElementById('quasarwp-theme-dark').value = '#1d1d1d'
+        document.getElementById('quasarwp-theme-positive').value = '#21ba45'
+        document.getElementById('quasarwp-theme-negative').value = '#c10015'
+        document.getElementById('quasarwp-theme-info').value = '#31ccec'
+        document.getElementById('quasarwp-theme-warning').value = '#f2c037'
+      }
+    </script>
+
     <?php submit_button(); ?>
   </form>
 <?php

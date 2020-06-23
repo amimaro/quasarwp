@@ -257,23 +257,17 @@ function set_qdrawer_show($show)
     <script>
         window.quasarConfig = {
             brand: {
-                primary: '#027BE3',
-                secondary: '#26A69A',
-                accent: '#9C27B0',
-
-                dark: '#1d1d1d',
-
-                positive: '#21BA45',
-                negative: '#C10015',
-                info: '#31CCEC',
-                warning: '#F2C037'
+                primary: '<?php echo $setting['theme-primary'] ?>',
+                secondary: '<?php echo $setting['theme-secondary'] ?>',
+                accent: '<?php echo $setting['theme-accent'] ?>',
+                dark: '<?php echo $setting['theme-dark'] ?>',
+                positive: '<?php echo $setting['theme-positive'] ?>',
+                negative: '<?php echo $setting['theme-negative'] ?>',
+                info: '<?php echo $setting['theme-info'] ?>',
+                warning: '<?php echo $setting['theme-warning'] ?>'
             }
         }
     </script>
-
-    <?php
-    if (isset($setting['qco'])) echo '';
-    ?>
 
     <?php
     echo '<script src="https://cdn.jsdelivr.net/npm/quasar@1.12.4/dist/quasar.ie.polyfills.umd' . $minified . '.js"></script>';
