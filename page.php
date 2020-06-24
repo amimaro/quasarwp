@@ -69,7 +69,7 @@ function set_qdrawer_show($show)
 }
 function get_reveal_option($show)
 {
-    return $show ? 'reveal' : '';
+  return $show ? 'reveal' : '';
 }
 ?>
 
