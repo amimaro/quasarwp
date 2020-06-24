@@ -75,7 +75,7 @@ function set_qdrawer_show($show)
     <q-layout view="<?php echo $setting['layout']; ?>">
 
       <?php if (isset($setting['qheader'])) { ?>
-        <q-header <?php echo $setting['qheader-separator']; ?>>
+        <q-header <?php echo get_reveal_option($setting['qheader-reveal']); ?> <?php echo $setting['qheader-separator']; ?>>
           <q-toolbar>
             <?php if (isset($setting['lqdrawer'])) { ?>
               <q-btn flat dense round icon="menu" aria-label="Menu" @click="left = !left"></q-btn>
@@ -98,7 +98,7 @@ function set_qdrawer_show($show)
       <?php } ?>
 
       <?php if (isset($setting['qfooter'])) { ?>
-        <q-footer <?php echo $setting['qfooter-separator']; ?>>
+        <q-footer <?php echo get_reveal_option($setting['qfooter-reveal']); ?> <?php echo $setting['qfooter-separator']; ?>>
           <q-toolbar>
             <q-toolbar-title class="cursor-pointer" @click="themeRouteTo('/')">
               <q-avatar>
