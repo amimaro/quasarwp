@@ -81,7 +81,7 @@ function set_qdrawer_show($show)
               <q-btn flat dense round icon="menu" aria-label="Menu" @click="left = !left"></q-btn>
             <?php } ?>
 
-            <q-toolbar-title>
+            <q-toolbar-title class="cursor-pointer" @click="themeRouteTo('/')">
               <?php echo get_bloginfo('name'); ?>
             </q-toolbar-title>
 
@@ -100,7 +100,7 @@ function set_qdrawer_show($show)
       <?php if (isset($setting['qfooter'])) { ?>
         <q-footer <?php echo $setting['qfooter-separator']; ?>>
           <q-toolbar>
-            <q-toolbar-title>
+            <q-toolbar-title class="cursor-pointer" @click="themeRouteTo('/')">
               <q-avatar>
                 <img src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg">
               </q-avatar>
