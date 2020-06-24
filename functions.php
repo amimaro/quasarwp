@@ -21,6 +21,7 @@ if (!get_option('quasarwp-settings')) {
     'rqdrawer-separator' => 'bordered',
     'roboto-font' => 1,
     'material-icons' => 1,
+    'fontawesomev5' => 1,
     'minified-files' => 1,
     'language' => 'en-us',
     'icon-set' => 'material',
@@ -29,10 +30,11 @@ if (!get_option('quasarwp-settings')) {
     'frontpage-show-post-date' => 1,
     'frontpage-show-post-author' => 1,
     'frontpage-show-post-comments-counter' => 1,
-    'single-show-post-comments-counter' => 1,
-    'single-show-post-date' => 1,
-    'single-show-post-author' => 1,
-    'single-show-post-img' => 1,
+    'posts-show-comments-counter' => 1,
+    'posts-show-date' => 1,
+    'posts-show-author' => 1,
+    'posts-show-featured-img' => 1,
+    'posts-show-social' => 1,
     'theme-primary' => '#027BE3',
     'theme-secondary' => '#26A69A',
     'theme-accent' => '#9C27B0',
@@ -42,6 +44,22 @@ if (!get_option('quasarwp-settings')) {
     'theme-info' => '#31CCEC',
     'theme-warning' => '#F2C037',
     'show-loading' => 1,
+    'whatsapp' => '1',
+    'facebook' => '1',
+    'twitter' => '1',
+    'google' => '1',
+    'whatsapp-icon' => 'fab fa-whatsapp',
+    'telegram-icon' => 'fab fa-telegram-plane',
+    'facebook-icon' => 'fab fa-facebook-f',
+    'twitter-icon' => 'fab fa-twitter',
+    'instagram-icon' => 'fab fa-instagram',
+    'github-icon' => 'fab fa-github-alt',
+    'linkedin-icon' => 'fab fa-linkedin-in',
+    'reddit-icon' => 'fab fa-reddit-alien',
+    'google-icon' => 'fab fa-google',
+    'snapchat-icon' => 'fab fa-snapchat-ghost',
+    'pinterest-icon' => 'fab fa-pinterest-p',
+    'tumblr-icon' => 'fab fa-tumblr',
   ));
 }
 
@@ -369,24 +387,29 @@ function quasarwp_settings_page()
         <th scope="row">Posts Page:</th>
         <td>
           <div>
-            <label for="quasarwp-settings-single-show-post-comments-counter">
-              <input name="quasarwp-settings[single-show-post-comments-counter]" type="checkbox" value="1" <?php checked(isset($options['single-show-post-comments-counter'])); ?> id="quasarwp-settings-single-show-post-comments-counter" />
+            <label for="quasarwp-settings-posts-show-comments-counter">
+              <input name="quasarwp-settings[posts-show-comments-counter]" type="checkbox" value="1" <?php checked(isset($options['posts-show-comments-counter'])); ?> id="quasarwp-settings-posts-show-comments-counter" />
               Show Comments Counter
             </label>
             <br>
-            <label for="quasarwp-settings-single-show-post-date">
-              <input name="quasarwp-settings[single-show-post-date]" type="checkbox" value="1" <?php checked(isset($options['single-show-post-date'])); ?> id="quasarwp-settings-single-show-post-date" />
+            <label for="quasarwp-settings-posts-show-date">
+              <input name="quasarwp-settings[posts-show-date]" type="checkbox" value="1" <?php checked(isset($options['posts-show-date'])); ?> id="quasarwp-settings-posts-show-date" />
               Show Post Date
             </label>
             <br>
-            <label for="quasarwp-settings-single-show-post-author">
-              <input name="quasarwp-settings[single-show-post-author]" type="checkbox" value="1" <?php checked(isset($options['single-show-post-author'])); ?> id="quasarwp-settings-single-show-post-author" />
+            <label for="quasarwp-settings-posts-show-author">
+              <input name="quasarwp-settings[posts-show-author]" type="checkbox" value="1" <?php checked(isset($options['posts-show-author'])); ?> id="quasarwp-settings-posts-show-author" />
               Show Post Author
             </label>
             <br>
-            <label for="quasarwp-settings-single-show-post-img">
-              <input name="quasarwp-settings[single-show-post-img]" type="checkbox" value="1" <?php checked(isset($options['single-show-post-img'])); ?> id="quasarwp-settings-single-show-post-img" />
+            <label for="quasarwp-settings-posts-show-featured-img">
+              <input name="quasarwp-settings[posts-show-featured-img]" type="checkbox" value="1" <?php checked(isset($options['posts-show-featured-img'])); ?> id="quasarwp-settings-posts-show-featured-img" />
               Show Post Featured Image
+            </label>
+            <br>
+            <label for="quasarwp-settings-posts-show-social">
+              <input name="quasarwp-settings[posts-show-social]" type="checkbox" value="1" <?php checked(isset($options['posts-show-social'])); ?> id="quasarwp-settings-posts-show-social" />
+              Show Social Icons
             </label>
           </div>
         </td>
@@ -466,6 +489,107 @@ function quasarwp_settings_page()
             </table>
             <br>
             <input type="button" class="button button-secondary" value="Set Default Theme" onclick="setDefaultTheme()">
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Social Icons:</th>
+        <td>
+          <div>
+            <!-- <input type="text" name="quasarwp-settings[layout]" value="<?php echo $options['layout']; ?>" /> -->
+            <table>
+              <thead>
+                <th>Media</th>
+                <th>Enabled</th>
+                <th>Icon</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding: 0px;"><label for="quasarwp-social-whatsapp">Whatsapp</label></td>
+                  <td style="padding: 0px;">
+                    <input name="quasarwp-settings[whatsapp]" type="checkbox" value="1" <?php checked(isset($options['whatsapp'])); ?> id="quasarwp-settings-whatsapp" />
+                  </td>
+                  <td style="padding: 0px;"><input type="text" name="quasarwp-settings[whatsapp-icon]" value="<?php echo $options['whatsapp-icon']; ?>" /></td>
+                </tr>
+                <tr>
+                  <td style="padding: 0px;"><label for="quasarwp-social-telegram">Telegram</label></td>
+                  <td style="padding: 0px;">
+                    <input name="quasarwp-settings[telegram]" type="checkbox" value="1" <?php checked(isset($options['telegram'])); ?> id="quasarwp-settings-telegram" />
+                  </td>
+                  <td style="padding: 0px;"><input type="text" name="quasarwp-settings[telegram-icon]" value="<?php echo $options['telegram-icon']; ?>" /></td>
+                </tr>
+                <tr>
+                  <td style="padding: 0px;"><label for="quasarwp-social-facebook">Facebook</label></td>
+                  <td style="padding: 0px;">
+                    <input name="quasarwp-settings[facebook]" type="checkbox" value="1" <?php checked(isset($options['facebook'])); ?> id="quasarwp-settings-facebook" />
+                  </td>
+                  <td style="padding: 0px;"><input type="text" name="quasarwp-settings[facebook-icon]" value="<?php echo $options['facebook-icon']; ?>" /></td>
+                </tr>
+                <tr>
+                  <td style="padding: 0px;"><label for="quasarwp-social-twitter">Twitter</label></td>
+                  <td style="padding: 0px;">
+                    <input name="quasarwp-settings[twitter]" type="checkbox" value="1" <?php checked(isset($options['twitter'])); ?> id="quasarwp-settings-twitter" />
+                  </td>
+                  <td style="padding: 0px;"><input type="text" name="quasarwp-settings[twitter-icon]" value="<?php echo $options['twitter-icon']; ?>" /></td>
+                </tr>
+                <tr>
+                  <td style="padding: 0px;"><label for="quasarwp-social-instagram">Instagram</label></td>
+                  <td style="padding: 0px;">
+                    <input name="quasarwp-settings[instagram]" type="checkbox" value="1" <?php checked(isset($options['instagram'])); ?> id="quasarwp-settings-instagram" />
+                  </td>
+                  <td style="padding: 0px;"><input type="text" name="quasarwp-settings[instagram-icon]" value="<?php echo $options['instagram-icon']; ?>" /></td>
+                </tr>
+                <tr>
+                  <td style="padding: 0px;"><label for="quasarwp-social-github">GitHub</label></td>
+                  <td style="padding: 0px;">
+                    <input name="quasarwp-settings[github]" type="checkbox" value="1" <?php checked(isset($options['github'])); ?> id="quasarwp-settings-github" />
+                  </td>
+                  <td style="padding: 0px;"><input type="text" name="quasarwp-settings[github-icon]" value="<?php echo $options['github-icon']; ?>" /></td>
+                </tr>
+                <tr>
+                  <td style="padding: 0px;"><label for="quasarwp-social-linkedin">Linkedin</label></td>
+                  <td style="padding: 0px;">
+                    <input name="quasarwp-settings[linkedin]" type="checkbox" value="1" <?php checked(isset($options['linkedin'])); ?> id="quasarwp-settings-linkedin" />
+                  </td>
+                  <td style="padding: 0px;"><input type="text" name="quasarwp-settings[linkedin-icon]" value="<?php echo $options['linkedin-icon']; ?>" /></td>
+                </tr>
+                <tr>
+                  <td style="padding: 0px;"><label for="quasarwp-social-reddit">Reddit</label></td>
+                  <td style="padding: 0px;">
+                    <input name="quasarwp-settings[reddit]" type="checkbox" value="1" <?php checked(isset($options['reddit'])); ?> id="quasarwp-settings-reddit" />
+                  </td>
+                  <td style="padding: 0px;"><input type="text" name="quasarwp-settings[reddit-icon]" value="<?php echo $options['reddit-icon']; ?>" /></td>
+                </tr>
+                <tr>
+                  <td style="padding: 0px;"><label for="quasarwp-social-google">Google</label></td>
+                  <td style="padding: 0px;">
+                    <input name="quasarwp-settings[google]" type="checkbox" value="1" <?php checked(isset($options['google'])); ?> id="quasarwp-settings-google" />
+                  </td>
+                  <td style="padding: 0px;"><input type="text" name="quasarwp-settings[google-icon]" value="<?php echo $options['google-icon']; ?>" /></td>
+                </tr>
+                <tr>
+                  <td style="padding: 0px;"><label for="quasarwp-social-snapchat">Snapchat</label></td>
+                  <td style="padding: 0px;">
+                    <input name="quasarwp-settings[snapchat]" type="checkbox" value="1" <?php checked(isset($options['snapchat'])); ?> id="quasarwp-settings-snapchat" />
+                  </td>
+                  <td style="padding: 0px;"><input type="text" name="quasarwp-settings[snapchat-icon]" value="<?php echo $options['snapchat-icon']; ?>" /></td>
+                </tr>
+                <tr>
+                  <td style="padding: 0px;"><label for="quasarwp-social-pinterest">Pinterest</label></td>
+                  <td style="padding: 0px;">
+                    <input name="quasarwp-settings[pinterest]" type="checkbox" value="1" <?php checked(isset($options['pinterest'])); ?> id="quasarwp-settings-pinterest" />
+                  </td>
+                  <td style="padding: 0px;"><input type="text" name="quasarwp-settings[pinterest-icon]" value="<?php echo $options['pinterest-icon']; ?>" /></td>
+                </tr>
+                <tr>
+                  <td style="padding: 0px;"><label for="quasarwp-social-tumblr">Tumblr</label></td>
+                  <td style="padding: 0px;">
+                    <input name="quasarwp-settings[tumblr]" type="checkbox" value="1" <?php checked(isset($options['tumblr'])); ?> id="quasarwp-settings-tumblr" />
+                  </td>
+                  <td style="padding: 0px;"><input type="text" name="quasarwp-settings[tumblr-icon]" value="<?php echo $options['tumblr-icon']; ?>" /></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </td>
       </tr>

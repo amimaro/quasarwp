@@ -62,5 +62,100 @@
       list-style-type: none;
     }
 
+    .text-quasarwp-github {
+      color: #000000;
+    }
+
+    .bg-quasarwp-github {
+      background: #000000;
+    }
+
+    .text-quasarwp-facebook {
+      color: #3b5998;
+    }
+
+    .bg-quasarwp-facebook {
+      background: #3b5998;
+    }
+
+    .text-quasarwp-twitter {
+      color: #1da1f2;
+    }
+
+    .bg-quasarwp-twitter {
+      background: #1da1f2;
+    }
+
+    .text-quasarwp-instagram {
+      color: #7232bd;
+    }
+
+    .bg-quasarwp-instagram {
+      background: #7232bd;
+    }
+
+    .text-quasarwp-pinterest {
+      color: #bd081c;
+    }
+
+    .bg-quasarwp-pinterest {
+      background: #bd081c;
+    }
+
+    .text-quasarwp-linkedin {
+      color: #007bb5;
+    }
+
+    .bg-quasarwp-linkedin {
+      background: #007bb5;
+    }
+
+    .text-quasarwp-whatsapp {
+      color: #25d366;
+    }
+
+    .bg-quasarwp-whatsapp {
+      background: #25d366;
+    }
+
+    .text-quasarwp-reddit {
+      color: #ff4500;
+    }
+
+    .bg-quasarwp-reddit {
+      background: #ff4500;
+    }
+
+    .text-quasarwp-telegram {
+      color: #0088cc;
+    }
+
+    .bg-quasarwp-telegram {
+      background: #0088cc;
+    }
+
+    .text-quasarwp-google {
+      color: #ea4335;
+    }
+
+    .bg-quasarwp-google {
+      background: #ea4335;
+    }
+
+    .text-quasarwp-snapchat {
+      color: #fffc00;
+    }
+
+    .bg-quasarwp-snapchat {
+      background: #fffc00;
+    }
+
+    .text-quasarwp-tumblr {
+      color: #35465d;
+    }
+
+    .bg-quasarwp-tumblr {
+      background: #35465d;
+    }
   </style>
 </head>
