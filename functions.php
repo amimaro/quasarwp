@@ -4,8 +4,6 @@
 
 add_filter('rest_allow_anonymous_comments', '__return_true');
 
-
-
 if (!get_option('quasarwp-settings')) {
   add_option('quasarwp-settings', array(
     'layout' => 'hHh Lpr lFf',
