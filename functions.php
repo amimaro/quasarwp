@@ -230,7 +230,7 @@ function quasarwp_settings_page()
             <br>
             <label for="quasarwp-settings-qfooter-reveal">
               <input name="quasarwp-settings[qfooter-reveal]" type="checkbox" value="1" <?php checked(isset($options['qfooter-reveal'])); ?> id="quasarwp-settings-qfooter-reveal" />
-              Header Reveal
+              Footer Reveal
             </label>
             <br>
             <label for="quasarwp-settings-qfooter-icon">
