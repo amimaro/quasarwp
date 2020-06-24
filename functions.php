@@ -47,6 +47,7 @@ if (!get_option('quasarwp-settings')) {
     'theme-negative' => '#C10015',
     'theme-info' => '#31CCEC',
     'theme-warning' => '#F2C037',
+    'show-loading' => 1,
   ));
 }
 
@@ -89,6 +90,17 @@ function quasarwp_settings_page()
     <?php settings_fields('quasarwp-settings'); ?>
     <?php do_settings_sections('quasarwp-settings'); ?>
     <table class="form-table">
+      <tr>
+        <th scope="row">General:</th>
+        <td>
+          <div>
+            <label for="quasarwp-settings-show-loading" style="padding-right: 20px;">
+              <input name="quasarwp-settings[show-loading]" type="checkbox" value="1" <?php checked(isset($options['show-loading'])); ?> id="quasarwp-settings-show-loading" />
+              Show Loading Overlay
+            </label>
+          </div>
+        </td>
+      </tr>
       <tr>
         <th scope="row">Layout view:</th>
         <td>

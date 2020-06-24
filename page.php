@@ -71,7 +71,7 @@ function set_qdrawer_show($show)
 
 
 <body <?php body_class(); ?>>
-  <div id="q-app">
+  <div id="q-app" <?php if (isset($setting['show-loading'])) { ?>style="visibility: hidden;" <?php } ?>>
     <q-layout view="<?php echo $setting['layout']; ?>">
 
       <?php if (isset($setting['qheader'])) { ?>
@@ -184,6 +184,19 @@ function set_qdrawer_show($show)
           right: false
         }
       },
+      <?php if (isset($setting['show-loading'])) { ?>
+        created() {
+          this.$q.loading.show()
+        },
+        mounted() {
+          this.$nextTick(function() {
+            setTimeout(() => {
+              this.$q.loading.hide()
+              document.getElementById('q-app').style.visibility = 'visible'
+            }, 500)
+          })
+        },
+      <?php } ?>
       methods: {
         themeRouteTo(permalink) {
           document.location.href = permalink
