@@ -1,5 +1,5 @@
 <?php 
-return array(
+$iconSets = array(
   "material" => "Material (webfont)",
   "svg-material-icons" => "Material (svg)",
   "material-icons-outlined" => "Material Outlined (webfont)",
@@ -17,5 +17,5 @@ return array(
   "svg-themify" => "Themify (svg)",
   "line-awesome" => "Line Awesome (webfont)",
   "svg-line-awesome" => "Line Awesome (svg)",
-)
-?>
+);
+

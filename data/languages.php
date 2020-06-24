@@ -1,5 +1,5 @@
 <?php 
-return array(
+$languages = array(
 "ar" => "العربية",
 "bg" => "български език",
 "ca" => "Català",
@@ -45,5 +45,4 @@ return array(
 "vi" => "Tiếng Việt",
 "zh-hans" => "中文(简体)",
 "zh-hant" => "中文(繁體)",
-)
-?>
+);

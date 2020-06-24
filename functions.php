@@ -4,11 +4,7 @@
 
 add_filter('rest_allow_anonymous_comments', '__return_true');
 
-add_action('quasarwp', 'my_theme_setup');
-function my_theme_setup()
-{
-  load_theme_textdomain('quasarwp', get_template_directory() . '/languages');
-}
+
 
 if (!get_option('quasarwp-settings')) {
   add_option('quasarwp-settings', array(
@@ -83,6 +79,8 @@ function quasarwp_settings_page()
     return;
   }
 
+  include('data/languages.php');
+  include('data/icon-sets.php');
   $options = get_option('quasarwp-settings');
 ?>
   <h1>QuasarWP Settings</h1>
@@ -399,9 +397,6 @@ function quasarwp_settings_page()
         <th scope="row">Language Pack:</th>
         <td>
           <div>
-            <?php
-            $languages = include('languages.php');
-            ?>
             <select name="quasarwp-settings[language]" id="quasarwp-settings-language">
               <?php
               foreach ($languages as $key => &$lang) {
@@ -416,9 +411,6 @@ function quasarwp_settings_page()
         <th scope="row">Icon Set:</th>
         <td>
           <div>
-            <?php
-            $iconSets = include('icon-sets.php');
-            ?>
             <select name="quasarwp-settings[icon-set]" id="quasarwp-settings-icon-set">
               <?php
               foreach ($iconSets as $key => &$iconSet) {
