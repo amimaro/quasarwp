@@ -2,7 +2,8 @@
 <html>
 
 <head>
-  <title><?php echo get_bloginfo('name'); ?></title>
+
+  <?php wp_head(); ?>
 
   <meta charset="utf-8">
   <meta name="description" content="<?php echo get_bloginfo('description'); ?>">
@@ -17,7 +18,6 @@
   <link rel="icon" type="image/ico" href="statics/icons/favicon.ico"> -->
 
   <?php
-  wp_head();
   $components = get_option('quasarwp-settings');
 
   $rtl = isset($components['rtl-css-support']) ? '.rtl' : '';

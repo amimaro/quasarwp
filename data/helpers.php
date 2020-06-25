@@ -20,3 +20,8 @@ function tn_custom_excerpt_length($length)
   return 35;
 }
 add_filter('excerpt_length', 'tn_custom_excerpt_length', 999);
+
+function theme_slug_setup() {
+  add_theme_support( 'title-tag' );
+}
+add_action( 'after_setup_theme', 'theme_slug_setup' );
