@@ -6,6 +6,11 @@
       Show Author
     </label>
     <br>
+    <label for="quasarwp-settings-frontpage-show-post-excerpt">
+      <input name="quasarwp-settings[frontpage-show-post-excerpt]" type="checkbox" value="1" <?php checked(isset($options['frontpage-show-post-excerpt'])); ?> id="quasarwp-settings-frontpage-show-post-excerpt" />
+      Show Excerpt
+    </label>
+    <br>
     <label for="quasarwp-settings-frontpage-show-post-date">
       <input name="quasarwp-settings[frontpage-show-post-date]" type="checkbox" value="1" <?php checked(isset($options['frontpage-show-post-date'])); ?> id="quasarwp-settings-frontpage-show-post-date" />
       Show Post Date

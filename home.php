@@ -38,7 +38,9 @@ include(get_template_directory() . '/components/header-functions.php');
                                     </q-card-section>
 
                                     <q-card-section class="q-pt-none">
-                                        <?php the_excerpt(''); ?>
+                                        <?php if (isset($setting['frontpage-show-post-excerpt'])) { ?>
+                                            <?php the_excerpt(''); ?>
+                                        <?php } ?>
                                         <div class="row justify-between">
                                             <?php if (isset($setting['frontpage-show-post-comments-counter'])) { ?>
                                                 <div class="text-caption">

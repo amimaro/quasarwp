@@ -24,6 +24,7 @@ if (!get_option('quasarwp-settings')) {
     'qtabs-position' => 'left',
     'frontpage-post-layout' => 'vertical',
     'frontpage-show-post-date' => 1,
+    'frontpage-show-post-excerpt' => 1,
     'frontpage-show-post-author' => 1,
     'frontpage-show-post-comments-counter' => 1,
     'posts-show-comments-counter' => 1,
