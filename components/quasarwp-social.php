@@ -12,23 +12,14 @@
     <?php if (isset($setting['twitter'])) { ?>
       <q-btn round color="quasarwp-twitter" glossy icon="<?php echo $setting['twitter-icon'] ?>"></q-btn>
     <?php } ?>
-    <?php if (isset($setting['instagram'])) { ?>
-      <q-btn round color="quasarwp-instagram" glossy icon="<?php echo $setting['instagram-icon'] ?>"></q-btn>
-    <?php } ?>
-    <?php if (isset($setting['github'])) { ?>
-      <q-btn round color="quasarwp-github" glossy icon="<?php echo $setting['github-icon'] ?>"></q-btn>
+    <?php if (isset($setting['mail'])) { ?>
+      <q-btn round color="quasarwp-mail" glossy icon="<?php echo $setting['mail-icon'] ?>"></q-btn>
     <?php } ?>
     <?php if (isset($setting['linkedin'])) { ?>
       <q-btn round color="quasarwp-linkedin" glossy icon="<?php echo $setting['linkedin-icon'] ?>"></q-btn>
     <?php } ?>
     <?php if (isset($setting['reddit'])) { ?>
       <q-btn round color="quasarwp-reddit" glossy icon="<?php echo $setting['reddit-icon'] ?>"></q-btn>
-    <?php } ?>
-    <?php if (isset($setting['google'])) { ?>
-      <q-btn round color="quasarwp-google" glossy icon="<?php echo $setting['google-icon'] ?>"></q-btn>
-    <?php } ?>
-    <?php if (isset($setting['snapchat'])) { ?>
-      <q-btn round color="quasarwp-snapchat" glossy icon="<?php echo $setting['snapchat-icon'] ?>"></q-btn>
     <?php } ?>
     <?php if (isset($setting['pinterest'])) { ?>
       <q-btn round color="quasarwp-pinterest" glossy icon="<?php echo $setting['pinterest-icon'] ?>"></q-btn>

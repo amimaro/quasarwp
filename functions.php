@@ -5,7 +5,7 @@
 add_filter('rest_allow_anonymous_comments', '__return_true');
 
 if (!get_option('quasarwp-settings')) {
-  add_option('quasarwp-settings', array(
+  update_option('quasarwp-settings', array(
     'layout' => 'hHh Lpr lFf',
     'qheader' => 1,
     'qheader-separator' => 'elevated',
@@ -52,7 +52,7 @@ if (!get_option('quasarwp-settings')) {
     'telegram-icon' => 'fab fa-telegram-plane',
     'facebook-icon' => 'fab fa-facebook-f',
     'twitter-icon' => 'fab fa-twitter',
-    'instagram-icon' => 'fab fa-instagram',
+    'mail-icon' => 'far fa-envelope',
     'github-icon' => 'fab fa-github-alt',
     'linkedin-icon' => 'fab fa-linkedin-in',
     'reddit-icon' => 'fab fa-reddit-alien',
@@ -533,18 +533,11 @@ function quasarwp_settings_page()
                   <td style="padding: 0px;"><input type="text" name="quasarwp-settings[twitter-icon]" value="<?php echo $options['twitter-icon']; ?>" /></td>
                 </tr>
                 <tr>
-                  <td style="padding: 0px;"><label for="quasarwp-social-instagram">Instagram</label></td>
+                  <td style="padding: 0px;"><label for="quasarwp-social-mail">E-mail</label></td>
                   <td style="padding: 0px;">
-                    <input name="quasarwp-settings[instagram]" type="checkbox" value="1" <?php checked(isset($options['instagram'])); ?> id="quasarwp-settings-instagram" />
+                    <input name="quasarwp-settings[mail]" type="checkbox" value="1" <?php checked(isset($options['mail'])); ?> id="quasarwp-settings-mail" />
                   </td>
-                  <td style="padding: 0px;"><input type="text" name="quasarwp-settings[instagram-icon]" value="<?php echo $options['instagram-icon']; ?>" /></td>
-                </tr>
-                <tr>
-                  <td style="padding: 0px;"><label for="quasarwp-social-github">GitHub</label></td>
-                  <td style="padding: 0px;">
-                    <input name="quasarwp-settings[github]" type="checkbox" value="1" <?php checked(isset($options['github'])); ?> id="quasarwp-settings-github" />
-                  </td>
-                  <td style="padding: 0px;"><input type="text" name="quasarwp-settings[github-icon]" value="<?php echo $options['github-icon']; ?>" /></td>
+                  <td style="padding: 0px;"><input type="text" name="quasarwp-settings[mail-icon]" value="<?php echo $options['mail-icon']; ?>" /></td>
                 </tr>
                 <tr>
                   <td style="padding: 0px;"><label for="quasarwp-social-linkedin">Linkedin</label></td>
@@ -559,20 +552,6 @@ function quasarwp_settings_page()
                     <input name="quasarwp-settings[reddit]" type="checkbox" value="1" <?php checked(isset($options['reddit'])); ?> id="quasarwp-settings-reddit" />
                   </td>
                   <td style="padding: 0px;"><input type="text" name="quasarwp-settings[reddit-icon]" value="<?php echo $options['reddit-icon']; ?>" /></td>
-                </tr>
-                <tr>
-                  <td style="padding: 0px;"><label for="quasarwp-social-google">Google</label></td>
-                  <td style="padding: 0px;">
-                    <input name="quasarwp-settings[google]" type="checkbox" value="1" <?php checked(isset($options['google'])); ?> id="quasarwp-settings-google" />
-                  </td>
-                  <td style="padding: 0px;"><input type="text" name="quasarwp-settings[google-icon]" value="<?php echo $options['google-icon']; ?>" /></td>
-                </tr>
-                <tr>
-                  <td style="padding: 0px;"><label for="quasarwp-social-snapchat">Snapchat</label></td>
-                  <td style="padding: 0px;">
-                    <input name="quasarwp-settings[snapchat]" type="checkbox" value="1" <?php checked(isset($options['snapchat'])); ?> id="quasarwp-settings-snapchat" />
-                  </td>
-                  <td style="padding: 0px;"><input type="text" name="quasarwp-settings[snapchat-icon]" value="<?php echo $options['snapchat-icon']; ?>" /></td>
                 </tr>
                 <tr>
                   <td style="padding: 0px;"><label for="quasarwp-social-pinterest">Pinterest</label></td>

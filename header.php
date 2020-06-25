@@ -94,6 +94,14 @@
       background: #7232bd;
     }
 
+    .text-quasarwp-mail {
+      color: #03c2fc;
+    }
+
+    .bg-quasarwp-mail {
+      background: #03c2fc;
+    }
+
     .text-quasarwp-pinterest {
       color: #bd081c;
     }
@@ -132,14 +140,6 @@
 
     .bg-quasarwp-telegram {
       background: #0088cc;
-    }
-
-    .text-quasarwp-google {
-      color: #ea4335;
-    }
-
-    .bg-quasarwp-google {
-      background: #ea4335;
     }
 
     .text-quasarwp-snapchat {
