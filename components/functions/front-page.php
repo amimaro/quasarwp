@@ -24,8 +24,8 @@
   <div style="padding: 10px 0 10px 0;">
     <label for="quasarwp-settings-frontpage-post-layout">Posts Layout:</label>
     <select name="quasarwp-settings[frontpage-post-layout]" id="quasarwp-settings-frontpage-post-layout">
-      <option value="vertical" <?php selected($options['frontpage-post-layout'], 'vertical'); ?>>Vertical</option>
-      <option value="horizontal" <?php selected($options['frontpage-post-layout'], 'horizontal'); ?>>Horizontal</option>
+      <option value="stacked" <?php selected($options['frontpage-post-layout'], 'stacked'); ?>>Stacked</option>
+      <option value="grid3x3" <?php selected($options['frontpage-post-layout'], 'grid3x3'); ?>>3x3 Grid</option>
     </select>
   </div>
 </td>

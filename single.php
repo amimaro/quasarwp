@@ -47,7 +47,7 @@ include(get_template_directory() . '/components/header-functions.php');
 
                 <?php if (has_post_thumbnail() && isset($setting['posts-show-featured-img'])) : ?>
                   <div align="center">
-                    <q-img src="<?php the_post_thumbnail_url('largest'); ?>" alt="" style="max-width: 900px; max-height: 300px"></q-img>
+                    <q-img src="<?php the_post_thumbnail_url('largest'); ?>" alt="" class="post-featured-img"></q-img>
                   </div>
                 <?php endif ?>
 

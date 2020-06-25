@@ -13,122 +13,12 @@ include(get_template_directory() . '/components/header-functions.php');
 
             <q-page-container>
 
-                <?php if ($setting['frontpage-post-layout'] == 'vertical') { ?>
-                    <!-- Vertical Layout -->
-                    <div class="q-pa-md row items-start q-gutter-md">
-                        <?php
-                        if (have_posts()) : while (have_posts()) : the_post();
-                        ?>
-                                <q-card class="post-card cursor-pointer" v-bind:class="{ 'post-card-vertical': isDesktop }" @click="quasarwpRouteTo('<?php the_permalink(); ?>')">
-                                    <?php if (has_post_thumbnail()) : ?>
-                                        <q-img src="<?php the_post_thumbnail_url('smallest'); ?>" :ratio="4/3" alt=""></q-img>
-                                    <?php endif ?>
-                                    <q-card-section>
-                                        <div class="text-h6">
-                                            <?php the_title(); ?>
-                                            <?php if (isset($setting['frontpage-show-post-author'])) { ?>
-                                                <div class="text-caption">
-                                                    <?php _e('by') ?> <?php the_author(); ?>
-                                                </div>
-                                            <?php } ?>
-                                        </div>
-                                    </q-card-section>
-
-                                    <q-card-section class="q-pt-none">
-                                        <?php if (isset($setting['frontpage-show-post-excerpt'])) { ?>
-                                            <?php the_excerpt(''); ?>
-                                        <?php } ?>
-                                        <div class="row justify-between">
-                                            <?php if (isset($setting['frontpage-show-post-comments-counter'])) { ?>
-                                                <div class="text-caption">
-                                                    <?php echo get_comments_number(get_post()->ID); ?>
-                                                    <?php _e('Comments'); ?>
-                                                </div>
-                                            <?php } ?>
-                                            <?php if (isset($setting['frontpage-show-post-date'])) { ?>
-                                                <div class="text-caption"><?php echo get_the_date(); ?></div>
-                                            <?php } ?>
-                                        </div>
-                                    </q-card-section>
-                                </q-card>
-                        <?php
-                            endwhile;
-                        endif;
-                        ?>
-                    </div>
+                <?php if ($setting['frontpage-post-layout'] == 'grid3x3') { ?>
+                    <?php include('components/home/grid3x3.php'); ?>
                 <?php } ?>
 
-                <?php if ($setting['frontpage-post-layout'] == 'horizontal') { ?>
-                    <!-- Horizontal Layout -->
-                    <div class="q-pa-xl row items-start q-gutter-lg">
-                        <?php
-                        if (have_posts()) : while (have_posts()) : the_post();
-                        ?>
-                                <q-card v-if="isDesktop" class="post-card post-card-horizontal cursor-pointer" @click="quasarwpRouteTo('<?php the_permalink(); ?>')">
-                                    <q-card-section horizontal>
-                                        <?php if (has_post_thumbnail()) : ?>
-                                            <q-img class="col-5" src="<?php the_post_thumbnail_url('smallest'); ?>" :ratio="4/3" alt=""></q-img>
-                                        <?php endif ?>
-                                        <q-card-section>
-                                            <div class="text-h6">
-                                                <?php the_title(); ?>
-                                                <?php if (isset($setting['frontpage-show-post-author'])) { ?>
-                                                    <div class="text-caption">
-                                                        <?php _e('by') ?> <?php the_author(); ?>
-                                                    </div>
-                                                <?php } ?>
-                                            </div>
-                                            <div class="row justify-between">
-                                                <?php if (isset($setting['frontpage-show-post-comments-counter'])) { ?>
-                                                    <div class="text-caption">
-                                                        <?php echo get_comments_number(get_post()->ID); ?>
-                                                        <?php _e('Comments'); ?>
-                                                    </div>
-                                                <?php } ?>
-                                                <?php if (isset($setting['frontpage-show-post-date'])) { ?>
-                                                    <div class="text-caption"><?php echo the_time('F d, Y'); ?></div>
-                                                <?php } ?>
-                                            </div>
-                                            <br>
-                                            <?php the_excerpt(''); ?>
-                                        </q-card-section>
-                                    </q-card-section>
-                                </q-card>
-                                <q-card v-else class="post-card cursor-pointer" v-bind:class="{ 'post-card-vertical': isDesktop }" @click="quasarwpRouteTo('<?php the_permalink(); ?>')">
-                                    <?php if (has_post_thumbnail()) : ?>
-                                        <q-img src="<?php the_post_thumbnail_url('smallest'); ?>" :ratio="4/3" alt=""></q-img>
-                                    <?php endif ?>
-                                    <q-card-section>
-                                        <div class="text-h6">
-                                            <?php the_title(); ?>
-                                            <?php if (isset($setting['frontpage-show-post-author'])) { ?>
-                                                <div class="text-caption">
-                                                    <?php _e('by') ?> <?php the_author(); ?>
-                                                </div>
-                                            <?php } ?>
-                                        </div>
-                                    </q-card-section>
-
-                                    <q-card-section class="q-pt-none">
-                                        <?php the_excerpt(''); ?>
-                                        <div class="row justify-between">
-                                            <?php if (isset($setting['frontpage-show-post-comments-counter'])) { ?>
-                                                <div class="text-caption">
-                                                    <?php echo get_comments_number(get_post()->ID); ?>
-                                                    <?php _e('Comments'); ?>
-                                                </div>
-                                            <?php } ?>
-                                            <?php if (isset($setting['frontpage-show-post-date'])) { ?>
-                                                <div class="text-caption"><?php echo the_time('F d, Y'); ?></div>
-                                            <?php } ?>
-                                        </div>
-                                    </q-card-section>
-                                </q-card>
-                        <?php
-                            endwhile;
-                        endif;
-                        ?>
-                    </div>
+                <?php if ($setting['frontpage-post-layout'] == 'stacked') { ?>
+                    <?php include('components/home/stacked.php'); ?>
                 <?php } ?>
 
             </q-page-container>

@@ -22,7 +22,7 @@ if (!get_option('quasarwp-settings')) {
     'language' => 'en-us',
     'icon-set' => 'material',
     'qtabs-position' => 'left',
-    'frontpage-post-layout' => 'vertical',
+    'frontpage-post-layout' => 'columns',
     'frontpage-show-post-date' => 1,
     'frontpage-show-post-excerpt' => 1,
     'frontpage-show-post-author' => 1,
