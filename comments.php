@@ -1,23 +1,9 @@
 <?php
 
-/**
- * The template for displaying Comments.
- *
- * The area of the page that contains comments and the comment form.
- *
- * @package WordPress
- * @subpackage Twenty_Thirteen
- * @since Twenty Thirteen 1.0
- */
-
-/*
- * If the current post is protected by a password and the visitor has not yet
- * entered the password we will return early without loading the comments.
- */
 if (post_password_required())
 	return;
 
-function better_comments($comment, $args, $depth)
+function customComments($comment, $args, $depth)
 {
 	// Get correct tag used for the comments
 	if ('div' === $args['style']) {
@@ -129,9 +115,9 @@ function better_comments($comment, $args, $depth)
 				'format'      => 'html5',
 				'short_ping'  => true,
 			];
-			if (function_exists('better_comments')) {
+			if (function_exists('customComments')) {
 				$args['format'] = 'wpse';
-				$args['callback'] = 'better_comments';
+				$args['callback'] = 'customComments';
 			}
 			wp_list_comments($args);
 			?>
@@ -207,6 +193,7 @@ function better_comments($comment, $args, $depth)
 	const replyComment = function(commentId) {
 		document.location.href = `<?php echo the_permalink(); ?>?replytocom=${commentId}#respond`
 	}
+	
 	const submitComment = function() {
 		console.log(this.$refs)
 		// document.getElementById('commentform').submit()
