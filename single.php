@@ -25,8 +25,13 @@ include(get_template_directory() . '/components/header-functions.php');
                 <div class="row justify-between">
                   <?php if (isset($setting['posts-show-comments-counter'])) { ?>
                     <div class="text-caption">
-                      <?php echo get_comments_number(get_post()->ID); ?>
-                      <?php _e('Comments'); ?>
+                      <a href="#comments">
+                        <?php
+                        $commentsText = __('Comments');
+                        $commentsCount =  get_comments_number(get_post()->ID);
+                        printf(_n('%s Comment', '%s Comments', $commentsCount), $commentsCount);
+                        ?>
+                      </a>
                     </div>
                   <?php } ?>
                   <?php if (isset($setting['posts-show-date'])) { ?>
