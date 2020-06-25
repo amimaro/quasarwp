@@ -59,12 +59,14 @@ include(get_template_directory() . '/components/header-functions.php');
                   <?php the_content(); ?>
                 </div>
 
-                <div>
-                  <?php
-                  if (comments_open() || get_comments_number()) :
-                    comments_template();
-                  endif; ?>
-                </div>
+                <?php if (isset($setting['posts-show-comments'])) { ?>
+                  <div>
+                    <?php
+                    if (comments_open() || get_comments_number()) :
+                      comments_template();
+                    endif; ?>
+                  </div>
+                <?php } ?>
 
             <?php endwhile;
             endif; ?>

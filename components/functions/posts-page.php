@@ -6,14 +6,14 @@
       Show Comments Counter
     </label>
     <br>
-    <label for="quasarwp-settings-posts-show-date">
-      <input name="quasarwp-settings[posts-show-date]" type="checkbox" value="1" <?php checked(isset($options['posts-show-date'])); ?> id="quasarwp-settings-posts-show-date" />
-      Show Post Date
-    </label>
-    <br>
     <label for="quasarwp-settings-posts-show-author">
       <input name="quasarwp-settings[posts-show-author]" type="checkbox" value="1" <?php checked(isset($options['posts-show-author'])); ?> id="quasarwp-settings-posts-show-author" />
       Show Post Author
+    </label>
+    <br>
+    <label for="quasarwp-settings-posts-show-date">
+      <input name="quasarwp-settings[posts-show-date]" type="checkbox" value="1" <?php checked(isset($options['posts-show-date'])); ?> id="quasarwp-settings-posts-show-date" />
+      Show Post Date
     </label>
     <br>
     <label for="quasarwp-settings-posts-show-featured-img">
@@ -24,6 +24,11 @@
     <label for="quasarwp-settings-posts-show-social">
       <input name="quasarwp-settings[posts-show-social]" type="checkbox" value="1" <?php checked(isset($options['posts-show-social'])); ?> id="quasarwp-settings-posts-show-social" />
       Show Social Icons
+    </label>
+    <br>
+    <label for="quasarwp-settings-posts-show-comments">
+      <input name="quasarwp-settings[posts-show-comments]" type="checkbox" value="1" <?php checked(isset($options['posts-show-comments'])); ?> id="quasarwp-settings-posts-show-comments" />
+      Show Comments
     </label>
   </div>
 </td>
