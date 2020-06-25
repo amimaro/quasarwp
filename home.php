@@ -1,12 +1,9 @@
-<?php /* Template Name: QuasarWP */ ?>
-
 <?php
 
 get_header();
 
 include(get_template_directory() . '/components/header-functions.php');
 ?>
-
 
 <body <?php body_class(); ?>>
     <div id="q-app" <?php if (isset($setting['show-loading'])) { ?>style="visibility: hidden;" <?php } ?>>
@@ -22,7 +19,7 @@ include(get_template_directory() . '/components/header-functions.php');
                         <?php
                         if (have_posts()) : while (have_posts()) : the_post();
                         ?>
-                                <q-card class="post-card cursor-pointer" v-bind:class="{ 'post-card-vertical': isDesktop }" @click="themeRouteTo('<?php the_permalink(); ?>')">
+                                <q-card class="post-card cursor-pointer" v-bind:class="{ 'post-card-vertical': isDesktop }" @click="quasarwpRouteTo('<?php the_permalink(); ?>')">
                                     <?php if (has_post_thumbnail()) : ?>
                                         <q-img src="<?php the_post_thumbnail_url('smallest'); ?>" :ratio="4/3" alt=""></q-img>
                                     <?php endif ?>
@@ -67,7 +64,7 @@ include(get_template_directory() . '/components/header-functions.php');
                         <?php
                         if (have_posts()) : while (have_posts()) : the_post();
                         ?>
-                                <q-card v-if="isDesktop" class="post-card post-card-horizontal cursor-pointer" @click="themeRouteTo('<?php the_permalink(); ?>')">
+                                <q-card v-if="isDesktop" class="post-card post-card-horizontal cursor-pointer" @click="quasarwpRouteTo('<?php the_permalink(); ?>')">
                                     <q-card-section horizontal>
                                         <?php if (has_post_thumbnail()) : ?>
                                             <q-img class="col-5" src="<?php the_post_thumbnail_url('smallest'); ?>" :ratio="4/3" alt=""></q-img>
@@ -97,7 +94,7 @@ include(get_template_directory() . '/components/header-functions.php');
                                         </q-card-section>
                                     </q-card-section>
                                 </q-card>
-                                <q-card v-else class="post-card cursor-pointer" v-bind:class="{ 'post-card-vertical': isDesktop }" @click="themeRouteTo('<?php the_permalink(); ?>')">
+                                <q-card v-else class="post-card cursor-pointer" v-bind:class="{ 'post-card-vertical': isDesktop }" @click="quasarwpRouteTo('<?php the_permalink(); ?>')">
                                     <?php if (has_post_thumbnail()) : ?>
                                         <q-img src="<?php the_post_thumbnail_url('smallest'); ?>" :ratio="4/3" alt=""></q-img>
                                     <?php endif ?>
@@ -139,37 +136,4 @@ include(get_template_directory() . '/components/header-functions.php');
     </div>
 
     <?php get_footer(); ?>
-
     <?php include(get_template_directory() . '/components/quasarwp-scripts.php'); ?>
-
-    <script>
-        new Vue({
-            el: '#q-app',
-            data: function() {
-                return {
-                    isMobile: this.$q.platform.is.mobile,
-                    isDesktop: this.$q.platform.is.desktop,
-                    left: false,
-                    right: false
-                }
-            },
-            <?php if (isset($setting['show-loading'])) { ?>
-                created() {
-                    this.$q.loading.show()
-                },
-                mounted() {
-                    this.$nextTick(function() {
-                        setTimeout(() => {
-                            this.$q.loading.hide()
-                            document.getElementById('q-app').style.visibility = 'visible'
-                        }, 500)
-                    })
-                },
-            <?php } ?>
-            methods: {
-                themeRouteTo(permalink) {
-                    document.location.href = permalink
-                }
-            }
-        })
-    </script>
