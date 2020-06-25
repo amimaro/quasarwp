@@ -4,6 +4,19 @@
 
 add_filter('rest_allow_anonymous_comments', '__return_true');
 
+function comma_tags($tags, $show_links = true)
+{
+  if ($tags) {
+    $t = array();
+    foreach ($tags as $tag) {
+      $t[] = (!$show_links) ? $tag->name : '<a href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a>';
+    }
+    return implode(",", $t);
+  } else {
+    return false;
+  }
+}
+
 if (!get_option('quasarwp-settings')) {
   update_option('quasarwp-settings', array(
     'layout' => 'hHh Lpr lFf',
@@ -559,13 +572,6 @@ function quasarwp_settings_page()
                     <input name="quasarwp-settings[pinterest]" type="checkbox" value="1" <?php checked(isset($options['pinterest'])); ?> id="quasarwp-settings-pinterest" />
                   </td>
                   <td style="padding: 0px;"><input type="text" name="quasarwp-settings[pinterest-icon]" value="<?php echo $options['pinterest-icon']; ?>" /></td>
-                </tr>
-                <tr>
-                  <td style="padding: 0px;"><label for="quasarwp-social-tumblr">Tumblr</label></td>
-                  <td style="padding: 0px;">
-                    <input name="quasarwp-settings[tumblr]" type="checkbox" value="1" <?php checked(isset($options['tumblr'])); ?> id="quasarwp-settings-tumblr" />
-                  </td>
-                  <td style="padding: 0px;"><input type="text" name="quasarwp-settings[tumblr-icon]" value="<?php echo $options['tumblr-icon']; ?>" /></td>
                 </tr>
               </tbody>
             </table>
