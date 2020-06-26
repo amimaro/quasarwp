@@ -1,11 +1,18 @@
 <?php
 
-add_filter('rest_allow_anonymous_comments', '__return_true');
+add_action('admin_menu', 'quasarwp_menu');
 
 include('data/load.php');
+include('data/helpers.php');
+include('components/custom-navs.php');
+
+add_filter('rest_allow_anonymous_comments', '__return_true');
 
 add_theme_support('menus');
 add_theme_support('post-thumbnails');
+add_image_size('smallest', 300, 300, true);
+add_image_size('largest', 800, 800, true);
+
 register_nav_menus(
   array(
     'tab-menu' => __('Tab Menu', 'theme'),
@@ -13,20 +20,18 @@ register_nav_menus(
     'right-menu' => __('Right Menu', 'theme'),
   )
 );
-add_image_size('smallest', 300, 300, true);
-add_image_size('largest', 800, 800, true);
 
-add_action('admin_menu', 'quasarwp_menu');
+function update_quasarwp()
+{
+  register_setting('quasarwp-settings', 'quasarwp-settings');
+}
+
 function quasarwp_menu()
 {
   add_menu_page('QuasarWP', 'QuasarWP', 'manage_options', 'quasarwp', 'quasarwp_settings_page', 'dashicons-editor-code', 90);
   add_action('admin_init', 'update_quasarwp');
 }
 
-function update_quasarwp()
-{
-  register_setting('quasarwp-settings', 'quasarwp-settings');
-}
 
 function quasarwp_settings_page()
 {
@@ -88,6 +93,3 @@ function quasarwp_settings_page()
   </form>
 <?php
 }
-
-include('components/custom-navs.php');
-include('data/helpers.php');
