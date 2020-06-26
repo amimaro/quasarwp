@@ -30,11 +30,12 @@ if ($iconSet != 'material')
       return {
         isMobile: this.$q.platform.is.mobile,
         isDesktop: this.$q.platform.is.desktop,
-        left: false,
-        right: false,
-        author: '',
-        email: '',
-        comment: '',
+        qwpLeft: false,
+        qwpRight: false,
+        qwpAuthor: '',
+        qwpEmail: '',
+        qwpComment: '',
+        qwpSearch: ''
       }
     },
     <?php if (isset($setting['show-loading'])) { ?>
@@ -55,11 +56,11 @@ if ($iconSet != 'material')
         document.location.href = permalink
       },
       quasarwpOnReset() {
-        this.author = null
-        this.email = null
-        this.comment = null
+        this.qwpAuthor = null
+        this.qwpEmail = null
+        this.qwpComment = null
         setTimeout(() => {
-          this.$refs.commentForm.resetValidation()
+          this.$refs.qwpCommentForm.resetValidation()
         }, 100)
       },
       quasarwpOnSubmitComment(evt) {
@@ -83,7 +84,6 @@ if ($iconSet != 'material')
         <?php } ?>
 
         data = JSON.stringify(data)
-        console.log(data)
 
         fetch('<?php echo get_site_url(); ?>/wp-json/wp/v2/comments', {
             method: 'post',

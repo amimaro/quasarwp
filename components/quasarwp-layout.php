@@ -2,7 +2,7 @@
   <q-header <?php echo get_reveal_option($setting['qheader-reveal']); ?> <?php echo $setting['qheader-separator']; ?>>
     <q-toolbar>
       <?php if (isset($setting['lqdrawer'])) { ?>
-        <q-btn flat dense round icon="menu" aria-label="Menu" @click="left = !left"></q-btn>
+        <q-btn flat dense round icon="menu" aria-label="Menu" @click="qwpLeft = !qwpLeft"></q-btn>
       <?php } ?>
 
       <q-toolbar-title class="cursor-pointer" @click="quasarwpRouteTo('/')">
@@ -15,7 +15,7 @@
       </q-toolbar-title>
 
       <?php if (isset($setting['rqdrawer'])) { ?>
-        <q-btn flat dense round icon="menu" aria-label="Menu" @click="right = !right"></q-btn>
+        <q-btn flat dense round icon="menu" aria-label="Menu" @click="qwpRight = !qwpRight"></q-btn>
       <?php } ?>
     </q-toolbar>
     <?php if (isset($setting['qtabs'])) { ?>
@@ -42,7 +42,7 @@
 <?php } ?>
 
 <?php if (isset($setting['lqdrawer'])) { ?>
-  <q-drawer v-model="left" side="left" <?php echo set_qdrawer_show($setting['lqdrawer-show']) ?> <?php echo $setting['lqdrawer-separator']; ?> <?php echo set_qdrawer_overlay($setting['lqdrawer-overlay']); ?> <?php echo set_qdrawer_behavior($setting['lqdrawer-behavior']); ?>>
+  <q-drawer v-model="qwpLeft" side="left" <?php echo set_qdrawer_show($setting['lqdrawer-show']) ?> <?php echo $setting['lqdrawer-separator']; ?> <?php echo set_qdrawer_overlay($setting['lqdrawer-overlay']); ?> <?php echo set_qdrawer_behavior($setting['lqdrawer-behavior']); ?>>
     <q-scroll-area class="fit">
       <q-list padding id="menu-list-left" class="menu-list">
         <?php echo $leftMenu; ?>
@@ -52,7 +52,7 @@
 <?php } ?>
 
 <?php if (isset($setting['rqdrawer'])) { ?>
-  <q-drawer v-model="right" side="right" <?php echo set_qdrawer_show($setting['rqdrawer-show']) ?> <?php echo $setting['rqdrawer-separator']; ?> <?php echo set_qdrawer_overlay($setting['rqdrawer-overlay']); ?> <?php echo set_qdrawer_behavior($setting['rqdrawer-behavior']); ?>>
+  <q-drawer v-model="qwpRight" side="right" <?php echo set_qdrawer_show($setting['rqdrawer-show']) ?> <?php echo $setting['rqdrawer-separator']; ?> <?php echo set_qdrawer_overlay($setting['rqdrawer-overlay']); ?> <?php echo set_qdrawer_behavior($setting['rqdrawer-behavior']); ?>>
     <q-scroll-area class="fit">
       <q-list padding id="menu-list-right" class="menu-list">
         <?php echo $rightMenu; ?>
