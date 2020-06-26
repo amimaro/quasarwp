@@ -12,6 +12,7 @@
   .grid-3x3-item {
     margin-bottom: 5% !important;
   }
+
   .stacked-item {
     margin-bottom: 5% !important;
   }
@@ -155,3 +156,5 @@
 .bg-quasarwp-tumblr {
   background: #35465d;
 }
+
+.qwp-input-search {}

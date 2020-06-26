@@ -15,6 +15,11 @@
       <input name="quasarwp-settings[qheader-icon]" type="checkbox" value="1" <?php checked(isset($options['qheader-icon'])); ?> id="quasarwp-settings-qheader-icon" />
       Show Site Icon
     </label>
+    <br>
+    <label for="quasarwp-settings-qheader-search">
+      <input name="quasarwp-settings[qheader-search]" type="checkbox" value="1" <?php checked(isset($options['qheader-search'])); ?> id="quasarwp-settings-qheader-search" />
+      Search Input
+    </label>
   </div>
   <div style="padding: 10px 0 10px 0;">
     <label for="quasarwp-settings-qheader-separator">Separator type:</label>

@@ -14,6 +14,18 @@
         <?php echo get_bloginfo('name'); ?>
       </q-toolbar-title>
 
+      <?php if (isset($setting['qheader-search'])) { ?>
+        <q-space></q-space>
+        <form role="search" method="get" id="qwp-form-search" action="<?php echo get_site_url(); ?>" class="qwp-form-search">
+          <q-input name="s" id="s" class="qwp-input-search" dense standout="bg-primary" v-model="qwpSearch" placeholder="<?php _e('Search'); ?>">
+            <template v-slot:append>
+              <q-icon v-if="qwpSearch === ''" name="search"></q-icon>
+              <q-icon v-else name="clear" class="cursor-pointer" @click="qwpSearch = ''"></q-icon>
+            </template>
+          </q-input>
+        </form>
+      <?php } ?>
+
       <?php if (isset($setting['rqdrawer'])) { ?>
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="qwpRight = !qwpRight"></q-btn>
       <?php } ?>
