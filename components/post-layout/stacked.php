@@ -3,7 +3,7 @@
     <?php if (has_post_thumbnail()) : ?>
       <q-img src="<?php the_post_thumbnail_url('smallest'); ?>" :ratio="4/3" alt="" class="stacked-post-featured-img"></q-img>
     <?php endif ?>
-    <q-card-section>
+    <q-card-section style="width: 100%;">
       <div class="text-h6">
         <?php the_title(); ?>
         <?php if (isset($setting['frontpage-show-post-author'])) { ?>
