@@ -11,7 +11,9 @@
             <img src="<?php echo get_site_icon_url(); ?>">
           </q-avatar>
         <?php } ?>
-        <?php echo get_bloginfo('name'); ?>
+        <?php if (isset($setting['qheader-name'])) { ?>
+          <?php echo get_bloginfo('name'); ?>
+        <?php } ?>
       </q-toolbar-title>
 
       <?php if (isset($setting['qheader-search'])) { ?>
