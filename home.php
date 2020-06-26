@@ -14,11 +14,29 @@ include(get_template_directory() . '/components/header-functions.php');
             <q-page-container>
 
                 <?php if ($setting['frontpage-post-layout'] == 'grid3x3') { ?>
-                    <?php include('components/home/grid3x3.php'); ?>
+                    <div class="grid-3x3-container">
+                        <?php
+                        if (have_posts()) : while (have_posts()) : the_post();
+                        ?>
+                                <?php include('components/post-layout/grid3x3.php'); ?>
+                        <?php
+                            endwhile;
+                        endif;
+                        ?>
+                    </div>
                 <?php } ?>
 
                 <?php if ($setting['frontpage-post-layout'] == 'stacked') { ?>
-                    <?php include('components/home/stacked.php'); ?>
+                    <div class="stacked-container">
+                        <?php
+                        if (have_posts()) : while (have_posts()) : the_post();
+                        ?>
+                                <?php include('components/post-layout/stacked.php'); ?>
+                        <?php
+                            endwhile;
+                        endif;
+                        ?>
+                    </div>
                 <?php } ?>
 
             </q-page-container>
