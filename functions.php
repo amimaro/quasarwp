@@ -29,6 +29,14 @@ function update_quasarwp()
 function quasarwp_menu()
 {
   add_menu_page('QuasarWP', 'QuasarWP', 'manage_options', 'quasarwp', 'quasarwp_settings_page', 'dashicons-editor-code', 90);
+  add_submenu_page(
+    'quasarwp',
+    'QuasarWP',
+    'QuasarWP',
+    'manage_options',
+    'quasarwp'
+  );
+  // add_submenu_page('quasarwp', 'Menu Components', 'Menu Components', 'edit_posts', 'edit-tags.php?taxonomy=qwp_components&post_type=qwp_components',false );
   add_action('admin_init', 'update_quasarwp');
 }
 
@@ -93,3 +101,5 @@ function quasarwp_settings_page()
   </form>
 <?php
 }
+
+include('components/qwp-menu-components.php');
