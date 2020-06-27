@@ -21,7 +21,16 @@ function tn_custom_excerpt_length($length)
 }
 add_filter('excerpt_length', 'tn_custom_excerpt_length', 999);
 
-function theme_slug_setup() {
-  add_theme_support( 'title-tag' );
+function theme_slug_setup()
+{
+  add_theme_support('title-tag');
 }
-add_action( 'after_setup_theme', 'theme_slug_setup' );
+add_action('after_setup_theme', 'theme_slug_setup');
+
+
+// Check if string is JSON
+function isJson($string)
+{
+  json_decode($string);
+  return json_last_error() === JSON_ERROR_NONE;
+}
