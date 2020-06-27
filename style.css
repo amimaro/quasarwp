@@ -35,12 +35,12 @@
 .grid-3x3-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   padding: 2% 2% 0 2%;
 }
 
 .grid-3x3-item {
-  flex: 0 32%;
+  flex: 0 30%;
+  margin-right: 2%;
   margin-bottom: 2%;
 }
 
