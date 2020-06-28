@@ -6,6 +6,11 @@
       Enabled
     </label>
     <br>
+    <label for="quasarwp-settings-qheader-menu">
+      <input name="quasarwp-settings[qheader-menu]" type="checkbox" value="1" <?php checked(isset($options['qheader-menu'])); ?> id="quasarwp-settings-qheader-menu" />
+      Header Menu
+    </label>
+    <br>
     <label for="quasarwp-settings-qheader-reveal">
       <input name="quasarwp-settings[qheader-reveal]" type="checkbox" value="1" <?php checked(isset($options['qheader-reveal'])); ?> id="quasarwp-settings-qheader-reveal" />
       Header Reveal

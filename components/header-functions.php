@@ -6,9 +6,22 @@ $modernEs6 = isset($setting['modern-es6']) ? '.modern' : '';
 $language = $setting['language'];
 $iconSet = $setting['icon-set'];
 
+$headerMenu = '';
 $tabMenu = '';
 $leftMenu = '';
 $rightMenu = '';
+
+if (has_nav_menu('header-menu')) {
+  $headerMenu = wp_nav_menu(array(
+    'menu'            => 'header-menu',
+    'theme_location'  => 'header-menu',
+    'echo'            => false,
+    'items_wrap'      => '%3$s',
+    'depth'           => 0,
+    'container'       => '',
+    'walker' => new Custom_Tab_Walker_Nav_Menu
+  ));
+}
 
 if (has_nav_menu('tab-menu')) {
   $tabMenu = wp_nav_menu(array(

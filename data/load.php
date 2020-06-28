@@ -4,6 +4,7 @@ if (!get_option('quasarwp-settings')) {
   add_option('quasarwp-settings', array(
     'layout' => 'hHh Lpr lFf',
     'qheader' => 1,
+    'qheader-menu' => 1,
     'qheader-separator' => 'elevated',
     'qheader-icon' => 1,
     'qfooter' => 1,
