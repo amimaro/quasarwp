@@ -91,9 +91,6 @@ function quasarwp_settings_page()
         <?php include('components/functions/icon-set.php'); ?>
       </tr>
       <tr>
-        <?php include('components/functions/theme-colors.php'); ?>
-      </tr>
-      <tr>
         <?php include('components/functions/social-icons.php'); ?>
       </tr>
     </table>
