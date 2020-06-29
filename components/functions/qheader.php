@@ -1,11 +1,6 @@
 <th scope="row">QHeader:</th>
 <td>
   <div>
-    <label for="quasarwp-settings-qheader">
-      <input name="quasarwp-settings[qheader]" type="checkbox" value="1" <?php checked(isset($options['qheader'])); ?> id="quasarwp-settings-qheader" />
-      Enabled
-    </label>
-    <br>
     <label for="quasarwp-settings-qheader-menu">
       <input name="quasarwp-settings[qheader-menu]" type="checkbox" value="1" <?php checked(isset($options['qheader-menu'])); ?> id="quasarwp-settings-qheader-menu" />
       Header Menu

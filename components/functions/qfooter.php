@@ -1,11 +1,6 @@
 <th scope="row">QFooter:</th>
 <td>
   <div>
-    <label for="quasarwp-settings-qfooter">
-      <input name="quasarwp-settings[qfooter]" type="checkbox" value="1" <?php checked(isset($options['qfooter'])); ?> id="quasarwp-settings-qfooter" />
-      Enabled
-    </label>
-    <br>
     <label for="quasarwp-settings-qfooter-reveal">
       <input name="quasarwp-settings[qfooter-reveal]" type="checkbox" value="1" <?php checked(isset($options['qfooter-reveal'])); ?> id="quasarwp-settings-qfooter-reveal" />
       Footer Reveal
