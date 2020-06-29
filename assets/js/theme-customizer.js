@@ -82,12 +82,22 @@
 		});
 	});
 
+	wp.customize('layout_header_enabled', function (value) {
+		value.bind(function (newval) {
+			$('.q-header').css('display', newval ? 'block' : 'none');
+		});
+	});
 	wp.customize('layout_header_backgroundcolor', function (value) {
 		value.bind(function (newval) {
 			$('.q-header').css('background-color', newval, '!important');
 		});
 	});
 
+	wp.customize('layout_footer_enabled', function (value) {
+		value.bind(function (newval) {
+			$('.q-footer').css('display', newval ? 'block' : 'none');
+		});
+	});
 	wp.customize('layout_footer_backgroundcolor', function (value) {
 		value.bind(function (newval) {
 			$('.q-footer').css('background-color', newval, '!important');
