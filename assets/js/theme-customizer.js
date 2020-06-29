@@ -82,4 +82,16 @@
 		});
 	});
 
+	wp.customize('layout_header_backgroundcolor', function (value) {
+		value.bind(function (newval) {
+			$('.q-header').css('background-color', newval, '!important');
+		});
+	});
+
+	wp.customize('layout_footer_backgroundcolor', function (value) {
+		value.bind(function (newval) {
+			$('.q-footer').css('background-color', newval, '!important');
+		});
+	});
+
 })(jQuery);

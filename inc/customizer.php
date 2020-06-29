@@ -24,7 +24,19 @@ class QuasarWP_Customize
 
       include(get_template_directory() . '/inc/components/upload-logo.php');
       include(get_template_directory() . '/inc/components/theme-colors.php');
-      
+      include(get_template_directory() . '/inc/components/header.php');
+      include(get_template_directory() . '/inc/components/footer.php');
+
+      // $wp_customize->add_control('sidebar_position_control', array(
+      //    'label' => __('Sidebar Position', 'mytheme'),
+      //    'section' => 'sidebar_settings',
+      //    'settings' => 'sidebar_position',
+      //    'type' => 'radio',
+      //    'choices' => array(
+      //       'left' => 'Left',
+      //       'right' => 'Right',
+      //    ),
+      // ));
    }
 
    public static function header_output()
@@ -33,9 +45,11 @@ class QuasarWP_Customize
       <!--Customizer CSS-->
       <style type="text/css">
          <?php
-         // self::generate_css('#site-title a', 'color', 'header_textcolor', '#');
-         // self::generate_css('body', 'background-color', 'background_color', '#');
-         // self::generate_css('a', 'color', 'theme_primary');
+         self::generate_css('#site-title a', 'color', 'header_textcolor', '#');
+         self::generate_css('body', 'background-color', 'background_color', '#');
+         self::generate_css('a', 'color', 'theme_primary');
+         self::generate_css('.q-header', 'background-color', 'layout_header_backgroundcolor', '', ' !important');
+         self::generate_css('.q-footer', 'background-color', 'layout_footer_backgroundcolor', '', ' !important');
          ?>
       </style>
       <!--/Customizer CSS-->
