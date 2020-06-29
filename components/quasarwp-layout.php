@@ -1,4 +1,4 @@
-<q-header <?php echo get_reveal_option($setting['qheader-reveal']); ?> <?php echo $setting['qheader-separator']; ?>>
+<q-header :reveal="qwpComputedHeaderReveal" <?php echo $setting['qheader-separator']; ?>>
   <q-toolbar>
     <?php if (isset($setting['lqdrawer'])) { ?>
       <q-btn flat dense round icon="menu" aria-label="Menu" @click="qwpLeft = !qwpLeft"></q-btn>

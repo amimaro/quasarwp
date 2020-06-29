@@ -87,6 +87,11 @@
 			$('.q-header').css('display', newval ? 'block' : 'none');
 		});
 	});
+	wp.customize('layout_header_reveal', function (value) {
+		value.bind(function (newval) {
+			qwpVueObj.qwpDataHeaderReveal = newval
+		});
+	});
 	wp.customize('layout_header_backgroundcolor', function (value) {
 		value.bind(function (newval) {
 			$('.q-header').css('background-color', newval, '!important');

@@ -31,7 +31,8 @@ if ($iconSet != 'material')
         qwpAuthor: '',
         qwpEmail: '',
         qwpComment: '',
-        qwpSearch: ''
+        qwpSearch: '',
+        qwpDataHeaderReveal: '<?php echo get_theme_mod('layout_header_reveal'); ?>'
       }
     },
     <?php if (isset($setting['show-loading'])) { ?>
@@ -47,6 +48,11 @@ if ($iconSet != 'material')
         })
       },
     <?php } ?>
+    computed: {
+      qwpComputedHeaderReveal: function() {
+        return this.qwpDataHeaderReveal ? true : false;
+      }
+    },
     methods: {
       quasarwpRouteTo(permalink) {
         document.location.href = permalink
@@ -117,5 +123,5 @@ if ($iconSet != 'material')
     }
   }
   if (typeof vm !== 'undefined') vueObject.mixins = [vm]
-  new Vue(vueObject)
+  const qwpVueObj = new Vue(vueObject)
 </script>
