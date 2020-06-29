@@ -1,16 +1,12 @@
 <script>
-  window.quasarConfig = {
-    brand: {
-      primary: '<?php echo $setting['theme-primary'] ?>',
-      secondary: '<?php echo $setting['theme-secondary'] ?>',
-      accent: '<?php echo $setting['theme-accent'] ?>',
-      dark: '<?php echo $setting['theme-dark'] ?>',
-      positive: '<?php echo $setting['theme-positive'] ?>',
-      negative: '<?php echo $setting['theme-negative'] ?>',
-      info: '<?php echo $setting['theme-info'] ?>',
-      warning: '<?php echo $setting['theme-warning'] ?>'
-    }
-  }
+  document.documentElement.style.setProperty('--q-color-primary', '<?php echo get_theme_mod('theme_primary'); ?>');
+  document.documentElement.style.setProperty('--q-color-secondary', '<?php echo get_theme_mod('theme_secondary'); ?>');
+  document.documentElement.style.setProperty('--q-color-accent', '<?php echo get_theme_mod('theme_accent'); ?>');
+  document.documentElement.style.setProperty('--q-color-dark', '<?php echo get_theme_mod('theme_dark'); ?>');
+  document.documentElement.style.setProperty('--q-color-positive', '<?php echo get_theme_mod('theme_positive'); ?>');
+  document.documentElement.style.setProperty('--q-color-negative', '<?php echo get_theme_mod('theme_negative'); ?>');
+  document.documentElement.style.setProperty('--q-color-info', '<?php echo get_theme_mod('theme_info'); ?>');
+  document.documentElement.style.setProperty('--q-color-warning', '<?php echo get_theme_mod('theme_warning'); ?>');
 </script>
 
 <?php
