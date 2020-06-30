@@ -37,9 +37,7 @@
       </form>
     <?php } ?>
 
-    <?php if (isset($setting['qheader-menu'])) { ?>
-      <?php echo $headerMenu; ?>
-    <?php } ?>
+    <?php echo $headerMenu; ?>
 
     <?php if (isset($setting['rqdrawer'])) { ?>
       <q-btn flat dense round icon="menu" aria-label="Menu" @click="qwpRight = !qwpRight"></q-btn>
