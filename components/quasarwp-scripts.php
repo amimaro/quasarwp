@@ -59,8 +59,12 @@ if ($iconSet != 'material')
       }
     },
     methods: {
-      qwpSelectHeaderSeparator(separator) {
-        return separator === this.qwpDataHeaderSeparator
+      qwpSelectSeparator(separator, layout) {
+        if (layout === 'header')
+          return separator === this.qwpDataHeaderSeparator
+        if (layout === 'footer')
+          return separator === this.qwpDataFooterSeparator
+        return false
       },
       quasarwpRouteTo(permalink) {
         document.location.href = permalink
