@@ -52,7 +52,7 @@
   <?php } ?>
 </q-header>
 
-<q-footer <?php echo get_reveal_option($setting['qfooter-reveal']); ?> <?php echo $setting['qfooter-separator']; ?>>
+<q-footer :reveal="qwpComputedFooterReveal" <?php echo $setting['qfooter-separator']; ?>>
   <q-toolbar>
     <q-toolbar-title class="cursor-pointer" @click="quasarwpRouteTo('/')">
       <?php if (isset($setting['qfooter-icon'])) { ?>

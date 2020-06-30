@@ -28,6 +28,24 @@ $wp_customize->add_control('quasarwp_layout_footer_enabled', array(
   'priority'   => 1,
 ));
 
+// Footer reveal checkbox
+$wp_customize->add_setting(
+  'layout_footer_reveal',
+  array(
+    'default'    => true,
+    'type'       => 'theme_mod',
+    'capability' => 'edit_theme_options',
+    'transport'  => 'postMessage',
+  )
+);
+$wp_customize->add_control('quasarwp_layout_footer_reveal', array(
+  'label' => __('Footer Reveal'),
+  'section' => 'quasarwp_layout_footer',
+  'settings' => 'layout_footer_reveal',
+  'type' => 'checkbox',
+  'priority'   => 2,
+));
+
 // Theme footer color
 $wp_customize->add_setting(
   'layout_footer_backgroundcolor',
@@ -44,10 +62,11 @@ $wp_customize->add_control(new WP_Customize_Color_Control(
   array(
     'label'      => __('Background Color'),
     'settings'   => 'layout_footer_backgroundcolor',
-    'priority'   => 2,
+    'priority'   => 3,
     'section'    => 'quasarwp_layout_footer',
   )
 ));
 
 $wp_customize->get_setting('layout_footer_enabled')->transport = 'postMessage';
+$wp_customize->get_setting('layout_footer_reveal')->transport = 'postMessage';
 $wp_customize->get_setting('layout_footer_backgroundcolor')->transport = 'postMessage';

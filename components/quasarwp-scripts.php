@@ -32,7 +32,8 @@ if ($iconSet != 'material')
         qwpEmail: '',
         qwpComment: '',
         qwpSearch: '',
-        qwpDataHeaderReveal: '<?php echo get_theme_mod('layout_header_reveal'); ?>'
+        qwpDataHeaderReveal: '<?php echo get_theme_mod('layout_header_reveal'); ?>',
+        qwpDataFooterReveal: '<?php echo get_theme_mod('layout_footer_reveal'); ?>'
       }
     },
     <?php if (isset($setting['show-loading'])) { ?>
@@ -51,6 +52,9 @@ if ($iconSet != 'material')
     computed: {
       qwpComputedHeaderReveal: function() {
         return this.qwpDataHeaderReveal ? true : false;
+      },
+      qwpComputedFooterReveal: function() {
+        return this.qwpDataFooterReveal ? true : false;
       }
     },
     methods: {

@@ -103,6 +103,11 @@
 			$('.q-footer').css('display', newval ? 'block' : 'none');
 		});
 	});
+	wp.customize('layout_footer_reveal', function (value) {
+		value.bind(function (newval) {
+			qwpVueObj.qwpDataFooterReveal = newval
+		});
+	});
 	wp.customize('layout_footer_backgroundcolor', function (value) {
 		value.bind(function (newval) {
 			$('.q-footer').css('background-color', newval, '!important');
