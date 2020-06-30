@@ -25,6 +25,8 @@ class QuasarWP_Customize
       include(get_template_directory() . '/inc/components/theme-colors.php');
       include(get_template_directory() . '/inc/components/header.php');
       include(get_template_directory() . '/inc/components/footer.php');
+      include(get_template_directory() . '/inc/components/left-drawer.php');
+      include(get_template_directory() . '/inc/components/right-drawer.php');
    }
 
    public static function header_output()
@@ -41,10 +43,14 @@ class QuasarWP_Customize
 
          self::set_view('.q-header', 'display', 'layout_header_enabled');
          self::set_view('.q-footer', 'display', 'layout_footer_enabled');
+         self::set_view('.q-footer', 'display', 'layout_ldrawer_enabled');
+         self::set_view('.q-footer', 'display', 'layout_rdrawer_enabled');
          self::set_view('.q-header .q-avatar', 'display', 'layout_header_icon', 'inline-block');
          self::set_view('.q-footer .q-avatar', 'display', 'layout_footer_icon', 'inline-block');
          self::set_view('.q-header .qwp-blogname', 'display', 'layout_header_blogname', 'inline-block');
          self::set_view('.q-footer .qwp-blogname', 'display', 'layout_footer_blogname', 'inline-block');
+         self::set_view('#qwp-btn-left-menu', 'display', 'layout_ldrawer_enabled', 'inline-block');
+         self::set_view('#qwp-btn-right-menu', 'display', 'layout_rdrawer_enabled', 'inline-block');
          ?>
       </style>
       <!--/Customizer CSS-->

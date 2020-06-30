@@ -144,5 +144,19 @@
 		});
 	});
 
+	wp.customize('layout_ldrawer_enabled', function (value) {
+		value.bind(function (newval) {
+			if (qwpVueObj.qwpLeft) qwpVueObj.qwpLeft = false
+			$('#qwp-btn-left-menu').css('display', newval ? 'inline-block' : 'none');
+		});
+	});
+
+	wp.customize('layout_rdrawer_enabled', function (value) {
+		value.bind(function (newval) {
+			if (qwpVueObj.qwpRight) qwpVueObj.qwpRight = false
+			$('#qwp-btn-right-menu').css('display', newval ? 'inline-block' : 'none');
+		});
+	});
+
 
 })(jQuery);
