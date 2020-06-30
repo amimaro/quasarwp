@@ -6,12 +6,4 @@
       Show Site Icon
     </label>
   </div>
-  <div style="padding: 10px 0 10px 0;">
-    <label for="quasarwp-settings-qfooter-separator">Separator type:</label>
-    <select name="quasarwp-settings[qfooter-separator]" id="quasarwp-settings-qfooter-separator">
-      <option value="none" <?php selected($options['qfooter-separator'], 'none'); ?>>None</option>
-      <option value="elevated" <?php selected($options['qfooter-separator'], 'elevated'); ?>>Elevated</option>
-      <option value="bordered" <?php selected($options['qfooter-separator'], 'bordered'); ?>>Bordered</option>
-    </select>
-  </div>
 </td>
