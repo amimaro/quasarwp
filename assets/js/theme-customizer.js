@@ -156,6 +156,11 @@
 			qwpVueObj.qwpLeft = newval
 		});
 	});
+	wp.customize('layout_ldrawer_separator', function (value) {
+		value.bind(function (newval) {
+			qwpVueObj.qwpDataLeftDrawerSeparator = newval
+		});
+	});
 
 	wp.customize('layout_rdrawer_enabled', function (value) {
 		value.bind(function (newval) {
@@ -167,6 +172,11 @@
 		value.bind(function (newval) {
 			qwpVueObj.qwpDataRightDrawerShowIfAbove = newval
 			qwpVueObj.qwpRight = newval
+		});
+	});
+	wp.customize('layout_rdrawer_separator', function (value) {
+		value.bind(function (newval) {
+			qwpVueObj.qwpDataRightDrawerSeparator = newval
 		});
 	});
 

@@ -37,7 +37,9 @@ if ($iconSet != 'material')
         qwpDataFooterReveal: '<?php echo get_theme_mod('layout_footer_reveal'); ?>',
         qwpDataFooterSeparator: '<?php echo get_theme_mod('layout_footer_separator'); ?>',
         qwpDataLeftDrawerShowIfAbove: '<?php echo get_theme_mod('layout_ldrawer_show_if_above'); ?>',
+        qwpDataLeftDrawerSeparator: '<?php echo get_theme_mod('layout_ldrawer_separator'); ?>',
         qwpDataRightDrawerShowIfAbove: '<?php echo get_theme_mod('layout_rdrawer_show_if_above'); ?>',
+        qwpDataRightDrawerSeparator: '<?php echo get_theme_mod('layout_rdrawer_separator'); ?>',
       }
     },
     <?php if (isset($setting['show-loading'])) { ?>
@@ -73,6 +75,10 @@ if ($iconSet != 'material')
           return separator === this.qwpDataHeaderSeparator
         if (layout === 'footer')
           return separator === this.qwpDataFooterSeparator
+        if (layout === 'ldrawer')
+          return separator === this.qwpDataLeftDrawerSeparator
+        if (layout === 'rdrawer')
+          return separator === this.qwpDataRightDrawerSeparator
         return false
       },
       quasarwpRouteTo(permalink) {

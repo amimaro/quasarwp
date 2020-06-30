@@ -46,7 +46,7 @@ $wp_customize->add_control('quasarwp_layout_footer_reveal', array(
   'priority'   => 2,
 ));
 
-// Theme footer color
+// Theme Footer color
 $wp_customize->add_setting(
   'layout_footer_backgroundcolor',
   array(
@@ -67,6 +67,7 @@ $wp_customize->add_control(new WP_Customize_Color_Control(
   )
 ));
 
+// Footer separator type
 $wp_customize->add_setting(
   'layout_footer_separator',
   array(

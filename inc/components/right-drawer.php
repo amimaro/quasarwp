@@ -47,5 +47,29 @@ $wp_customize->add_control('quasarwp_layout_rdrawer_show_if_above', array(
   'description' => __('Shows the menu when starting the page')
 ));
 
+// Right Drawer separator type
+$wp_customize->add_setting(
+  'layout_rdrawer_separator',
+  array(
+    'default'    => 'elevated',
+    'type'       => 'theme_mod',
+    'capability' => 'edit_theme_options',
+    'transport'  => 'postMessage',
+  )
+);
+$wp_customize->add_control('quasarwp_layout_rdrawer_separator', array(
+  'label' => __('Separator type'),
+  'section' => 'quasarwp_layout_rdrawer',
+  'settings' => 'layout_rdrawer_separator',
+  'type' => 'radio',
+  'priority'   => 3,
+  'choices' => array(
+    'none' => 'None',
+    'elevated' => 'Elevated',
+    'bordered' => 'Bordered',
+  ),
+));
+
 $wp_customize->get_setting('layout_rdrawer_enabled')->transport = 'postMessage';
 $wp_customize->get_setting('layout_rdrawer_show_if_above')->transport = 'postMessage';
+$wp_customize->get_setting('layout_rdrawer_separator')->transport = 'postMessage';
