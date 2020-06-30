@@ -5,24 +5,18 @@
     <?php } ?>
 
     <q-toolbar-title class="cursor-pointer" @click="quasarwpRouteTo('/')">
-
       <?php
       if (get_theme_mod('quasarwp_theme_logo')) : ?>
         <img src="<?php echo get_theme_mod('quasarwp_theme_logo'); ?>" alt="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>">
       <?php
       else : ?>
-        <?php bloginfo('name'); ?>
-      <?php endif; ?>
-
-
-      <!-- <?php if (isset($setting['qheader-icon'])) { ?>
+        <?php if (has_site_icon()) : ?>
           <q-avatar>
             <img src="<?php echo get_site_icon_url(); ?>">
           </q-avatar>
-        <?php } ?>
-        <?php if (isset($setting['qheader-name'])) { ?>
-          <?php echo get_bloginfo('name'); ?>
-        <?php } ?> -->
+        <?php endif; ?>
+        <?php bloginfo('name'); ?>
+      <?php endif; ?>
     </q-toolbar-title>
 
     <?php if (isset($setting['qheader-search'])) { ?>
@@ -53,12 +47,18 @@
 <q-footer :reveal="qwpComputedFooterReveal" :elevated="qwpSelectSeparator('elevated', 'footer')" :bordered="qwpSelectSeparator('bordered', 'footer')">
   <q-toolbar>
     <q-toolbar-title class="cursor-pointer" @click="quasarwpRouteTo('/')">
-      <?php if (isset($setting['qfooter-icon'])) { ?>
-        <q-avatar>
-          <img src="<?php echo get_site_icon_url(); ?>">
-        </q-avatar>
-      <?php } ?>
-      <?php echo get_bloginfo('name'); ?>
+      <?php
+      if (get_theme_mod('quasarwp_theme_logo')) : ?>
+        <img src="<?php echo get_theme_mod('quasarwp_theme_logo'); ?>" alt="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>">
+      <?php
+      else : ?>
+        <?php if (has_site_icon()) : ?>
+          <q-avatar>
+            <img src="<?php echo get_site_icon_url(); ?>">
+          </q-avatar>
+        <?php endif; ?>
+        <?php bloginfo('name'); ?>
+      <?php endif; ?>
     </q-toolbar-title>
 
     <?php echo $footerMenu; ?>
