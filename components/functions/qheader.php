@@ -21,12 +21,4 @@
       Search Input
     </label>
   </div>
-  <div style="padding: 10px 0 10px 0;">
-    <label for="quasarwp-settings-qheader-separator">Separator type:</label>
-    <select name="quasarwp-settings[qheader-separator]" id="quasarwp-settings-qheader-separator">
-      <option value="none" <?php selected($options['qheader-separator'], 'none'); ?>>None</option>
-      <option value="elevated" <?php selected($options['qheader-separator'], 'elevated'); ?>>Elevated</option>
-      <option value="bordered" <?php selected($options['qheader-separator'], 'bordered'); ?>>Bordered</option>
-    </select>
-  </div>
 </td>
