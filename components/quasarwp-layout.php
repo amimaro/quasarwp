@@ -15,7 +15,9 @@
             <img src="<?php echo get_site_icon_url(); ?>">
           </q-avatar>
         <?php endif; ?>
-        <?php bloginfo('name'); ?>
+        <span class="qwp-blogname">
+          <?php bloginfo('name'); ?>
+        </span>
       <?php endif; ?>
     </q-toolbar-title>
 
@@ -57,7 +59,9 @@
             <img src="<?php echo get_site_icon_url(); ?>">
           </q-avatar>
         <?php endif; ?>
-        <?php bloginfo('name'); ?>
+        <span class="qwp-blogname">
+          <?php bloginfo('name'); ?>
+        </span>
       <?php endif; ?>
     </q-toolbar-title>
 

@@ -107,6 +107,11 @@
 			$('.q-header .q-avatar').css('display', newval ? 'inline-block' : 'none');
 		});
 	});
+	wp.customize('layout_header_blogname', function (value) {
+		value.bind(function (newval) {
+			$('.q-header .qwp-blogname').css('display', newval ? 'inline-block' : 'none');
+		});
+	});
 
 	wp.customize('layout_footer_enabled', function (value) {
 		value.bind(function (newval) {
@@ -131,6 +136,11 @@
 	wp.customize('layout_footer_icon', function (value) {
 		value.bind(function (newval) {
 			$('.q-footer .q-avatar').css('display', newval ? 'inline-block' : 'none');
+		});
+	});
+	wp.customize('layout_footer_blogname', function (value) {
+		value.bind(function (newval) {
+			$('.q-footer .qwp-blogname').css('display', newval ? 'inline-block' : 'none');
 		});
 	});
 

@@ -43,6 +43,8 @@ class QuasarWP_Customize
          self::set_view('.q-footer', 'display', 'layout_footer_enabled');
          self::set_view('.q-header .q-avatar', 'display', 'layout_header_icon', 'inline-block');
          self::set_view('.q-footer .q-avatar', 'display', 'layout_footer_icon', 'inline-block');
+         self::set_view('.q-header .qwp-blogname', 'display', 'layout_header_blogname', 'inline-block');
+         self::set_view('.q-footer .qwp-blogname', 'display', 'layout_footer_blogname', 'inline-block');
          ?>
       </style>
       <!--/Customizer CSS-->

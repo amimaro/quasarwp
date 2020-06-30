@@ -107,8 +107,27 @@ $wp_customize->add_control('quasarwp_layout_header_icon', array(
   'priority'   => 5,
 ));
 
+// Header blog name checkbox
+$wp_customize->add_setting(
+  'layout_header_blogname',
+  array(
+    'default'    => true,
+    'type'       => 'theme_mod',
+    'capability' => 'edit_theme_options',
+    'transport'  => 'postMessage',
+  )
+);
+$wp_customize->add_control('quasarwp_layout_header_blogname', array(
+  'label' => __('Show Header Blog Name'),
+  'section' => 'quasarwp_layout_header',
+  'settings' => 'layout_header_blogname',
+  'type' => 'checkbox',
+  'priority'   => 6,
+));
+
 $wp_customize->get_setting('layout_header_enabled')->transport = 'postMessage';
 $wp_customize->get_setting('layout_header_reveal')->transport = 'postMessage';
 $wp_customize->get_setting('layout_header_backgroundcolor')->transport = 'postMessage';
 $wp_customize->get_setting('layout_header_separator')->transport = 'postMessage';
 $wp_customize->get_setting('layout_header_icon')->transport = 'postMessage';
+$wp_customize->get_setting('layout_header_blogname')->transport = 'postMessage';
