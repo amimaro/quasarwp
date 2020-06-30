@@ -41,6 +41,7 @@
 		});
 	});
 
+	// Theme Colors
 	wp.customize('theme_primary', function (value) {
 		value.bind(function (newval) {
 			document.documentElement.style.setProperty('--q-color-primary', newval, 'important');
@@ -82,6 +83,7 @@
 		});
 	});
 
+	// Header
 	wp.customize('layout_header_enabled', function (value) {
 		value.bind(function (newval) {
 			$('.q-header').css('display', newval ? 'block' : 'none');
@@ -113,6 +115,7 @@
 		});
 	});
 
+	// Footer
 	wp.customize('layout_footer_enabled', function (value) {
 		value.bind(function (newval) {
 			$('.q-footer').css('display', newval ? 'block' : 'none');
@@ -144,6 +147,7 @@
 		});
 	});
 
+	// Left Drawer
 	wp.customize('layout_ldrawer_enabled', function (value) {
 		value.bind(function (newval) {
 			if (!qwpVueObj.qwpDataLeftDrawerShowIfAbove) qwpVueObj.qwpLeft = false
@@ -162,6 +166,7 @@
 		});
 	});
 
+	// Right Drawer
 	wp.customize('layout_rdrawer_enabled', function (value) {
 		value.bind(function (newval) {
 			if (!qwpVueObj.qwpDataRightDrawerShowIfAbove) qwpVueObj.qwpRight = false
