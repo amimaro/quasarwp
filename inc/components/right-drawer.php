@@ -28,4 +28,24 @@ $wp_customize->add_control('quasarwp_layout_rdrawer_enabled', array(
   'priority'   => 1,
 ));
 
+// Right Drawer checkbox show_if_above
+$wp_customize->add_setting(
+  'layout_rdrawer_show_if_above',
+  array(
+    'default'    => false,
+    'type'       => 'theme_mod',
+    'capability' => 'edit_theme_options',
+    'transport'  => 'postMessage',
+  )
+);
+$wp_customize->add_control('quasarwp_layout_rdrawer_show_if_above', array(
+  'label' => __('Show if Above'),
+  'section' => 'quasarwp_layout_rdrawer',
+  'settings' => 'layout_rdrawer_show_if_above',
+  'type' => 'checkbox',
+  'priority'   => 2,
+  'description' => __('Shows the menu when starting the page')
+));
+
 $wp_customize->get_setting('layout_rdrawer_enabled')->transport = 'postMessage';
+$wp_customize->get_setting('layout_rdrawer_show_if_above')->transport = 'postMessage';

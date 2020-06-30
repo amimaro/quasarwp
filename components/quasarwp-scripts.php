@@ -36,6 +36,8 @@ if ($iconSet != 'material')
         qwpDataHeaderSeparator: '<?php echo get_theme_mod('layout_header_separator'); ?>',
         qwpDataFooterReveal: '<?php echo get_theme_mod('layout_footer_reveal'); ?>',
         qwpDataFooterSeparator: '<?php echo get_theme_mod('layout_footer_separator'); ?>',
+        qwpDataLeftDrawerShowIfAbove: '<?php echo get_theme_mod('layout_ldrawer_show_if_above'); ?>',
+        qwpDataRightDrawerShowIfAbove: '<?php echo get_theme_mod('layout_rdrawer_show_if_above'); ?>',
       }
     },
     <?php if (isset($setting['show-loading'])) { ?>
@@ -57,6 +59,12 @@ if ($iconSet != 'material')
       },
       qwpComputedFooterReveal: function() {
         return this.qwpDataFooterReveal ? true : false;
+      },
+      qwpComputedLeftDrawerShowIfAbove: function() {
+        return this.qwpDataLeftDrawerShowIfAbove ? true : false;
+      },
+      qwpComputedRightDrawerShowIfAbove: function() {
+        return this.qwpDataRightDrawerShowIfAbove ? true : false;
       }
     },
     methods: {

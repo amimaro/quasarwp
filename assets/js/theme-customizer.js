@@ -146,15 +146,27 @@
 
 	wp.customize('layout_ldrawer_enabled', function (value) {
 		value.bind(function (newval) {
-			if (qwpVueObj.qwpLeft) qwpVueObj.qwpLeft = false
+			if (!qwpVueObj.qwpDataLeftDrawerShowIfAbove) qwpVueObj.qwpLeft = false
 			$('#qwp-btn-left-menu').css('display', newval ? 'inline-block' : 'none');
+		});
+	});
+	wp.customize('layout_ldrawer_show_if_above', function (value) {
+		value.bind(function (newval) {
+			qwpVueObj.qwpDataLeftDrawerShowIfAbove = newval
+			qwpVueObj.qwpLeft = newval
 		});
 	});
 
 	wp.customize('layout_rdrawer_enabled', function (value) {
 		value.bind(function (newval) {
-			if (qwpVueObj.qwpRight) qwpVueObj.qwpRight = false
+			if (!qwpVueObj.qwpDataRightDrawerShowIfAbove) qwpVueObj.qwpRight = false
 			$('#qwp-btn-right-menu').css('display', newval ? 'inline-block' : 'none');
+		});
+	});
+	wp.customize('layout_rdrawer_show_if_above', function (value) {
+		value.bind(function (newval) {
+			qwpVueObj.qwpDataRightDrawerShowIfAbove = newval
+			qwpVueObj.qwpRight = newval
 		});
 	});
 
