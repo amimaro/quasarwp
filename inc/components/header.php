@@ -32,7 +32,7 @@ $wp_customize->add_control('quasarwp_layout_header_enabled', array(
 $wp_customize->add_setting(
   'layout_header_reveal',
   array(
-    'default'    => true,
+    'default'    => false,
     'type'       => 'theme_mod',
     'capability' => 'edit_theme_options',
     'transport'  => 'postMessage',
