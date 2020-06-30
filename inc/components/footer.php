@@ -89,7 +89,26 @@ $wp_customize->add_control('quasarwp_layout_footer_separator', array(
   ),
 ));
 
+// Footer icon checkbox
+$wp_customize->add_setting(
+  'layout_footer_icon',
+  array(
+    'default'    => true,
+    'type'       => 'theme_mod',
+    'capability' => 'edit_theme_options',
+    'transport'  => 'postMessage',
+  )
+);
+$wp_customize->add_control('quasarwp_layout_footer_icon', array(
+  'label' => __('Show Footer Icon'),
+  'section' => 'quasarwp_layout_footer',
+  'settings' => 'layout_footer_icon',
+  'type' => 'checkbox',
+  'priority'   => 5,
+));
+
 $wp_customize->get_setting('layout_footer_enabled')->transport = 'postMessage';
 $wp_customize->get_setting('layout_footer_reveal')->transport = 'postMessage';
 $wp_customize->get_setting('layout_footer_backgroundcolor')->transport = 'postMessage';
 $wp_customize->get_setting('layout_footer_separator')->transport = 'postMessage';
+$wp_customize->get_setting('layout_footer_icon')->transport = 'postMessage';

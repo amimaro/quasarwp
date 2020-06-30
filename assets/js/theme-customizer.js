@@ -102,6 +102,11 @@
 			qwpVueObj.qwpDataHeaderSeparator = newval
 		});
 	});
+	wp.customize('layout_header_icon', function (value) {
+		value.bind(function (newval) {
+			$('.q-header .q-avatar').css('display', newval ? 'inline-block' : 'none');
+		});
+	});
 
 	wp.customize('layout_footer_enabled', function (value) {
 		value.bind(function (newval) {
@@ -123,5 +128,11 @@
 			qwpVueObj.qwpDataFooterSeparator = newval
 		});
 	});
+	wp.customize('layout_footer_icon', function (value) {
+		value.bind(function (newval) {
+			$('.q-footer .q-avatar').css('display', newval ? 'inline-block' : 'none');
+		});
+	});
+
 
 })(jQuery);

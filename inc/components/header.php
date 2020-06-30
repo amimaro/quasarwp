@@ -89,7 +89,26 @@ $wp_customize->add_control('quasarwp_layout_header_separator', array(
   ),
 ));
 
+// Header icon checkbox
+$wp_customize->add_setting(
+  'layout_header_icon',
+  array(
+    'default'    => true,
+    'type'       => 'theme_mod',
+    'capability' => 'edit_theme_options',
+    'transport'  => 'postMessage',
+  )
+);
+$wp_customize->add_control('quasarwp_layout_header_icon', array(
+  'label' => __('Show Header Icon'),
+  'section' => 'quasarwp_layout_header',
+  'settings' => 'layout_header_icon',
+  'type' => 'checkbox',
+  'priority'   => 5,
+));
+
 $wp_customize->get_setting('layout_header_enabled')->transport = 'postMessage';
 $wp_customize->get_setting('layout_header_reveal')->transport = 'postMessage';
 $wp_customize->get_setting('layout_header_backgroundcolor')->transport = 'postMessage';
 $wp_customize->get_setting('layout_header_separator')->transport = 'postMessage';
+$wp_customize->get_setting('layout_header_icon')->transport = 'postMessage';

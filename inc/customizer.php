@@ -41,6 +41,8 @@ class QuasarWP_Customize
 
          self::set_view('.q-header', 'display', 'layout_header_enabled');
          self::set_view('.q-footer', 'display', 'layout_footer_enabled');
+         self::set_view('.q-header .q-avatar', 'display', 'layout_header_icon', 'inline-block');
+         self::set_view('.q-footer .q-avatar', 'display', 'layout_footer_icon', 'inline-block');
          ?>
       </style>
       <!--/Customizer CSS-->
@@ -58,18 +60,20 @@ class QuasarWP_Customize
       );
    }
 
-   public static function set_view($selector, $style, $mod_name)
+   public static function set_view($selector, $style = 'display', $mod_name, $visible = '', $hidden = '')
    {
       $return = '';
       $value = '';
       $mod = get_theme_mod($mod_name);
       if ($style == 'display') {
-         $value = $mod ? 'block' : 'none';
+         if (!$visible) $visible = 'block';
+         if (!$hidden) $hidden = 'none';
       }
       if ($style == 'visibility') {
-         $value = $mod ? 'visible' : 'hidden';
+         if (!$visible) $visible = 'visible';
+         if (!$hidden) $hidden = 'hidden';
       }
-
+      $value = $mod ? $visible : $hidden;
       return printf(
          '%s { %s: %s; }',
          $selector,
