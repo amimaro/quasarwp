@@ -68,9 +68,6 @@ function quasarwp_settings_page()
         <?php include('components/functions/qheader.php'); ?>
       </tr>
       <tr>
-        <?php include('components/functions/qfooter.php'); ?>
-      </tr>
-      <tr>
         <?php include('components/functions/left-drawer.php'); ?>
       </tr>
       <tr>
