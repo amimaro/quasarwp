@@ -7,6 +7,7 @@ $language = $setting['language'];
 $iconSet = $setting['icon-set'];
 
 $headerMenu = '';
+$footerMenu = '';
 $tabMenu = '';
 $leftMenu = '';
 $rightMenu = '';
@@ -15,6 +16,18 @@ if (has_nav_menu('header-menu')) {
   $headerMenu = wp_nav_menu(array(
     'menu'            => 'header-menu',
     'theme_location'  => 'header-menu',
+    'echo'            => false,
+    'items_wrap'      => '%3$s',
+    'depth'           => 0,
+    'container'       => '',
+    'walker' => new Custom_Tab_Walker_Nav_Menu
+  ));
+}
+
+if (has_nav_menu('footer-menu')) {
+  $footerMenu = wp_nav_menu(array(
+    'menu'            => 'footer-menu',
+    'theme_location'  => 'footer-menu',
     'echo'            => false,
     'items_wrap'      => '%3$s',
     'depth'           => 0,

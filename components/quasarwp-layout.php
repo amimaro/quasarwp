@@ -62,6 +62,8 @@
       <?php } ?>
       <?php echo get_bloginfo('name'); ?>
     </q-toolbar-title>
+
+    <?php echo $footerMenu; ?>
   </q-toolbar>
 </q-footer>
 

@@ -16,6 +16,7 @@ add_image_size('largest', 800, 800, true);
 register_nav_menus(
   array(
     'header-menu' => __('Header Menu', 'theme'),
+    'footer-menu' => __('Footer Menu', 'theme'),
     'tab-menu' => __('Tab Menu', 'theme'),
     'left-menu' => __('Left Menu', 'theme'),
     'right-menu' => __('Right Menu', 'theme'),
