@@ -21,22 +21,10 @@ class QuasarWP_Customize
     */
    public static function register($wp_customize)
    {
-
       include(get_template_directory() . '/inc/components/upload-logo.php');
       include(get_template_directory() . '/inc/components/theme-colors.php');
       include(get_template_directory() . '/inc/components/header.php');
       include(get_template_directory() . '/inc/components/footer.php');
-
-      // $wp_customize->add_control('sidebar_position_control', array(
-      //    'label' => __('Sidebar Position', 'mytheme'),
-      //    'section' => 'sidebar_settings',
-      //    'settings' => 'sidebar_position',
-      //    'type' => 'radio',
-      //    'choices' => array(
-      //       'left' => 'Left',
-      //       'right' => 'Right',
-      //    ),
-      // ));
    }
 
    public static function header_output()
@@ -53,7 +41,7 @@ class QuasarWP_Customize
 
          $headerVisible = get_theme_mod('layout_header_enabled') ? 'block' : 'none';
          self::set_css('.q-header', 'display', $headerVisible);
-         
+
          $footerVisible = get_theme_mod('layout_footer_enabled') ? 'block' : 'none';
          self::set_css('.q-footer', 'display', $footerVisible);
          ?>

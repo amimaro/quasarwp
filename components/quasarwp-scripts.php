@@ -33,6 +33,7 @@ if ($iconSet != 'material')
         qwpComment: '',
         qwpSearch: '',
         qwpDataHeaderReveal: '<?php echo get_theme_mod('layout_header_reveal'); ?>',
+        qwpDataHeaderSeparator: '<?php echo get_theme_mod('layout_header_separator'); ?>',
         qwpDataFooterReveal: '<?php echo get_theme_mod('layout_footer_reveal'); ?>'
       }
     },
@@ -58,6 +59,9 @@ if ($iconSet != 'material')
       }
     },
     methods: {
+      qwpSelectHeaderSeparator(separator) {
+        return separator === this.qwpDataHeaderSeparator
+      },
       quasarwpRouteTo(permalink) {
         document.location.href = permalink
       },

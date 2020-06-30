@@ -97,6 +97,11 @@
 			$('.q-header').css('background-color', newval, '!important');
 		});
 	});
+	wp.customize('layout_header_separator', function (value) {
+		value.bind(function (newval) {
+			qwpVueObj.qwpDataHeaderSeparator = newval
+		});
+	});
 
 	wp.customize('layout_footer_enabled', function (value) {
 		value.bind(function (newval) {
