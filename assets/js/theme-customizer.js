@@ -118,5 +118,10 @@
 			$('.q-footer').css('background-color', newval, '!important');
 		});
 	});
+	wp.customize('layout_footer_separator', function (value) {
+		value.bind(function (newval) {
+			qwpVueObj.qwpDataFooterSeparator = newval
+		});
+	});
 
 })(jQuery);

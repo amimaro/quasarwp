@@ -67,6 +67,29 @@ $wp_customize->add_control(new WP_Customize_Color_Control(
   )
 ));
 
+$wp_customize->add_setting(
+  'layout_footer_separator',
+  array(
+    'default'    => 'elevated',
+    'type'       => 'theme_mod',
+    'capability' => 'edit_theme_options',
+    'transport'  => 'postMessage',
+  )
+);
+$wp_customize->add_control('quasarwp_layout_footer_separator', array(
+  'label' => __('Separator type'),
+  'section' => 'quasarwp_layout_footer',
+  'settings' => 'layout_footer_separator',
+  'type' => 'radio',
+  'priority'   => 4,
+  'choices' => array(
+    'none' => 'None',
+    'elevated' => 'Elevated',
+    'bordered' => 'Bordered',
+  ),
+));
+
 $wp_customize->get_setting('layout_footer_enabled')->transport = 'postMessage';
 $wp_customize->get_setting('layout_footer_reveal')->transport = 'postMessage';
 $wp_customize->get_setting('layout_footer_backgroundcolor')->transport = 'postMessage';
+$wp_customize->get_setting('layout_footer_separator')->transport = 'postMessage';

@@ -34,7 +34,8 @@ if ($iconSet != 'material')
         qwpSearch: '',
         qwpDataHeaderReveal: '<?php echo get_theme_mod('layout_header_reveal'); ?>',
         qwpDataHeaderSeparator: '<?php echo get_theme_mod('layout_header_separator'); ?>',
-        qwpDataFooterReveal: '<?php echo get_theme_mod('layout_footer_reveal'); ?>'
+        qwpDataFooterReveal: '<?php echo get_theme_mod('layout_footer_reveal'); ?>',
+        qwpDataFooterSeparator: '<?php echo get_theme_mod('layout_footer_separator'); ?>',
       }
     },
     <?php if (isset($setting['show-loading'])) { ?>
