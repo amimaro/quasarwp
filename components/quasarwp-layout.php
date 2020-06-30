@@ -1,5 +1,4 @@
 <q-header :reveal="qwpComputedHeaderReveal" :elevated="qwpSelectSeparator('elevated', 'header')" :bordered="qwpSelectSeparator('bordered', 'header')">
-  <?php echo get_theme_mod('layout_header_separator'); ?>
   <q-toolbar>
     <?php if (isset($setting['lqdrawer'])) { ?>
       <q-btn flat dense round icon="menu" aria-label="Menu" @click="qwpLeft = !qwpLeft"></q-btn>
