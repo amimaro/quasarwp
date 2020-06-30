@@ -40,6 +40,8 @@ if ($iconSet != 'material')
         qwpDataLeftDrawerSeparator: '<?php echo get_theme_mod('layout_ldrawer_separator'); ?>',
         qwpDataRightDrawerShowIfAbove: '<?php echo get_theme_mod('layout_rdrawer_show_if_above'); ?>',
         qwpDataRightDrawerSeparator: '<?php echo get_theme_mod('layout_rdrawer_separator'); ?>',
+        qwpDataLeftDrawerOverlay: '<?php echo get_theme_mod('layout_ldrawer_overlay'); ?>',
+        qwpDataRightDrawerOverlay: '<?php echo get_theme_mod('layout_rdrawer_overlay'); ?>',
       }
     },
     <?php if (isset($setting['show-loading'])) { ?>
@@ -67,7 +69,13 @@ if ($iconSet != 'material')
       },
       qwpComputedRightDrawerShowIfAbove: function() {
         return this.qwpDataRightDrawerShowIfAbove ? true : false;
-      }
+      },
+      qwpComputedLeftDrawerOverlay: function() {
+        return this.qwpDataLeftDrawerOverlay ? true : false;
+      },
+      qwpComputedRightDrawerOverlay: function() {
+        return this.qwpDataRightDrawerOverlay ? true : false;
+      },
     },
     methods: {
       qwpSelectSeparator(separator, layout) {

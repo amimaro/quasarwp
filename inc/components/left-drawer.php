@@ -47,7 +47,25 @@ $wp_customize->add_control('quasarwp_layout_ldrawer_show_if_above', array(
   'description' => __('Shows the menu when starting the page')
 ));
 
-// Left Drawer separator type
+// Left Drawer checkbox overlay
+$wp_customize->add_setting(
+  'layout_ldrawer_overlay',
+  array(
+    'default'    => false,
+    'type'       => 'theme_mod',
+    'capability' => 'edit_theme_options',
+    'transport'  => 'postMessage',
+  )
+);
+$wp_customize->add_control('quasarwp_layout_ldrawer_overlay', array(
+  'label' => __('Overlay Mode'),
+  'section' => 'quasarwp_layout_ldrawer',
+  'settings' => 'layout_ldrawer_overlay',
+  'type' => 'checkbox',
+  'priority'   => 3,
+));
+
+// Left Drawer select separator type
 $wp_customize->add_setting(
   'layout_ldrawer_separator',
   array(
@@ -62,7 +80,7 @@ $wp_customize->add_control('quasarwp_layout_ldrawer_separator', array(
   'section' => 'quasarwp_layout_ldrawer',
   'settings' => 'layout_ldrawer_separator',
   'type' => 'radio',
-  'priority'   => 3,
+  'priority'   => 4,
   'choices' => array(
     'none' => 'None',
     'elevated' => 'Elevated',
@@ -72,4 +90,5 @@ $wp_customize->add_control('quasarwp_layout_ldrawer_separator', array(
 
 $wp_customize->get_setting('layout_ldrawer_enabled')->transport = 'postMessage';
 $wp_customize->get_setting('layout_ldrawer_show_if_above')->transport = 'postMessage';
+$wp_customize->get_setting('layout_ldrawer_overlay')->transport = 'postMessage';
 $wp_customize->get_setting('layout_ldrawer_separator')->transport = 'postMessage';

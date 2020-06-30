@@ -47,7 +47,25 @@ $wp_customize->add_control('quasarwp_layout_rdrawer_show_if_above', array(
   'description' => __('Shows the menu when starting the page')
 ));
 
-// Right Drawer separator type
+// Left Drawer checkbox overlay
+$wp_customize->add_setting(
+  'layout_rdrawer_overlay',
+  array(
+    'default'    => false,
+    'type'       => 'theme_mod',
+    'capability' => 'edit_theme_options',
+    'transport'  => 'postMessage',
+  )
+);
+$wp_customize->add_control('quasarwp_layout_rdrawer_overlay', array(
+  'label' => __('Overlay Mode'),
+  'section' => 'quasarwp_layout_rdrawer',
+  'settings' => 'layout_rdrawer_overlay',
+  'type' => 'checkbox',
+  'priority'   => 3,
+));
+
+// Right Drawer select separator type
 $wp_customize->add_setting(
   'layout_rdrawer_separator',
   array(
@@ -62,7 +80,7 @@ $wp_customize->add_control('quasarwp_layout_rdrawer_separator', array(
   'section' => 'quasarwp_layout_rdrawer',
   'settings' => 'layout_rdrawer_separator',
   'type' => 'radio',
-  'priority'   => 3,
+  'priority'   => 4,
   'choices' => array(
     'none' => 'None',
     'elevated' => 'Elevated',
@@ -72,4 +90,5 @@ $wp_customize->add_control('quasarwp_layout_rdrawer_separator', array(
 
 $wp_customize->get_setting('layout_rdrawer_enabled')->transport = 'postMessage';
 $wp_customize->get_setting('layout_rdrawer_show_if_above')->transport = 'postMessage';
+$wp_customize->get_setting('layout_rdrawer_overlay')->transport = 'postMessage';
 $wp_customize->get_setting('layout_rdrawer_separator')->transport = 'postMessage';
