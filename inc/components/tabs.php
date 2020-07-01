@@ -28,30 +28,6 @@ $wp_customize->add_control('quasarwp_layout_tabs_enabled', array(
   'priority'   => 1,
 ));
 
-// Right Drawer select separator type
-$wp_customize->add_setting(
-  'layout_tabs_align',
-  array(
-    'default'    => 'left',
-    'type'       => 'theme_mod',
-    'capability' => 'edit_theme_options',
-    'transport'  => 'postMessage',
-  )
-);
-$wp_customize->add_control('quasarwp_layout_tabs_align', array(
-  'label' => __('Align Items'),
-  'section' => 'quasarwp_layout_tabs',
-  'settings' => 'layout_tabs_align',
-  'type' => 'radio',
-  'priority'   => 2,
-  'choices' => array(
-    'left' => 'Left',
-    'center' => 'Center',
-    'right' => 'Right',
-  ),
-));
-
-
 // Theme Tabs background-color
 $wp_customize->add_setting(
   'layout_tabs_backgroundcolor',
@@ -68,11 +44,34 @@ $wp_customize->add_control(new WP_Customize_Color_Control(
   array(
     'label'      => __('Background Color'),
     'settings'   => 'layout_tabs_backgroundcolor',
-    'priority'   => 3,
+    'priority'   => 2,
     'section'    => 'quasarwp_layout_tabs',
   )
 ));
 
+// Right Drawer select separator type
+$wp_customize->add_setting(
+  'layout_tabs_align',
+  array(
+    'default'    => 'left',
+    'type'       => 'theme_mod',
+    'capability' => 'edit_theme_options',
+    'transport'  => 'postMessage',
+  )
+);
+$wp_customize->add_control('quasarwp_layout_tabs_align', array(
+  'label' => __('Align Items'),
+  'section' => 'quasarwp_layout_tabs',
+  'settings' => 'layout_tabs_align',
+  'type' => 'radio',
+  'priority'   => 3,
+  'choices' => array(
+    'left' => 'Left',
+    'center' => 'Center',
+    'right' => 'Right',
+  ),
+));
+
 $wp_customize->get_setting('layout_tabs_enabled')->transport = 'postMessage';
-$wp_customize->get_setting('layout_tabs_align')->transport = 'postMessage';
 $wp_customize->get_setting('layout_tabs_backgroundcolor')->transport = 'postMessage';
+$wp_customize->get_setting('layout_tabs_align')->transport = 'postMessage';
