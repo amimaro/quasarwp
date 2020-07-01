@@ -27,6 +27,7 @@ class QuasarWP_Customize
       include(get_template_directory() . '/inc/components/footer.php');
       include(get_template_directory() . '/inc/components/left-drawer.php');
       include(get_template_directory() . '/inc/components/right-drawer.php');
+      include(get_template_directory() . '/inc/components/tabs.php');
    }
 
    public static function header_output()
@@ -40,6 +41,7 @@ class QuasarWP_Customize
          self::generate_css('a', 'color', 'theme_primary');
          self::generate_css('.q-header', 'background-color', 'layout_header_backgroundcolor', '', ' !important');
          self::generate_css('.q-footer', 'background-color', 'layout_footer_backgroundcolor', '', ' !important');
+         self::generate_css('.q-header .q-tabs', 'background-color', 'layout_tabs_backgroundcolor', '', ' !important');
 
          self::set_view('.q-header', 'display', 'layout_header_enabled');
          self::set_view('.q-footer', 'display', 'layout_footer_enabled');
@@ -51,6 +53,7 @@ class QuasarWP_Customize
          self::set_view('.q-footer .qwp-blogname', 'display', 'layout_footer_blogname', 'inline-block');
          self::set_view('#qwp-btn-left-menu', 'display', 'layout_ldrawer_enabled', 'inline-block');
          self::set_view('#qwp-btn-right-menu', 'display', 'layout_rdrawer_enabled', 'inline-block');
+         self::set_view('.q-header .q-tabs', 'display', 'layout_tabs_enabled');
          ?>
       </style>
       <!--/Customizer CSS-->

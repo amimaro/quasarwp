@@ -44,6 +44,7 @@ if ($iconSet != 'material')
         qwpDataRightDrawerOverlay: '<?php echo get_theme_mod('layout_rdrawer_overlay'); ?>',
         qwpDataRightDrawerSeparator: '<?php echo get_theme_mod('layout_rdrawer_separator'); ?>',
         qwpDataRightDrawerBehavior: '<?php echo get_theme_mod('layout_rdrawer_behavior'); ?>',
+        qwpDataTabsAlign: '<?php echo get_theme_mod('layout_tabs_align'); ?>',
       }
     },
     <?php if (isset($setting['show-loading'])) { ?>

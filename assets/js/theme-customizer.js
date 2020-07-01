@@ -205,5 +205,22 @@
 		});
 	});
 
+	// Tabs
+	wp.customize('layout_tabs_enabled', function (value) {
+		value.bind(function (newval) {
+			$('.q-tabs').css('display', newval ? 'block' : 'none');
+		});
+	});
+	wp.customize('layout_tabs_align', function (value) {
+		value.bind(function (newval) {
+			qwpVueObj.qwpDataTabsAlign = newval
+		});
+	});
+	wp.customize('layout_tabs_backgroundcolor', function (value) {
+		value.bind(function (newval) {
+			$('.q-header .q-tabs').css('background-color', newval, '!important');
+		});
+	});
+
 
 })(jQuery);

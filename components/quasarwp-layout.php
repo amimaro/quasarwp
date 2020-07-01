@@ -40,11 +40,11 @@
 
     <q-btn id="qwp-btn-right-menu" flat dense round icon="menu" aria-label="Menu" @click="qwpRight = !qwpRight"></q-btn>
   </q-toolbar>
-  <?php if (isset($setting['qtabs'])) { ?>
-  <q-tabs align="<?php echo $setting['qtabs-position']; ?>">
+
+  <q-tabs :align="qwpDataTabsAlign">
     <?php echo $tabMenu; ?>
   </q-tabs>
-  <?php } ?>
+
 </q-header>
 
 <q-footer :reveal="qwpComputedFooterReveal" :elevated="qwpSelectSeparator('elevated', 'footer')"
