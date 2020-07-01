@@ -70,9 +70,6 @@ function quasarwp_settings_page()
       <tr>
         <?php include('components/functions/icon-set.php'); ?>
       </tr>
-      <tr>
-        <?php include('components/functions/social-icons.php'); ?>
-      </tr>
     </table>
 
     <?php submit_button(); ?>
@@ -83,6 +80,6 @@ function quasarwp_settings_page()
 include('components/qwp-menu-components.php');
 
 /**
-* Customizer additions.
-*/
+ * Customizer additions.
+ */
 require get_template_directory() . '/inc/customizer.php';
