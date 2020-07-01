@@ -13,31 +13,27 @@ include(get_template_directory() . '/components/header-functions.php');
 
             <q-page-container>
 
-                <?php if ($setting['frontpage-post-layout'] == 'grid3x3') { ?>
-                    <div class="grid-3x3-container">
-                        <?php
-                        if (have_posts()) : while (have_posts()) : the_post();
-                        ?>
-                                <?php include('components/post-layout/grid3x3.php'); ?>
-                        <?php
-                            endwhile;
-                        endif;
-                        ?>
-                    </div>
-                <?php } ?>
+                <div class="grid-3x3-container" v-if="qwpDataHomePostLayout === 'grid3x3'">
+                    <?php
+                    if (have_posts()) : while (have_posts()) : the_post();
+                    ?>
+                            <?php include('components/post-layout/grid3x3.php'); ?>
+                    <?php
+                        endwhile;
+                    endif;
+                    ?>
+                </div>
 
-                <?php if ($setting['frontpage-post-layout'] == 'stacked') { ?>
-                    <div class="stacked-container">
-                        <?php
-                        if (have_posts()) : while (have_posts()) : the_post();
-                        ?>
-                                <?php include('components/post-layout/stacked.php'); ?>
-                        <?php
-                            endwhile;
-                        endif;
-                        ?>
-                    </div>
-                <?php } ?>
+                <div class="stacked-container" v-else>
+                    <?php
+                    if (have_posts()) : while (have_posts()) : the_post();
+                    ?>
+                            <?php include('components/post-layout/stacked.php'); ?>
+                    <?php
+                        endwhile;
+                    endif;
+                    ?>
+                </div>
 
             </q-page-container>
         </q-layout>

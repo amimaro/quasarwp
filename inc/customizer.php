@@ -28,35 +28,39 @@ class QuasarWP_Customize
       include(get_template_directory() . '/inc/components/left-drawer.php');
       include(get_template_directory() . '/inc/components/right-drawer.php');
       include(get_template_directory() . '/inc/components/tabs.php');
+      include(get_template_directory() . '/inc/components/home.php');
    }
 
    public static function header_output()
    {
 ?>
-      <!--Customizer CSS-->
-      <style type="text/css">
-         <?php
-         self::generate_css('#site-title a', 'color', 'header_textcolor', '#');
-         self::generate_css('body', 'background-color', 'background_color', '#');
-         self::generate_css('a', 'color', 'theme_primary');
-         self::generate_css('.q-header', 'background-color', 'layout_header_backgroundcolor', '', ' !important');
-         self::generate_css('.q-footer', 'background-color', 'layout_footer_backgroundcolor', '', ' !important');
-         self::generate_css('.q-header .q-tabs', 'background-color', 'layout_tabs_backgroundcolor', '', ' !important');
-         self::generate_css('.q-drawer--left', 'background-color', 'layout_ldrawer_backgroundcolor', '', ' !important');
-         self::generate_css('.q-drawer--right', 'background-color', 'layout_rdrawer_backgroundcolor', '', ' !important');
+<!--Customizer CSS-->
+<style type="text/css">
+<?php self::generate_css('#site-title a', 'color', 'header_textcolor', '#');
+self::generate_css('body', 'background-color', 'background_color', '#');
+self::generate_css('a', 'color', 'theme_primary');
+self::generate_css('.q-header', 'background-color', 'layout_header_backgroundcolor', '', ' !important');
+self::generate_css('.q-footer', 'background-color', 'layout_footer_backgroundcolor', '', ' !important');
+self::generate_css('.q-header .q-tabs', 'background-color', 'layout_tabs_backgroundcolor', '', ' !important');
+self::generate_css('.q-drawer--left', 'background-color', 'layout_ldrawer_backgroundcolor', '', ' !important');
+self::generate_css('.q-drawer--right', 'background-color', 'layout_rdrawer_backgroundcolor', '', ' !important');
 
-         self::set_view('.q-header', 'display', 'layout_header_enabled');
-         self::set_view('.q-footer', 'display', 'layout_footer_enabled');
-         self::set_view('.q-header .q-avatar', 'display', 'layout_header_icon', 'inline-block');
-         self::set_view('.q-footer .q-avatar', 'display', 'layout_footer_icon', 'inline-block');
-         self::set_view('.q-header .qwp-blogname', 'display', 'layout_header_blogname', 'inline-block');
-         self::set_view('.q-footer .qwp-blogname', 'display', 'layout_footer_blogname', 'inline-block');
-         self::set_view('#qwp-btn-left-menu', 'display', 'layout_ldrawer_enabled', 'inline-block');
-         self::set_view('#qwp-btn-right-menu', 'display', 'layout_rdrawer_enabled', 'inline-block');
-         self::set_view('.q-header .q-tabs', 'display', 'layout_tabs_enabled');
-         ?>
-      </style>
-      <!--/Customizer CSS-->
+self::set_view('.q-header', 'display', 'layout_header_enabled');
+self::set_view('.q-footer', 'display', 'layout_footer_enabled');
+self::set_view('.q-header .q-avatar', 'display', 'layout_header_icon', 'inline-block');
+self::set_view('.q-footer .q-avatar', 'display', 'layout_footer_icon', 'inline-block');
+self::set_view('.q-header .qwp-blogname', 'display', 'layout_header_blogname', 'inline-block');
+self::set_view('.q-footer .qwp-blogname', 'display', 'layout_footer_blogname', 'inline-block');
+self::set_view('#qwp-btn-left-menu', 'display', 'layout_ldrawer_enabled', 'inline-block');
+self::set_view('#qwp-btn-right-menu', 'display', 'layout_rdrawer_enabled', 'inline-block');
+self::set_view('.q-header .q-tabs', 'display', 'layout_tabs_enabled');
+self::set_view('.qwp-home-post-author', 'display', 'layout_home_author');
+self::set_view('.qwp-home-post-excerpt', 'display', 'layout_home_excerpt');
+self::set_view('.qwp-home-post-postdate', 'display', 'layout_home_postdate');
+self::set_view('.qwp-home-post-commentcounter', 'display', 'layout_home_commentcounter');
+?>
+</style>
+<!--/Customizer CSS-->
 <?php
    }
 

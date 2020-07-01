@@ -45,6 +45,7 @@ if ($iconSet != 'material')
         qwpDataRightDrawerSeparator: '<?php echo get_theme_mod('layout_rdrawer_separator'); ?>',
         qwpDataRightDrawerBehavior: '<?php echo get_theme_mod('layout_rdrawer_behavior'); ?>',
         qwpDataTabsAlign: '<?php echo get_theme_mod('layout_tabs_align'); ?>',
+        qwpDataHomePostLayout: '<?php echo get_theme_mod('layout_home_postlayout'); ?>',
       }
     },
     <?php if (isset($setting['show-loading'])) { ?>

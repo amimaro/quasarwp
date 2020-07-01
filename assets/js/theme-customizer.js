@@ -233,4 +233,32 @@
 	});
 
 
+	// Home Page
+	wp.customize('layout_home_author', function (value) {
+		value.bind(function (newval) {
+			$('.qwp-home-post-author').css('display', newval ? 'block' : 'none');
+		});
+	});
+	wp.customize('layout_home_excerpt', function (value) {
+		value.bind(function (newval) {
+			$('.qwp-home-post-excerpt').css('display', newval ? 'block' : 'none');
+		});
+	});
+	wp.customize('layout_home_postdate', function (value) {
+		value.bind(function (newval) {
+			$('.qwp-home-post-postdate').css('display', newval ? 'block' : 'none');
+		});
+	});
+	wp.customize('layout_home_commentcounter', function (value) {
+		value.bind(function (newval) {
+			$('.qwp-home-post-commentcounter').css('display', newval ? 'block' : 'none');
+		});
+	});
+	wp.customize('layout_home_postlayout', function (value) {
+		value.bind(function (newval) {
+			qwpVueObj.qwpDataHomePostLayout = newval
+		});
+	});
+
+
 })(jQuery);
