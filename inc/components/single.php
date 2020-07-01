@@ -4,7 +4,7 @@ $wp_customize->add_section(
   'quasarwp_layout_single',
   array(
     'title'       => __('Post Page'),
-    'priority'    => 109.1,
+    'priority'    => 108.1,
     'capability'  => 'edit_theme_options',
     'description' => __('Allows you to customize single page layout settings for QuasarWP.'),
   )

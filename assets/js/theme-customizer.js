@@ -291,5 +291,19 @@
 		});
 	});
 
+	const socialMedias = ['whatsapp', 'telegram', 'facebook', 'twitter', 'e-mail', 'linkedin', 'reddit', 'pinterest'];
+	for (let socialMedia of socialMedias) {
+		wp.customize(`social_${socialMedia}_enabled`, function (value) {
+			value.bind(function (newval) {
+				$(`#social-icon-${socialMedia}`).css('display', newval ? 'inline-block' : 'none');
+			});
+		});
+		wp.customize(`social_${socialMedia}_class`, function (value) {
+			value.bind(function (newval) {
+				$(`#social-icon-${socialMedia} .q-icon`).attr('class', `${newval} q-icon notranslate`)
+			});
+		});
+	}
+
 
 })(jQuery);

@@ -30,6 +30,7 @@ class QuasarWP_Customize
       include(get_template_directory() . '/inc/components/tabs.php');
       include(get_template_directory() . '/inc/components/home.php');
       include(get_template_directory() . '/inc/components/single.php');
+      include(get_template_directory() . '/inc/components/social-icons.php');
    }
 
    public static function header_output()
@@ -65,6 +66,15 @@ self::set_view('.qwp-single-commentcounter', 'display', 'layout_single_commentco
 self::set_view('.qwp-single-featured-image', 'display', 'layout_single_featured_image');
 self::set_view('.qwp-single-social', 'display', 'layout_single_social');
 self::set_view('.qwp-single-comments', 'display', 'layout_single_comments');
+
+self::set_view('#social-icon-whatsapp', 'display', 'social_whatsapp_enabled', 'inline-block');
+self::set_view('#social-icon-telegram', 'display', 'social_telegram_enabled', 'inline-block');
+self::set_view('#social-icon-facebook', 'display', 'social_facebook_enabled', 'inline-block');
+self::set_view('#social-icon-twitter', 'display', 'social_twitter_enabled', 'inline-block');
+self::set_view('#social-icon-e-mail', 'display', 'social_e-mail_enabled', 'inline-block');
+self::set_view('#social-icon-linkedin', 'display', 'social_linkedin_enabled', 'inline-block');
+self::set_view('#social-icon-reddit', 'display', 'social_reddit_enabled', 'inline-block');
+self::set_view('#social-icon-pinterest', 'display', 'social_pinterest_enabled', 'inline-block');
 ?>
 </style>
 <!--/Customizer CSS-->

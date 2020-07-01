@@ -5,47 +5,31 @@ $permalink = get_permalink();
 $tags = comma_tags(get_the_tags(), false);
 ?>
 <div class="q-my-xl q-gutter-sm" align="center">
-  <?php if (isset($setting['whatsapp'])) { ?>
-  <q-btn round color="quasarwp-whatsapp" glossy icon="<?php echo $setting['whatsapp-icon'] ?>" data-sharer="whatsapp"
+  <q-btn id="social-icon-whatsapp" round color="quasarwp-whatsapp" glossy icon="<?php echo get_theme_mod('social_whatsapp_class') ?>" data-sharer="whatsapp"
     data-title="<?php echo $title; ?>" data-hashtags="<?php echo $tags; ?>" data-url="<?php echo $permalink; ?>">
   </q-btn>
-  <?php } ?>
-  <?php if (isset($setting['telegram'])) { ?>
-  <q-btn round color="quasarwp-telegram" glossy icon="<?php echo $setting['telegram-icon'] ?>" data-sharer="telegram"
+  <q-btn id="social-icon-telegram" round color="quasarwp-telegram" glossy icon="<?php echo get_theme_mod('social_telegram_class') ?>" data-sharer="telegram"
     data-title="<?php echo $title; ?>" data-hashtags="<?php echo $tags; ?>" data-url="<?php echo $permalink; ?>">
   </q-btn>
-  <?php } ?>
-  <?php if (isset($setting['facebook'])) { ?>
-  <q-btn round color="quasarwp-facebook" glossy icon="<?php echo $setting['facebook-icon'] ?>" data-sharer="facebook"
+  <q-btn id="social-icon-facebook" round color="quasarwp-facebook" glossy icon="<?php echo get_theme_mod('social_facebook_class') ?>" data-sharer="facebook"
     data-title="<?php echo $title; ?>" data-hashtags="<?php echo $tags; ?>" data-url="<?php echo $permalink; ?>">
   </q-btn>
-  <?php } ?>
-  <?php if (isset($setting['twitter'])) { ?>
-  <q-btn round color="quasarwp-twitter" glossy icon="<?php echo $setting['twitter-icon'] ?>" data-sharer="twitter"
+  <q-btn id="social-icon-twitter" round color="quasarwp-twitter" glossy icon="<?php echo get_theme_mod('social_twitter_class') ?>" data-sharer="twitter"
     data-title="<?php echo $title; ?>" data-hashtags="<?php echo $tags; ?>" data-url="<?php echo $permalink; ?>">
   </q-btn>
-  <?php } ?>
-  <?php if (isset($setting['mail'])) { ?>
-  <q-btn round color="quasarwp-mail" glossy icon="<?php echo $setting['mail-icon'] ?>" data-sharer="email"
+  <q-btn id="social-icon-e-mail" round color="quasarwp-mail" glossy icon="<?php echo get_theme_mod('social_e-mail_class') ?>" data-sharer="email"
     data-title="<?php echo $title; ?>" data-hashtags="<?php echo $tags; ?>" data-url="<?php echo $permalink; ?>">
   </q-btn>
-  <?php } ?>
-  <?php if (isset($setting['linkedin'])) { ?>
-  <q-btn round color="quasarwp-linkedin" glossy icon="<?php echo $setting['linkedin-icon'] ?>" data-sharer="linkedin"
+  <q-btn id="social-icon-linkedin" round color="quasarwp-linkedin" glossy icon="<?php echo get_theme_mod('social_linkedin_class') ?>" data-sharer="linkedin"
     data-title="<?php echo $title; ?>" data-hashtags="<?php echo $tags; ?>" data-url="<?php echo $permalink; ?>">
   </q-btn>
-  <?php } ?>
-  <?php if (isset($setting['reddit'])) { ?>
-  <q-btn round color="quasarwp-reddit" glossy icon="<?php echo $setting['reddit-icon'] ?>" data-sharer="reddit"
+  <q-btn id="social-icon-reddit" round color="quasarwp-reddit" glossy icon="<?php echo get_theme_mod('social_reddit_class') ?>" data-sharer="reddit"
     data-title="<?php echo $title; ?>" data-hashtags="<?php echo $tags; ?>" data-url="<?php echo $permalink; ?>">
   </q-btn>
-  <?php } ?>
-  <?php if (isset($setting['pinterest'])) { ?>
-  <q-btn round color="quasarwp-pinterest" glossy icon="<?php echo $setting['pinterest-icon'] ?>" data-sharer="pinterest"
+  <q-btn id="social-icon-pinterest" round color="quasarwp-pinterest" glossy icon="<?php echo get_theme_mod('social_pinterest_class') ?>" data-sharer="pinterest"
     data-title="<?php echo $title; ?>" data-hashtags="<?php echo $tags; ?>" data-url="<?php echo $permalink; ?>">
   </q-btn>
-  <?php } ?>
 </div>
 <?php
-  wp_enqueue_script('sharer', get_template_directory_uri() . '/vendor/sharer/sharer.min.js');
+wp_enqueue_script('sharer', get_template_directory_uri() . '/vendor/sharer/sharer.min.js');
 ?>
