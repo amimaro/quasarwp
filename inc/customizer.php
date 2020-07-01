@@ -42,6 +42,8 @@ class QuasarWP_Customize
          self::generate_css('.q-header', 'background-color', 'layout_header_backgroundcolor', '', ' !important');
          self::generate_css('.q-footer', 'background-color', 'layout_footer_backgroundcolor', '', ' !important');
          self::generate_css('.q-header .q-tabs', 'background-color', 'layout_tabs_backgroundcolor', '', ' !important');
+         self::generate_css('.q-drawer--left', 'background-color', 'layout_ldrawer_backgroundcolor', '', ' !important');
+         self::generate_css('.q-drawer--right', 'background-color', 'layout_rdrawer_backgroundcolor', '', ' !important');
 
          self::set_view('.q-header', 'display', 'layout_header_enabled');
          self::set_view('.q-footer', 'display', 'layout_footer_enabled');

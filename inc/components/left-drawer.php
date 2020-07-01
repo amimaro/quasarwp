@@ -65,6 +65,27 @@ $wp_customize->add_control('quasarwp_layout_ldrawer_overlay', array(
   'priority'   => 3,
 ));
 
+// Theme left drawer background-color
+$wp_customize->add_setting(
+  'layout_ldrawer_backgroundcolor',
+  array(
+    'default'    => '',
+    'type'       => 'theme_mod',
+    'capability' => 'edit_theme_options',
+    'transport'  => 'postMessage',
+  )
+);
+$wp_customize->add_control(new WP_Customize_Color_Control(
+  $wp_customize,
+  'quasarwp_layout_ldrawer_backgroundcolor',
+  array(
+    'label'      => __('Background Color'),
+    'settings'   => 'layout_ldrawer_backgroundcolor',
+    'priority'   => 4,
+    'section'    => 'quasarwp_layout_ldrawer',
+  )
+));
+
 // Left Drawer select separator type
 $wp_customize->add_setting(
   'layout_ldrawer_separator',
@@ -80,7 +101,7 @@ $wp_customize->add_control('quasarwp_layout_ldrawer_separator', array(
   'section' => 'quasarwp_layout_ldrawer',
   'settings' => 'layout_ldrawer_separator',
   'type' => 'radio',
-  'priority'   => 4,
+  'priority'   => 5,
   'choices' => array(
     'none' => 'None',
     'elevated' => 'Elevated',
@@ -103,7 +124,7 @@ $wp_customize->add_control('quasarwp_layout_ldrawer_behavior', array(
   'section' => 'quasarwp_layout_ldrawer',
   'settings' => 'layout_ldrawer_behavior',
   'type' => 'radio',
-  'priority'   => 5,
+  'priority'   => 6,
   'choices' => array(
     'normal' => 'Behave Normal',
     'mobile' => 'Behave Mobile',
@@ -114,5 +135,6 @@ $wp_customize->add_control('quasarwp_layout_ldrawer_behavior', array(
 $wp_customize->get_setting('layout_ldrawer_enabled')->transport = 'postMessage';
 $wp_customize->get_setting('layout_ldrawer_show_if_above')->transport = 'postMessage';
 $wp_customize->get_setting('layout_ldrawer_overlay')->transport = 'postMessage';
+$wp_customize->get_setting('layout_ldrawer_backgroundcolor')->transport = 'postMessage';
 $wp_customize->get_setting('layout_ldrawer_separator')->transport = 'postMessage';
 $wp_customize->get_setting('layout_ldrawer_behavior')->transport = 'postMessage';
