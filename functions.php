@@ -65,12 +65,6 @@ function quasarwp_settings_page()
         <?php include('components/functions/modules.php'); ?>
       </tr>
       <tr>
-        <?php include('components/functions/qheader.php'); ?>
-      </tr>
-      <tr>
-        <?php include('components/functions/tabs.php'); ?>
-      </tr>
-      <tr>
         <?php include('components/functions/front-page.php'); ?>
       </tr>
       <tr>
