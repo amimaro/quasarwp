@@ -74,7 +74,7 @@
 
 <q-drawer v-model="qwpLeft" side="left" :show-if-above="qwpComputedLeftDrawerShowIfAbove"
   :elevated="qwpSelectSeparator('elevated', 'ldrawer')" :bordered="qwpSelectSeparator('bordered', 'ldrawer')"
-  :overlay="qwpComputedLeftDrawerOverlay" <?php echo set_qdrawer_behavior($setting['lqdrawer-behavior']); ?>>
+  :overlay="qwpComputedLeftDrawerOverlay" :behavior="qwpDataLeftDrawerBehavior">
   <q-scroll-area class="fit">
     <q-list padding id="menu-list-left" class="menu-list">
       <?php echo $leftMenu; ?>
@@ -84,7 +84,7 @@
 
 <q-drawer v-model="qwpRight" side="right" :show-if-above="qwpComputedRightDrawerShowIfAbove"
   :elevated="qwpSelectSeparator('elevated', 'rdrawer')" :bordered="qwpSelectSeparator('bordered', 'rdrawer')"
-  :overlay="qwpComputedRightDrawerOverlay" <?php echo set_qdrawer_behavior($setting['rqdrawer-behavior']); ?>>
+  :overlay="qwpComputedRightDrawerOverlay" :behavior="qwpDataRightDrawerBehavior">
   <q-scroll-area class="fit">
     <q-list padding id="menu-list-right" class="menu-list">
       <?php echo $rightMenu; ?>

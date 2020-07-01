@@ -88,7 +88,31 @@ $wp_customize->add_control('quasarwp_layout_rdrawer_separator', array(
   ),
 ));
 
+// Left Drawer select behavior
+$wp_customize->add_setting(
+  'layout_rdrawer_behavior',
+  array(
+    'default'    => 'normal',
+    'type'       => 'theme_mod',
+    'capability' => 'edit_theme_options',
+    'transport'  => 'postMessage',
+  )
+);
+$wp_customize->add_control('quasarwp_layout_rdrawer_behavior', array(
+  'label' => __('Behavior'),
+  'section' => 'quasarwp_layout_rdrawer',
+  'settings' => 'layout_rdrawer_behavior',
+  'type' => 'radio',
+  'priority'   => 5,
+  'choices' => array(
+    'normal' => 'Behave Normal',
+    'mobile' => 'Behave Mobile',
+    'desktop' => 'Behave Desktop',
+  ),
+));
+
 $wp_customize->get_setting('layout_rdrawer_enabled')->transport = 'postMessage';
 $wp_customize->get_setting('layout_rdrawer_show_if_above')->transport = 'postMessage';
 $wp_customize->get_setting('layout_rdrawer_overlay')->transport = 'postMessage';
 $wp_customize->get_setting('layout_rdrawer_separator')->transport = 'postMessage';
+$wp_customize->get_setting('layout_rdrawer_behavior')->transport = 'postMessage';

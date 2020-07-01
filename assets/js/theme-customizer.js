@@ -165,6 +165,11 @@
 			qwpVueObj.qwpDataLeftDrawerSeparator = newval
 		});
 	});
+	wp.customize('layout_ldrawer_behavior', function (value) {
+		value.bind(function (newval) {
+			qwpVueObj.qwpDataLeftDrawerBehavior = newval
+		});
+	});
 	wp.customize('layout_ldrawer_overlay', function (value) {
 		value.bind(function (newval) {
 			qwpVueObj.qwpDataLeftDrawerOverlay = newval
@@ -187,6 +192,11 @@
 	wp.customize('layout_rdrawer_separator', function (value) {
 		value.bind(function (newval) {
 			qwpVueObj.qwpDataRightDrawerSeparator = newval
+		});
+	});
+	wp.customize('layout_rdrawer_behavior', function (value) {
+		value.bind(function (newval) {
+			qwpVueObj.qwpDataRightDrawerBehavior = newval
 		});
 	});
 	wp.customize('layout_rdrawer_overlay', function (value) {

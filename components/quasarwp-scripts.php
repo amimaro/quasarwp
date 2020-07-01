@@ -37,11 +37,13 @@ if ($iconSet != 'material')
         qwpDataFooterReveal: '<?php echo get_theme_mod('layout_footer_reveal'); ?>',
         qwpDataFooterSeparator: '<?php echo get_theme_mod('layout_footer_separator'); ?>',
         qwpDataLeftDrawerShowIfAbove: '<?php echo get_theme_mod('layout_ldrawer_show_if_above'); ?>',
-        qwpDataLeftDrawerSeparator: '<?php echo get_theme_mod('layout_ldrawer_separator'); ?>',
-        qwpDataRightDrawerShowIfAbove: '<?php echo get_theme_mod('layout_rdrawer_show_if_above'); ?>',
-        qwpDataRightDrawerSeparator: '<?php echo get_theme_mod('layout_rdrawer_separator'); ?>',
         qwpDataLeftDrawerOverlay: '<?php echo get_theme_mod('layout_ldrawer_overlay'); ?>',
+        qwpDataLeftDrawerSeparator: '<?php echo get_theme_mod('layout_ldrawer_separator'); ?>',
+        qwpDataLeftDrawerBehavior: '<?php echo get_theme_mod('layout_ldrawer_behavior'); ?>',
+        qwpDataRightDrawerShowIfAbove: '<?php echo get_theme_mod('layout_rdrawer_show_if_above'); ?>',
         qwpDataRightDrawerOverlay: '<?php echo get_theme_mod('layout_rdrawer_overlay'); ?>',
+        qwpDataRightDrawerSeparator: '<?php echo get_theme_mod('layout_rdrawer_separator'); ?>',
+        qwpDataRightDrawerBehavior: '<?php echo get_theme_mod('layout_rdrawer_behavior'); ?>',
       }
     },
     <?php if (isset($setting['show-loading'])) { ?>
