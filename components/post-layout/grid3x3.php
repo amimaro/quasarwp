@@ -5,26 +5,26 @@
   <q-card-section>
     <div class="text-h6">
       <?php the_title(); ?>
-      <div class="text-caption qwp-home-post-author">
+      <div class="text-caption qwp-home-author">
         <?php _e('by') ?> <?php the_author(); ?>
       </div>
     </div>
   </q-card-section>
 
-  <q-card-section class="q-pt-none qwp-home-post-excerpt">
+  <q-card-section class="q-pt-none qwp-home-excerpt">
     <?php the_excerpt(''); ?>
   </q-card-section>
 
   <br>
   <q-card-actions align="between" class="absolute-bottom">
-    <div class="text-caption qwp-home-post-commentcounter">
+    <div class="text-caption qwp-home-commentcounter">
       <?php
         $commentsText = __('Comments');
         $commentsCount =  get_comments_number(get_post()->ID);
         printf(_n('%s Comment', '%s Comments', $commentsCount), $commentsCount);
         ?>
     </div>
-    <div class="text-caption qwp-home-post-postdate">
+    <div class="text-caption qwp-home-postdate">
       <?php echo get_the_date(); ?>
     </div>
   </q-card-actions>

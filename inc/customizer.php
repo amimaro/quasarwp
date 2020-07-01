@@ -54,10 +54,10 @@ self::set_view('.q-footer .qwp-blogname', 'display', 'layout_footer_blogname', '
 self::set_view('#qwp-btn-left-menu', 'display', 'layout_ldrawer_enabled', 'inline-block');
 self::set_view('#qwp-btn-right-menu', 'display', 'layout_rdrawer_enabled', 'inline-block');
 self::set_view('.q-header .q-tabs', 'display', 'layout_tabs_enabled');
-self::set_view('.qwp-home-post-author', 'display', 'layout_home_author');
-self::set_view('.qwp-home-post-excerpt', 'display', 'layout_home_excerpt');
-self::set_view('.qwp-home-post-postdate', 'display', 'layout_home_postdate');
-self::set_view('.qwp-home-post-commentcounter', 'display', 'layout_home_commentcounter');
+self::set_view('.qwp-home-author', 'display', 'layout_home_author');
+self::set_view('.qwp-home-excerpt', 'display', 'layout_home_excerpt');
+self::set_view('.qwp-home-postdate', 'display', 'layout_home_postdate');
+self::set_view('.qwp-home-commentcounter', 'display', 'layout_home_commentcounter');
 ?>
 </style>
 <!--/Customizer CSS-->
