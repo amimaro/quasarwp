@@ -75,7 +75,7 @@ $wp_customize->add_setting(
   )
 );
 $wp_customize->add_control('quasarwp_layout_home_commentcounter', array(
-  'label' => __('Show Comment Counter'),
+  'label' => __('Show Comments Counter'),
   'section' => 'quasarwp_layout_home',
   'settings' => 'layout_home_commentcounter',
   'type' => 'checkbox',

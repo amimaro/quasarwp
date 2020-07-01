@@ -29,6 +29,7 @@ class QuasarWP_Customize
       include(get_template_directory() . '/inc/components/right-drawer.php');
       include(get_template_directory() . '/inc/components/tabs.php');
       include(get_template_directory() . '/inc/components/home.php');
+      include(get_template_directory() . '/inc/components/single.php');
    }
 
    public static function header_output()
@@ -58,6 +59,12 @@ self::set_view('.qwp-home-author', 'display', 'layout_home_author');
 self::set_view('.qwp-home-excerpt', 'display', 'layout_home_excerpt');
 self::set_view('.qwp-home-postdate', 'display', 'layout_home_postdate');
 self::set_view('.qwp-home-commentcounter', 'display', 'layout_home_commentcounter');
+self::set_view('.qwp-single-author', 'display', 'layout_single_author');
+self::set_view('.qwp-single-postdate', 'display', 'layout_single_postdate');
+self::set_view('.qwp-single-commentcounter', 'display', 'layout_single_commentcounter');
+self::set_view('.qwp-single-featured-image', 'display', 'layout_single_featured_image');
+self::set_view('.qwp-single-social', 'display', 'layout_single_social');
+self::set_view('.qwp-single-comments', 'display', 'layout_single_comments');
 ?>
 </style>
 <!--/Customizer CSS-->
