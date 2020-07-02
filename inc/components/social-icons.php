@@ -21,7 +21,7 @@ $wp_customize->add_section(
     'title'       => __('Social Icons'),
     'priority'    => 109.1,
     'capability'  => 'edit_theme_options',
-    'description' => __('Allows you to customize social icons layout settings for QuasarWP.'),
+    'description' => __('Allows you to customize social icons layout for QuasarWP.'),
   )
 );
 

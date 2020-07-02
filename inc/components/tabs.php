@@ -6,7 +6,7 @@ $wp_customize->add_section(
     'title'       => __('Tabs'),
     'priority'    => 107.1,
     'capability'  => 'edit_theme_options',
-    'description' => __('Allows you to customize tabs layout settings for QuasarWP.'),
+    'description' => __('Allows you to customize tabs layout for QuasarWP.'),
   )
 );
 

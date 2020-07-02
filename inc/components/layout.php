@@ -6,7 +6,7 @@ $wp_customize->add_section(
     'title'       => __('Layout'),
     'priority'    => 110.1,
     'capability'  => 'edit_theme_options',
-    'description' => __('Allows you to customize theme layout settings for QuasarWP.'),
+    'description' => __('Allows you to customize theme layout for QuasarWP.'),
   )
 );
 

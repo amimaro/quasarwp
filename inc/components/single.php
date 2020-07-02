@@ -6,7 +6,7 @@ $wp_customize->add_section(
     'title'       => __('Post Page'),
     'priority'    => 108.1,
     'capability'  => 'edit_theme_options',
-    'description' => __('Allows you to customize single page layout settings for QuasarWP.'),
+    'description' => __('Allows you to customize single page layout for QuasarWP.'),
   )
 );
 

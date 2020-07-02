@@ -6,7 +6,7 @@ $wp_customize->add_section(
     'title'       => __('Left Drawer'),
     'priority'    => 105.1,
     'capability'  => 'edit_theme_options',
-    'description' => __('Allows you to customize the left drawer layout settings for QuasarWP.'),
+    'description' => __('Allows you to customize left drawer layout for QuasarWP.'),
   )
 );
 
