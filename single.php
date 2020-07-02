@@ -6,7 +6,7 @@ include(get_template_directory() . '/components/header-functions.php');
 ?>
 
 <body <?php body_class(); ?>>
-  <div id="q-app" <?php if (isset($setting['show-loading'])) { ?>style="visibility: hidden;" <?php } ?>>
+  <div id="q-app">
     <q-layout view="<?php echo $setting['layout']; ?>">
 
       <?php include(get_template_directory() . '/components/quasarwp-layout.php'); ?>

@@ -45,22 +45,26 @@ if ($iconSet != 'material')
         qwpDataRightDrawerSeparator: '<?php echo get_theme_mod('layout_rdrawer_separator'); ?>',
         qwpDataRightDrawerBehavior: '<?php echo get_theme_mod('layout_rdrawer_behavior'); ?>',
         qwpDataTabsAlign: '<?php echo get_theme_mod('layout_tabs_align'); ?>',
-        qwpDataHomePostLayout: '<?php echo get_theme_mod('layout_home_postlayout'); ?>'
+        qwpDataHomePostLayout: '<?php echo get_theme_mod('layout_home_postlayout'); ?>',
+        qwpDataLoadingEnabled: '<?php echo get_theme_mod('settings_loading_enabled'); ?>',
+        qwpDataLayoutView: '<?php echo get_theme_mod('settings_layout_view'); ?>',
       }
     },
-    <?php if (isset($setting['show-loading'])) { ?>
-      created() {
+    created() {
+      if (this.qwpDataLoadingEnabled) {
         this.$q.loading.show()
-      },
-      mounted() {
+      }
+    },
+    mounted() {
+      if (this.qwpDataLoadingEnabled) {
         this.$nextTick(function() {
           setTimeout(() => {
             this.$q.loading.hide()
             document.getElementById('q-app').style.visibility = 'visible'
           }, 500)
         })
-      },
-    <?php } ?>
+      }
+    },
     computed: {
       qwpComputedHeaderReveal: function() {
         return this.qwpDataHeaderReveal ? true : false;

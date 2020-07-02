@@ -305,5 +305,16 @@
 		});
 	}
 
+	wp.customize('settings_loading_enabled', function (value) {
+		value.bind(function (newval) {
+			qwpVueObj.qwpDataLoadingEnabled = newval
+		});
+	});
+	wp.customize('settings_layout_view', function (value) {
+		value.bind(function (newval) {
+			qwpVueObj.qwpDataLayoutView = newval
+		});
+	});
+
 
 })(jQuery);
