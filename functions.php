@@ -54,6 +54,7 @@ function quasarwp_settings_page()
   $options = get_option('quasarwp-settings');
 ?>
   <h1>QuasarWP Settings</h1>
+  <p><a href="<?php echo get_site_url() . '/wp-admin/customize.php'; ?>">Click here</a> to customize your theme.</p>
   <form method="post" action="options.php">
     <?php settings_fields('quasarwp-settings'); ?>
     <?php do_settings_sections('quasarwp-settings'); ?>
