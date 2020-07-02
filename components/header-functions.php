@@ -71,26 +71,3 @@ if (has_nav_menu('right-menu')) {
     'walker' => new Custom_Side_Walker_Nav_Menu
   ));
 }
-
-function set_qdrawer_behavior($behavior)
-{
-  if ($behavior == 'mobile') : return 'behavior="mobile"';
-  elseif ($behavior == 'desktop') : return 'behavior="mobile"';
-  else : return '';
-  endif;
-}
-
-function set_qdrawer_overlay($overlay)
-{
-  return $overlay ? 'overlay' : '';
-}
-
-function set_qdrawer_show($show)
-{
-  return $show ? 'show-if-above' : '';
-}
-
-function get_reveal_option($show)
-{
-  return $show ? 'reveal' : '';
-}
