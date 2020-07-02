@@ -22,7 +22,7 @@ class QuasarWP_Customize
    public static function register($wp_customize)
    {
       $wp_customize->add_panel('quasarwp', array(
-         'priority'       => 103.1,
+         'priority'       => 104.1,
          'capability'     => 'edit_theme_options',
          'theme_supports' => '',
          'title'          => __('QuasarWP')
