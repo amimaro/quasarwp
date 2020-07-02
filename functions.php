@@ -59,9 +59,6 @@ function quasarwp_settings_page()
     <?php do_settings_sections('quasarwp-settings'); ?>
     <table class="form-table">
       <tr>
-        <?php include('components/functions/general.php'); ?>
-      </tr>
-      <tr>
         <?php include('components/functions/modules.php'); ?>
       </tr>
       <tr>
