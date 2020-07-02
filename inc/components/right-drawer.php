@@ -7,6 +7,7 @@ $wp_customize->add_section(
     'priority'    => 106.1,
     'capability'  => 'edit_theme_options',
     'description' => __('Allows you to customize right drawer layout for QuasarWP.'),
+    'panel'  => 'quasarwp',
   )
 );
 

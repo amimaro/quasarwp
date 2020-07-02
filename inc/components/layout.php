@@ -4,9 +4,10 @@ $wp_customize->add_section(
   'quasarwp_layout_settings',
   array(
     'title'       => __('Layout'),
-    'priority'    => 110.1,
+    'priority'    => 102.1,
     'capability'  => 'edit_theme_options',
     'description' => __('Allows you to customize theme layout for QuasarWP.'),
+    'panel'  => 'quasarwp',
   )
 );
 

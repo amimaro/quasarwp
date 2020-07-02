@@ -6,7 +6,7 @@ $wp_customize->add_section(
     'title'       => __('Colors'),
     'priority'    => 102.3,
     'capability'  => 'edit_theme_options',
-    'description' => __('Allows you to customize colors for QuasarWP.'),
+    'description' => __('Allows you to customize theme colors for QuasarWP.'),
   )
 );
 
