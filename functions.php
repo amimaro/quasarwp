@@ -5,6 +5,7 @@ add_action('admin_menu', 'quasarwp_menu');
 include('data/load.php');
 include('data/helpers.php');
 include('components/custom-navs.php');
+include('components/functions/setup.php');
 
 add_filter('rest_allow_anonymous_comments', '__return_true');
 
@@ -104,7 +105,7 @@ function add_menus()
       }
     }
   }
-  if(count($menu_ids) > 0) {
+  if (count($menu_ids) > 0) {
     set_theme_mod('nav_menu_locations', $menu_ids);
   }
 }
