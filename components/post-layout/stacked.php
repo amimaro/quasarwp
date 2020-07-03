@@ -6,35 +6,27 @@
     <q-card-section style="width: 100%;">
       <div class="text-h6">
         <?php the_title(); ?>
-        <?php if (isset($setting['frontpage-show-post-author'])) { ?>
-          <div class="text-caption">
-            <?php _e('by') ?> <?php the_author(); ?>
-          </div>
-        <?php } ?>
+        <div class="text-caption qwp-home-author">
+          <?php _e('by') ?> <?php the_author(); ?>
+        </div>
       </div>
       <br>
-      <?php if (isset($setting['frontpage-show-post-excerpt'])) { ?>
+      <span class="qwp-home-excerpt">
         <?php the_excerpt(''); ?>
-      <?php } ?>
-      <?php if (isset($setting['frontpage-show-post-comments-counter']) || isset($setting['frontpage-show-post-date'])) { ?>
-        <br>
-        <q-card-actions align="between" class="absolute-bottom">
-          <div class="text-caption">
-            <?php if (isset($setting['frontpage-show-post-comments-counter'])) { ?>
-              <?php
-              $commentsText = __('Comments');
-              $commentsCount =  get_comments_number(get_post()->ID);
-              printf(_n('%s Comment', '%s Comments', $commentsCount), $commentsCount);
-              ?>
-            <?php } ?>
-          </div>
-          <div class="text-caption">
-            <?php if (isset($setting['frontpage-show-post-date'])) { ?>
-              <?php echo get_the_date(); ?>
-            <?php } ?>
-          </div>
-        </q-card-actions>
-      <?php } ?>
+      </span>
+      <br>
+      <q-card-actions align="between" class="absolute-bottom">
+        <div class="text-caption qwp-home-commentcounter">
+          <?php
+          $commentsText = __('Comments');
+          $commentsCount =  get_comments_number(get_post()->ID);
+          printf(_n('%s Comment', '%s Comments', $commentsCount), $commentsCount);
+          ?>
+        </div>
+        <div class="text-caption qwp-home-postdate">
+          <?php echo get_the_date(); ?>
+        </div>
+      </q-card-actions>
     </q-card-section>
   </q-card-section>
 </q-card>
@@ -45,37 +37,27 @@
   <q-card-section>
     <div class="text-h6">
       <?php the_title(); ?>
-      <?php if (isset($setting['frontpage-show-post-author'])) { ?>
-        <div class="text-caption">
-          <?php _e('by') ?> <?php the_author(); ?>
-        </div>
-      <?php } ?>
+      <div class="text-caption qwp-home-author">
+        <?php _e('by') ?> <?php the_author(); ?>
+      </div>
     </div>
   </q-card-section>
 
-  <?php if (isset($setting['frontpage-show-post-excerpt'])) { ?>
-    <q-card-section class="q-pt-none">
-      <?php the_excerpt(''); ?>
-    </q-card-section>
-  <?php } ?>
+  <q-card-section class="q-pt-none qwp-home-excerpt">
+    <?php the_excerpt(''); ?>
+  </q-card-section>
 
-  <?php if (isset($setting['frontpage-show-post-comments-counter']) || isset($setting['frontpage-show-post-date'])) { ?>
-    <br>
-    <q-card-actions align="between" class="absolute-bottom">
-      <div class="text-caption">
-        <?php if (isset($setting['frontpage-show-post-comments-counter'])) { ?>
-          <?php
-          $commentsText = __('Comments');
-          $commentsCount =  get_comments_number(get_post()->ID);
-          printf(_n('%s Comment', '%s Comments', $commentsCount), $commentsCount);
-          ?>
-        <?php } ?>
-      </div>
-      <div class="text-caption">
-        <?php if (isset($setting['frontpage-show-post-date'])) { ?>
-          <?php echo get_the_date(); ?>
-        <?php } ?>
-      </div>
-    </q-card-actions>
-  <?php } ?>
+  <br>
+  <q-card-actions align="between" class="absolute-bottom">
+    <div class="text-caption qwp-home-commentcounter">
+      <?php
+      $commentsText = __('Comments');
+      $commentsCount =  get_comments_number(get_post()->ID);
+      printf(_n('%s Comment', '%s Comments', $commentsCount), $commentsCount);
+      ?>
+    </div>
+    <div class="text-caption qwp-home-postdate">
+      <?php echo get_the_date(); ?>
+    </div>
+  </q-card-actions>
 </q-card>
