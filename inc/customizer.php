@@ -46,9 +46,7 @@ class QuasarWP_Customize
 ?>
 <!--Customizer CSS-->
 <style type="text/css">
-<?php self::generate_css('#site-title a', 'color', 'header_textcolor', '#');
-self::generate_css('body', 'background-color', 'background_color', '#');
-self::generate_css('a', 'color', 'theme_primary');
+<?php 
 self::generate_css('.q-header', 'background-color', 'layout_header_backgroundcolor', '', ' !important');
 self::generate_css('.q-footer', 'background-color', 'layout_footer_backgroundcolor', '', ' !important');
 self::generate_css('.q-header .q-tabs', 'background-color', 'layout_tabs_backgroundcolor', '', ' !important');
