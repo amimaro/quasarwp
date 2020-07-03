@@ -40,10 +40,19 @@ function create_topics_nonhierarchical_taxonomy()
   ));
 
   wp_insert_term(
+    'QWPSpace',
+    'qwp_components',
+    array(
+      'description' => 'Menu Space.',
+      'slug' => 'qwp-Space',
+    )
+  );
+
+  wp_insert_term(
     'QWPSeparator',
     'qwp_components',
     array(
-      'description' => 'Menu separator.',
+      'description' => 'Menu Separator.',
       'slug' => 'qwp-separator',
     )
   );
@@ -52,8 +61,26 @@ function create_topics_nonhierarchical_taxonomy()
     'QWPLabel',
     'qwp_components',
     array(
-      'description' => 'Menu label.',
+      'description' => 'Menu Label.',
       'slug' => 'qwp-label',
+    )
+  );
+
+  wp_insert_term(
+    'QWPSearch',
+    'qwp_components',
+    array(
+      'description' => 'Menu Search Input.',
+      'slug' => 'qwp-search',
+    )
+  );
+
+  wp_insert_term(
+    'QWPLogo',
+    'qwp_components',
+    array(
+      'description' => 'Site logo or icon.',
+      'slug' => 'qwp-logo',
     )
   );
 

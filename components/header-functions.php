@@ -20,7 +20,7 @@ if (has_nav_menu('header-menu')) {
     'items_wrap'      => '%3$s',
     'depth'           => 0,
     'container'       => '',
-    'walker' => new Custom_Tab_Walker_Nav_Menu
+    'walker' => new Custom_Nav_Menu('header')
   ));
 }
 
@@ -32,7 +32,7 @@ if (has_nav_menu('footer-menu')) {
     'items_wrap'      => '%3$s',
     'depth'           => 0,
     'container'       => '',
-    'walker' => new Custom_Tab_Walker_Nav_Menu
+    'walker' => new Custom_Nav_Menu('footer')
   ));
 }
 
@@ -44,7 +44,7 @@ if (has_nav_menu('tab-menu')) {
     'items_wrap'      => '%3$s',
     'depth'           => 0,
     'container'       => '',
-    'walker' => new Custom_Tab_Walker_Nav_Menu
+    'walker' => new Custom_Nav_Menu('tab')
   ));
 }
 
@@ -56,7 +56,7 @@ if (has_nav_menu('left-menu')) {
     'items_wrap'      => '%3$s',
     'depth'           => 0,
     'container'       => '',
-    'walker' => new Custom_Side_Walker_Nav_Menu
+    'walker' => new Custom_Nav_Menu('left')
   ));
 }
 
@@ -68,6 +68,6 @@ if (has_nav_menu('right-menu')) {
     'items_wrap'      => '%3$s',
     'depth'           => 0,
     'container'       => '',
-    'walker' => new Custom_Side_Walker_Nav_Menu
+    'walker' => new Custom_Nav_Menu('right')
   ));
 }
