@@ -83,5 +83,42 @@ function create_topics_nonhierarchical_taxonomy()
       'slug' => 'qwp-logo',
     )
   );
+}
 
+// Setup Inicial Menus
+add_action('after_switch_theme', 'add_menus');
+function add_menus()
+{
+  $menu_names   = array(
+    'header-menu' => 'Header Menu',
+    'footer-menu' => 'Footer Menu'
+  );
+  $menu_ids = array();
+  foreach ($menu_names as $key => $menu_name) {
+    $menu_exists = wp_get_nav_menu_object($menu_name);
+    if (!$menu_exists) {
+      $menu_id = wp_create_nav_menu($menu_name);
+      if ($menu_id > 0) {
+        $menu_ids[$key] = $menu_id;
+        $page_args = array(
+          'menu-item-title'   =>  __('QWPLogo'),
+          'menu-item-status'  => 'publish'
+        );
+        wp_update_nav_menu_item($menu_id, 0, $page_args);
+        if ($key == 'header-menu') {
+          wp_update_nav_menu_item($menu_id, 0, array(
+            'menu-item-title'   =>  __('QWPSpace'),
+            'menu-item-status'  => 'publish'
+          ));
+          wp_update_nav_menu_item($menu_id, 0, array(
+            'menu-item-title'   =>  __('QWPSearch'),
+            'menu-item-status'  => 'publish'
+          ));
+        }
+      }
+    }
+  }
+  if (count($menu_ids) > 0) {
+    set_theme_mod('nav_menu_locations', $menu_ids);
+  }
 }
