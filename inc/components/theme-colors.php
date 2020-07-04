@@ -10,6 +10,27 @@ $wp_customize->add_section(
   )
 );
 
+// Theme background color
+$wp_customize->add_setting(
+  'theme_background',
+  array(
+    'default'    => '#FFFFFF',
+    'type'       => 'theme_mod',
+    'capability' => 'edit_theme_options',
+    'transport'  => 'postMessage',
+  )
+);
+$wp_customize->add_control(new WP_Customize_Color_Control(
+  $wp_customize,
+  'quasarwp_theme_background',
+  array(
+    'label'      => 'Background',
+    'settings'   => 'theme_background',
+    'priority'   => 0,
+    'section'    => 'quasarwp_theme_colors',
+  )
+));
+
 // Theme primary color
 $wp_customize->add_setting(
   'theme_primary',
@@ -178,6 +199,7 @@ $wp_customize->add_control(new WP_Customize_Color_Control(
   )
 ));
 
+$wp_customize->get_setting('theme_background')->transport = 'postMessage';
 $wp_customize->get_setting('theme_primary')->transport = 'postMessage';
 $wp_customize->get_setting('theme_secondary')->transport = 'postMessage';
 $wp_customize->get_setting('theme_accent')->transport = 'postMessage';

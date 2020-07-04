@@ -42,6 +42,11 @@
 	});
 
 	// Theme Colors
+	wp.customize('theme_background', function (value) {
+		value.bind(function (newval) {
+			$('#q-app').css('background-color', newval, 'important');
+		});
+	});
 	wp.customize('theme_primary', function (value) {
 		value.bind(function (newval) {
 			document.documentElement.style.setProperty('--q-color-primary', newval, 'important');
