@@ -13,7 +13,7 @@ if (!get_option('quasarwp-settings')) {
   ));
 }
 
-include('data/helpers.php');
+include('assets/helpers.php');
 include('components/custom-navs.php');
 include('components/functions/setup.php');
 
