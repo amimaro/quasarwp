@@ -114,7 +114,7 @@ $wp_customize->add_control('quasarwp_layout_ldrawer_separator', array(
 $wp_customize->add_setting(
   'layout_ldrawer_behavior',
   array(
-    'default'    => 'normal',
+    'default'    => 'default',
     'type'       => 'theme_mod',
     'capability' => 'edit_theme_options',
     'transport'  => 'postMessage',
@@ -127,7 +127,7 @@ $wp_customize->add_control('quasarwp_layout_ldrawer_behavior', array(
   'type' => 'radio',
   'priority'   => 6,
   'choices' => array(
-    'normal' => 'Behave Normal',
+    'default' => 'Behave Normal',
     'mobile' => 'Behave Mobile',
     'desktop' => 'Behave Desktop',
   ),

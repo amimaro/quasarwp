@@ -16,7 +16,9 @@ function set_default_theme_mod()
   set_theme_mod('layout_ldrawer_enabled', true);
   set_theme_mod('layout_ldrawer_show_if_above', true);
   set_theme_mod('layout_ldrawer_separator', 'elevated');
-  set_theme_mod('layout_ldrawer_behavior', 'normal');
+  set_theme_mod('layout_ldrawer_behavior', 'default');
+  set_theme_mod('layout_rdrawer_separator', 'elevated');
+  set_theme_mod('layout_rdrawer_behavior', 'default');
 
   set_theme_mod('settings_loading_enabled', true);
   set_theme_mod('settings_layout_view', 'hHh Lpr lFf');
