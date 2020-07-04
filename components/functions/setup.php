@@ -46,6 +46,7 @@ function set_default_theme_mod()
   
   set_theme_mod('layout_tabs_align', 'left');
 
+  set_theme_mod('theme_background', '#FF0000');
   set_theme_mod('theme_primary', '#027BE3');
   set_theme_mod('theme_secondary', '#26A69A');
   set_theme_mod('theme_accent', '#9C27B0');
