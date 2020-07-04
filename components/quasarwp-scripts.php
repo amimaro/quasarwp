@@ -86,6 +86,10 @@ if ($iconSet != 'material')
       },
     },
     methods: {
+      qwpReplyComment(commentId) {
+        console.log(`<?php echo the_permalink(); ?>?replytocom=${commentId}#respond`)
+        document.location.href = `<?php echo the_permalink(); ?>?replytocom=${commentId}#respond`
+      },
       qwpSelectSeparator(separator, layout) {
         if (layout === 'header')
           return separator === this.qwpDataHeaderSeparator
