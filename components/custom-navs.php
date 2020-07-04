@@ -129,7 +129,8 @@ class Custom_Nav_Menu extends Walker_Nav_Menu
     $return .= '';
     $return .= '<q-toolbar-title shrink class="cursor-pointer" @click="quasarwpRouteTo(\'/\')">';
     if (get_theme_mod('quasarwp_theme_logo')) {
-      $return .= '  <img src="' . get_theme_mod('quasarwp_theme_logo') . '"';
+      $return .= '  <img id="qwp-site-logo" src="' . get_theme_mod('quasarwp_theme_logo') . '"';
+      $return .= '    class="' . esc_attr(get_theme_mod('quasarwp_theme_logo_class')) . '"';
       $return .= '    alt="' . esc_attr(get_bloginfo('name', 'display')) . '">';
     } else {
       if (has_site_icon()) {

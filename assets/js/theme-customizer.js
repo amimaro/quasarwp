@@ -316,5 +316,11 @@
 		});
 	});
 
+	wp.customize(`theme_logo_class`, function (value) {
+		value.bind(function (newval) {
+			$('#qwp-site-logo').attr('class', newval)
+		});
+	});
+
 
 })(jQuery);

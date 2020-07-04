@@ -54,4 +54,6 @@ function set_default_theme_mod()
   set_theme_mod('theme_negative', '#C10015');
   set_theme_mod('theme_info', '#31CCEC');
   set_theme_mod('theme_warning', '#F2C037');
+
+  set_theme_mod('theme_logo_class', 'q-my-sm');
 }
