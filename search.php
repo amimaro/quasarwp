@@ -41,8 +41,12 @@ include(get_template_directory() . '/components/header-functions.php');
               <?php wp_reset_postdata(); ?>
 
             <?php else : ?>
-              <p><?php _e('No results.'); ?></p>
-              <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+              <q-card>
+                <q-card-section>
+                  <p><?php _e('No results.'); ?></p>
+                  <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+                </q-card-section>
+              </q-card>
             <?php endif; ?>
           </div>
         </q-page>
