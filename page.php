@@ -11,7 +11,7 @@ include(get_template_directory() . '/components/header-functions.php');
 
       <?php include(get_template_directory() . '/components/quasarwp-layout.php'); ?>
 
-      <q-page-container>
+      <q-page-container class="qwp-page">
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             <?php the_content(); ?>
         <?php endwhile;

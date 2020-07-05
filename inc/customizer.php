@@ -67,12 +67,12 @@ self::set_view('.qwp-home-author', 'display', 'layout_home_author');
 self::set_view('.qwp-home-excerpt', 'display', 'layout_home_excerpt');
 self::set_view('.qwp-home-postdate', 'display', 'layout_home_postdate');
 self::set_view('.qwp-home-commentcounter', 'display', 'layout_home_commentcounter');
-self::set_view('.qwp-single-author', 'display', 'layout_single_author');
-self::set_view('.qwp-single-postdate', 'display', 'layout_single_postdate');
-self::set_view('.qwp-single-commentcounter', 'display', 'layout_single_commentcounter');
-self::set_view('.qwp-single-featured-image', 'display', 'layout_single_featured_image');
-self::set_view('.qwp-single-social', 'display', 'layout_single_social');
-self::set_view('.qwp-single-comments', 'display', 'layout_single_comments');
+self::set_view('.qwp-post-author', 'display', 'layout_single_author');
+self::set_view('.qwp-post-postdate', 'display', 'layout_single_postdate');
+self::set_view('.qwp-post-commentcounter', 'display', 'layout_single_commentcounter');
+self::set_view('.qwp-post-featured-image', 'display', 'layout_single_featured_image');
+self::set_view('.qwp-post-social', 'display', 'layout_single_social');
+self::set_view('.qwp-post-comments', 'display', 'layout_single_comments');
 
 self::set_view('#social-icon-whatsapp', 'display', 'social_whatsapp_enabled', 'inline-block');
 self::set_view('#social-icon-telegram', 'display', 'social_telegram_enabled', 'inline-block');

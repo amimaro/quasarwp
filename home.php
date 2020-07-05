@@ -12,8 +12,8 @@ include(get_template_directory() . '/components/header-functions.php');
             <?php include(get_template_directory() . '/components/quasarwp-layout.php'); ?>
 
             <q-page-container>
-                <q-page>
-                    <div class="grid-3x3-container" v-if="qwpDataHomePostLayout === 'grid3x3'">
+                <q-page class="qwp-home">
+                    <div class="qwp-grid-3x3-container" v-if="qwpDataHomePostLayout === 'grid3x3'">
                         <?php
                         if (have_posts()) : while (have_posts()) : the_post();
                         ?>
@@ -24,7 +24,7 @@ include(get_template_directory() . '/components/header-functions.php');
                         ?>
                     </div>
 
-                    <div class="stacked-container" v-else>
+                    <div class="qwp-stacked-container" v-else>
                         <?php
                         if (have_posts()) : while (have_posts()) : the_post();
                         ?>

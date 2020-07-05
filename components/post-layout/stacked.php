@@ -1,7 +1,7 @@
-<q-card v-if="isDesktop" class="hover-scale stacked-item cursor-pointer" @click="quasarwpRouteTo('<?php the_permalink(); ?>')">
+<q-card v-if="isDesktop" class="hover-scale qwp-home-post-card qwp-stacked-item cursor-pointer" @click="quasarwpRouteTo('<?php the_permalink(); ?>')">
   <q-card-section horizontal>
     <?php if (has_post_thumbnail()) : ?>
-      <q-img src="<?php the_post_thumbnail_url('smallest'); ?>" :ratio="4/3" alt="" class="stacked-post-featured-img"></q-img>
+      <q-img src="<?php the_post_thumbnail_url('smallest'); ?>" :ratio="4/3" alt="" class="qwp-home-featured-img qwp-stacked-qwp-post-featured-img "></q-img>
     <?php endif ?>
     <q-card-section style="width: 100%;">
       <div class="text-h6">
@@ -30,9 +30,9 @@
     </q-card-section>
   </q-card-section>
 </q-card>
-<q-card v-else class="hover-scale stacked-item cursor-pointer" @click="quasarwpRouteTo('<?php the_permalink(); ?>')">
+<q-card v-else class="hover-scale qwp-home-post-card qwp-stacked-item cursor-pointer" @click="quasarwpRouteTo('<?php the_permalink(); ?>')">
   <?php if (has_post_thumbnail()) : ?>
-    <q-img src="<?php the_post_thumbnail_url('smallest'); ?>" :ratio="4/3" alt=""></q-img>
+    <q-img src="<?php the_post_thumbnail_url('smallest'); ?>" :ratio="4/3" alt="" class="qwp-home-featured-img"></q-img>
   <?php endif ?>
   <q-card-section>
     <div class="text-h6">

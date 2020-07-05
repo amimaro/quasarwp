@@ -17,7 +17,7 @@ include(get_template_directory() . '/components/header-functions.php');
       Search results for &#8220;%s&#8221; -->
 
       <q-page-container>
-        <q-page padding>
+        <q-page padding class="qwp-search">
           <div class="q-px-xl">
             <?php
             global $query_string;

@@ -12,7 +12,7 @@ include(get_template_directory() . '/components/header-functions.php');
       <?php include(get_template_directory() . '/components/quasarwp-layout.php'); ?>
 
       <q-page-container>
-        <q-page padding>
+        <q-page padding class="qwp-404">
           <q-card>
             <q-card-section class="q-pa-lg q-gutter-md">
               <p class="text-h3 text-weight-light"><?php _e('Page not found'); ?> :(</p>

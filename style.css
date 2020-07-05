@@ -1,50 +1,50 @@
 @media (max-width: 800px) {
-  .grid-3x3-container {
+  .qwp-grid-3x3-container {
     display: flex;
     flex-direction: column;
     padding: 2% 5% 0 5% !important;
   }
 
-  .stacked-container {
+  .qwp-stacked-container {
     padding: 2% 5% 0 5% !important;
   }
 
-  .grid-3x3-item {
+  .qwp-grid-3x3-item {
     margin-bottom: 5% !important;
   }
 
-  .stacked-item {
+  .qwp-stacked-item {
     margin-bottom: 5% !important;
   }
 }
 
-.stacked-container {
+.qwp-stacked-container {
   display: flex;
   flex-direction: column;
   padding: 2% 2% 0 2%;
 }
 
-.stacked-item {
+.qwp-stacked-item {
   margin-bottom: 2%;
 }
 
-.stacked-post-featured-img {
+.qwp-stacked-qwp-post-featured-img  {
   width: 70vh !important;
 }
 
-.grid-3x3-container {
+.qwp-grid-3x3-container {
   display: flex;
   flex-wrap: wrap;
   padding: 2% 2% 0 2%;
 }
 
-.grid-3x3-item {
+.qwp-grid-3x3-item {
   flex: 0 30%;
   margin-right: 2%;
   margin-bottom: 2%;
 }
 
-.post-featured-img {
+.qwp-post-featured-img  {
   max-width: 900px;
   max-height: 300px;
 }
@@ -59,14 +59,6 @@
 
 .list-unbullet {
   list-style-type: none;
-}
-
-.text-quasarwp-github {
-  color: #000000;
-}
-
-.bg-quasarwp-github {
-  background: #000000;
 }
 
 .text-quasarwp-facebook {
@@ -141,24 +133,46 @@
   background: #0088cc;
 }
 
-.text-quasarwp-snapchat {
-  color: #fffc00;
-}
-
-.bg-quasarwp-snapchat {
-  background: #fffc00;
-}
-
-.text-quasarwp-tumblr {
-  color: #35465d;
-}
-
-.bg-quasarwp-tumblr {
-  background: #35465d;
-}
-
-.qwp-input-search {}
-
 ul.children {
   padding: 0 0 0 20px;
 }
+
+#qwp-btn-left-menu{}
+#qwp-btn-right-menu{}
+.q-header {}
+.q-header .q-tabs {}
+.q-footer {}
+.q-drawer--left {}
+.q-drawer--right {}
+.qwp-home {}
+.qwp-logo {}
+.qwp-grid-3x3-container {}
+.qwp-grid-3x3-item {}
+.qwp-stacked-container {}
+.qwp-stacked-item {}
+.qwp-home-post-card {}
+.qwp-form-search {}
+.qwp-input-search {}
+.qwp-custom-component {}
+.qwp-simple-btn {}
+.qwp-label {}
+.qwp-separator {}
+.qwp-space {}
+.qwp-page {}
+.qwp-home-author
+.qwp-home-commentcounter
+.qwp-home-excerpt
+.qwp-home-postdate
+.qwp-stacked-qwp-post-featured-img 
+.qwp-home-featured-img
+.qwp-search
+.qwp-404
+.qwp-post {}
+.qwp-post-title {}
+.qwp-post-commentcounter {}
+.qwp-post-featured-img {}
+.qwp-post-postdate {}
+.qwp-post-social {}
+.qwp-post-content {}
+.qwp-post-comments {}
+
