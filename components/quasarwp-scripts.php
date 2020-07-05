@@ -26,6 +26,9 @@ if ($iconSet != 'material')
       return {
         isMobile: this.$q.platform.is.mobile,
         isDesktop: this.$q.platform.is.desktop,
+        qwpDataCommentFormDialog: false,
+        qwpDataReplyCommentId: null,
+        qwpDataReplyCommentAuthor: '',
         qwpLeft: false,
         qwpRight: false,
         qwpAuthor: '',
@@ -86,10 +89,6 @@ if ($iconSet != 'material')
       },
     },
     methods: {
-      qwpReplyComment(commentId) {
-        console.log(`<?php echo the_permalink(); ?>?replytocom=${commentId}#respond`)
-        document.location.href = `<?php echo the_permalink(); ?>?replytocom=${commentId}#respond`
-      },
       qwpSelectSeparator(separator, layout) {
         if (layout === 'header')
           return separator === this.qwpDataHeaderSeparator
@@ -104,7 +103,28 @@ if ($iconSet != 'material')
       quasarwpRouteTo(permalink) {
         document.location.href = permalink
       },
-      quasarwpOnReset() {
+      qwpHideCommentDialog() {
+        this.qwpDataReplyCommentId = null
+        this.qwpDataReplyCommentAuthor = ''
+        this.qwpDataCommentFormDialog = false
+      },
+      qwpReplyComment(commentId, author) {
+        this.qwpDataReplyCommentId = commentId
+        this.qwpDataReplyCommentAuthor = author
+        this.qwpShowCommentDialog()
+      },
+      qwpShowCommentDialog() {
+        this.qwpCommentFormOnReset()
+        this.qwpDataCommentFormDialog = true
+        setTimeout(() => {
+          <?php if (is_user_logged_in()) { ?>
+            this.$refs['qwpCommentContent'].$el.focus()
+          <?php } else { ?>
+            this.$refs['qwpCommentAuthorName'].$el.focus()
+          <?php } ?>
+        }, 100)
+      },
+      qwpCommentFormOnReset() {
         this.qwpAuthor = null
         this.qwpEmail = null
         this.qwpComment = null
@@ -112,14 +132,15 @@ if ($iconSet != 'material')
           this.$refs.qwpCommentForm.resetValidation()
         }, 100)
       },
-      quasarwpOnSubmitComment(evt) {
+      qwpCommentFormOnSubmit(evt) {
         evt.preventDefault();
 
         let data = {
           post: evt.target.comment_post_ID.value,
           content: evt.target.comment.value,
+          parent: this.qwpDataReplyCommentId,
         };
-
+        console.log(data, 1)
         <?php if (is_user_logged_in()) {
           $successMessage = __('Done');
         ?>
@@ -133,7 +154,7 @@ if ($iconSet != 'material')
         <?php } ?>
 
         data = JSON.stringify(data)
-
+        console.log(data)
         fetch('<?php echo get_site_url(); ?>/wp-json/wp/v2/comments', {
             method: 'post',
             headers: {
@@ -149,7 +170,7 @@ if ($iconSet != 'material')
                 icon: 'cloud_done',
                 message: '<?php echo $successMessage; ?>'
               })
-              this.quasarwpOnReset()
+              this.qwpHideCommentDialog()
               setTimeout(() => {
                 location.reload();
               }, 1000)

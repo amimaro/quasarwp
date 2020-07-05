@@ -14,7 +14,7 @@ include(get_template_directory() . '/components/header-functions.php');
       <q-page-container>
         <q-page padding>
 
-          <div class="q-px-xl">
+          <div class="q-px-sm">
 
             <p class="text-h3 q-pt-md"><?php the_title() ?></p>
 
