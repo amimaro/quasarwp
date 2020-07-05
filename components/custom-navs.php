@@ -30,7 +30,7 @@ class Custom_Nav_Menu extends Walker_Nav_Menu
       } else if ($item->title == 'QWPLogo' || strpos($url, 'qwp-logo')) {
         $output .= $this->qwpLogo();
       } else {
-        $output .= $this->qwpSimpleSideBtn(array(
+        $output .= $this->qwpSimpleBtn(array(
           'url'   => $url,
           'title' => $title
         ));
@@ -42,7 +42,7 @@ class Custom_Nav_Menu extends Walker_Nav_Menu
       $caption = !empty($json->caption) ? $json->caption : false;
       $target = (!empty($json->target) && $json->target == 'blank') ? 'target="_blank"' : '';
 
-      $output .= $this->qwpClickable(array(
+      $output .= $this->qwpCustom(array(
         'title'   =>  $title,
         'url'     =>  $url,
         'icon'    =>  $icon,
@@ -54,7 +54,7 @@ class Custom_Nav_Menu extends Walker_Nav_Menu
   function qwpSpace()
   {
     $return = '';
-    $return .= '<q-space></q-space>';
+    $return .= '<q-space class="qwp-space"></q-space>';
     return $return;
   }
 
@@ -62,23 +62,23 @@ class Custom_Nav_Menu extends Walker_Nav_Menu
   {
     $return = '';
     if (in_array($this->menuLocation, $this->horizontalMenus))
-      $return .= '<q-separator vertical inset></q-separator>';
+      $return .= '<q-separator vertical inset class="qwp-separator"></q-separator>';
     else
-      $return .= '<q-separator class="q-my-md"></q-separator>';
+      $return .= '<q-separator class="q-my-md qwp-separator"></q-separator>';
     return $return;
   }
 
   function qwpLabel($title)
   {
     $return = '';
-    $return .= '<q-item-label header>' . $title . '</q-item-label>';
+    $return .= '<q-item-label header class="qwp-label">' . $title . '</q-item-label>';
     return $return;
   }
 
-  function qwpSimpleSideBtn($args)
+  function qwpSimpleBtn($args)
   {
     $return = '';
-    $return .= '<a href="' . $args['url'] . '" class="q-tab relative-position self-stretch flex q-tab--inactive q-focusable q-hoverable cursor-pointer">';
+    $return .= '<a href="' . $args['url'] . '" class="q-tab qwp-simple-btn relative-position self-stretch flex q-tab--inactive q-focusable q-hoverable cursor-pointer">';
     $return .= '  <div class="q-focus-helper"></div>';
     $return .= '  <div class="q-tab__content self-stretch flex-center relative-position q-anchor--skip non-selectable column">';
     $return .= '    <div class="q-tab__label">' . $args['title'] . '</div>';
@@ -87,10 +87,10 @@ class Custom_Nav_Menu extends Walker_Nav_Menu
     return $return;
   }
 
-  function qwpClickable($args)
+  function qwpCustom($args)
   {
     $return = '';
-    $return .= '<q-item clickable tag="a" ' . $args['target'] . ' rel="noopener" href="' . $args['url'] . '">';
+    $return .= '<q-item class="qwp-custom-component" clickable tag="a" ' . $args['target'] . ' rel="noopener" href="' . $args['url'] . '">';
     if ($args['icon']) {
       $return .= '  <q-item-section avatar>';
       $return .= '    <q-icon name="' . $args['icon'] . '"></q-icon>';
@@ -111,7 +111,7 @@ class Custom_Nav_Menu extends Walker_Nav_Menu
   function qwpSearch()
   {
     $return = '';
-    $return .= '<form role="search" method="get" id="qwp-form-search" action="' . get_site_url() . '"';
+    $return .= '<form role="search" method="get" action="' . get_site_url() . '"';
     $return .= '  class="qwp-form-search">';
     $return .= '  <q-input name="s" id="s" class="qwp-input-search" dense standout="bg-primary" v-model="qwpSearch"';
     $return .= '    placeholder="' . __("Search") . '">';
@@ -127,7 +127,7 @@ class Custom_Nav_Menu extends Walker_Nav_Menu
   function qwpLogo()
   {
     $return .= '';
-    $return .= '<q-toolbar-title shrink class="cursor-pointer" @click="quasarwpRouteTo(\'/\')">';
+    $return .= '<q-toolbar-title shrink class="qwp-logo cursor-pointer" @click="quasarwpRouteTo(\'/\')">';
     if (get_theme_mod('quasarwp_theme_logo')) {
       $return .= '  <img id="qwp-site-logo" src="' . get_theme_mod('quasarwp_theme_logo') . '"';
       $return .= '    class="' . esc_attr(get_theme_mod('quasarwp_theme_logo_class')) . '"';
