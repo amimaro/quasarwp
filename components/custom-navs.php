@@ -36,18 +36,7 @@ class Custom_Nav_Menu extends Walker_Nav_Menu
         ));
       }
     } else {
-      $json = json_decode($title);
-      $title = !empty($json->title) ? $json->title : false;
-      $icon = !empty($json->icon) ? $json->icon : false;
-      $caption = !empty($json->caption) ? $json->caption : false;
-      $target = (!empty($json->target) && $json->target == 'blank') ? 'target="_blank"' : '';
-
-      $output .= $this->qwpCustom(array(
-        'title'   =>  $title,
-        'url'     =>  $url,
-        'icon'    =>  $icon,
-        'caption' =>  $caption
-      ));
+      $output .= $this->qwpCustomItem($title, $url);
     }
   }
 
@@ -87,27 +76,6 @@ class Custom_Nav_Menu extends Walker_Nav_Menu
     return $return;
   }
 
-  function qwpCustom($args)
-  {
-    $return = '';
-    $return .= '<q-item class="qwp-custom-component" clickable tag="a" ' . $args['target'] . ' rel="noopener" href="' . $args['url'] . '">';
-    if ($args['icon']) {
-      $return .= '  <q-item-section avatar>';
-      $return .= '    <q-icon name="' . $args['icon'] . '"></q-icon>';
-      $return .= '  </q-item-section>';
-    }
-    $return .= '  <q-item-section>';
-    if ($args['title']) {
-      $return .= '    <q-item-label>' . $args['title'] . '</q-item-label>';
-    }
-    if ($args['caption']) {
-      $return .= '    <q-item-label caption>' . $args['caption'] . '</q-item-label>';
-    }
-    $return .= '  </q-item-section>';
-    $return .= '</q-item>';
-    return $return;
-  }
-
   function qwpSearch()
   {
     $return = '';
@@ -141,6 +109,60 @@ class Custom_Nav_Menu extends Walker_Nav_Menu
       $return .= '  <span class="qwp-blogname">' . get_bloginfo('name') . '</span>';
     }
     $return .= '</q-toolbar-title>';
+    return $return;
+  }
+
+  function qwpCustomItem($data, $url)
+  {
+    $json = json_decode($data);
+    $title = !empty($json->title) ? $json->title : false;
+    $icon = !empty($json->icon) ? $json->icon : false;
+    $avatar = !empty($json->avatar) ? $json->avatar : false;
+    $sideIcon = !empty($json->sideIcon) ? $json->sideIcon : false;
+    $caption = !empty($json->caption) ? $json->caption : false;
+    $target = (!empty($json->target) && $json->target == 'blank') ? 'target="_blank"' : '';
+
+    $return = '';
+    $return .= '<q-item class="qwp-custom-component" clickable tag="a" ' . $target . ' rel="noopener" href="' . $url . '">';
+    if ($icon) {
+      $return .= '  <q-item-section avatar>';
+      $return .= '  <q-icon ';
+      $return .= isset($icon->name) ? 'name="' . $icon->name . '" ' : '';
+      $return .= isset($icon->color) ? 'color="' . $icon->color . '" ' : '';
+      $return .= isset($icon->size) ? 'size="' . $icon->size . '" ' : '';
+      $return .= '></q-icon>';
+      $return .= '  </q-item-section>';
+    } else if ($avatar) {
+      $return .= '<q-item-section avatar>';
+      $return .= '  <q-avatar ';
+      $return .= isset($avatar->icon) ? 'icon="' . $avatar->icon . '" ' : '';
+      $return .= isset($avatar->color) ? 'color="' . $avatar->color . '" ' : '';
+      $return .= isset($avatar->textColor) ? 'text-color="' . $avatar->textColor . '" ' : '';
+      $return .= isset($avatar->size) ? 'size="' . $avatar->size . '" ' : '';
+      $return .= isset($avatar->rounded) ? 'rounded ' : '';
+      $return .= '>';
+      $return .= isset($avatar->content) ? $avatar->content : '';;
+      $return .= isset($avatar->img) ? '<img src="' . $avatar->img . '">' : '';;
+      $return .= '</q-avatar>';
+      $return .= '</q-item-section>';
+    }
+    $return .= '  <q-item-section>';
+    if ($title) {
+      $return .= '    <q-item-label>' . $title . '</q-item-label>';
+    }
+    if ($caption) {
+      $return .= '    <q-item-label caption>' . $caption . '</q-item-label>';
+    }
+    $return .= '  </q-item-section>';
+    if ($sideIcon) {
+      $return .= '<q-item-section side>';
+      $return .= '  <q-icon ';
+      $return .= isset($sideIcon->name) ? 'name="' . $sideIcon->name . '" ' : '';
+      $return .= isset($sideIcon->color) ? 'color="' . $sideIcon->color . '" ' : '';
+      $return .= '></q-icon>';
+      $return .= '</q-item-section>';
+    }
+    $return .= '</q-item>';
     return $return;
   }
 }
