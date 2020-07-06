@@ -25,7 +25,7 @@ class QuasarWP_Customize
          'priority'       => 104.1,
          'capability'     => 'edit_theme_options',
          'theme_supports' => '',
-         'title'          => __('QuasarWP')
+         'title'          => __('QuasarWP', 'quasarwp')
       ));
 
       include(get_template_directory() . '/inc/components/upload-logo.php');

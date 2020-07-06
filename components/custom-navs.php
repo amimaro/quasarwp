@@ -82,7 +82,7 @@ class Custom_Nav_Menu extends Walker_Nav_Menu
     $return .= '<form role="search" method="get" action="' . get_site_url() . '"';
     $return .= '  class="qwp-form-search">';
     $return .= '  <q-input name="s" id="s" class="qwp-input-search" dense standout="bg-primary" v-model="qwpSearch"';
-    $return .= '    placeholder="' . __("Search") . '">';
+    $return .= '    placeholder="' . __('Search', 'quasarwp') . '">';
     $return .= '    <template v-slot:append>';
     $return .= '      <q-icon v-if="qwpSearch === \'\'" name="search"></q-icon>';
     $return .= '      <q-icon v-else name="clear" class="cursor-pointer" @click="qwpSearch = \'\'"></q-icon>';

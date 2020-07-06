@@ -14,10 +14,10 @@ function customComments($comment, $args, $depth)
     $add_below = 'div-comment';
   } ?>
 
-  <<?php echo $tag; ?> <?php comment_class(empty($args['has_children']) ? '' : 'parent'); ?> id="comment-<?php comment_ID() ?>" style="list-style-type: none; padding: 20px 0 20px 0">
+  <<?php echo esc_html($tag); ?> <?php comment_class(empty($args['has_children']) ? '' : 'parent'); ?> id="comment-<?php comment_ID() ?>" style="list-style-type: none; padding: 20px 0 20px 0">
 
     <!-- // case 'trackback':  -->
-    <!-- <div class="pingback-entry"><span class="pingback-heading"><?php esc_html_e('Pingback:', 'textdomain'); ?></span> <?php comment_author_link(); ?></div> -->
+    <!-- <div class="pingback-entry"><span class="pingback-heading"><?php esc_html_e('Pingback:', 'quasarwp'); ?></span> <?php comment_author_link(); ?></div> -->
 
     <q-card>
       <q-card-section>
@@ -37,8 +37,9 @@ function customComments($comment, $args, $depth)
             }
 
             // Display author name
-            printf(__('%s', 'textdomain'), get_comment_author()); ?>
-            <!-- printf(__('%s', 'textdomain'), get_comment_author_link()); ?> -->
+            echo esc_html(get_comment_author());
+            ?>
+            <!-- printf(__('%s', 'quasarwp'), get_comment_author_link()); ?> -->
           </div><!-- .comment-author -->
 
           <div class="comment-details">
@@ -49,7 +50,7 @@ function customComments($comment, $args, $depth)
               <?php
               // Display comment moderation text
               if ($comment->comment_approved == '0') { ?>
-                <em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation. This is a preview, your comment will be visible after it has been approved.'); ?></em><br />
+                <em class="comment-awaiting-moderation"><?php esc_attr_e('Your comment is awaiting moderation. This is a preview, your comment will be visible after it has been approved.', 'quasarwp'); ?></em><br />
               <?php  } ?>
             </div>
 
@@ -62,7 +63,7 @@ function customComments($comment, $args, $depth)
                 } else {
                   $author = $comment->comment_author;
                 }
-                $args['reply_text'] = __('Reply') . ' ' . $author;
+                $args['reply_text'] = __('Reply', 'quasarwp') . ' ' . $author;
 
                 // Display comment reply link
                 // comment_reply_link(array_merge($args, array(
@@ -71,19 +72,21 @@ function customComments($comment, $args, $depth)
                 // 	'max_depth' => $args['max_depth']
                 // ))); 
                 ?>
-                <q-btn flat dense label="<?php echo $args['reply_text']; ?>" @click="qwpReplyComment(<?php comment_ID(); ?>, '<?php echo $author; ?>')"></q-btn>
+                <q-btn flat dense label="<?php echo esc_html($args['reply_text']); ?>" @click="qwpReplyComment(<?php comment_ID(); ?>, '<?php echo esc_html($author); ?>')"></q-btn>
               </div>
               <div class="comment-meta commentmetadata">
-                <!-- <a href="<?php echo htmlspecialchars(get_comment_link($comment->comment_ID)); ?>"> -->
+                <!-- <a href="<?php echo esc_html(get_comment_link($comment->comment_ID)); ?>"> -->
                 <?php
-                /* translators: 1: date, 2: time */
-                printf(
-                  __('%1$s · %2$s', 'textdomain'),
+                $commentDateTime = sprintf(
+                  /* translators: date, time */
+                  __('%1$s · %2$s', 'quasarwp'),
                   get_comment_date(),
                   get_comment_time()
-                ); ?>
+                ); 
+                echo esc_html($commentDateTime);
+                ?>
                 <!-- </a> -->
-                <!-- <?php edit_comment_link(__('(Edit)', 'textdomain'), '  ', ''); ?> -->
+                <!-- <?php edit_comment_link(__('(Edit)', 'quasarwp'), '  ', ''); ?> -->
               </div><!-- .comment-meta -->
             </div>
 

@@ -24,9 +24,9 @@ include(get_template_directory() . '/components/header-functions.php');
               <div class="text-caption qwp-post-commentcounter">
                 <a href="#comments">
                   <?php
-                      $commentsText = __('Comments');
+                      $commentsText = __('Comments', 'quasarwp');
                       $commentsCount =  get_comments_number(get_post()->ID);
-                      printf(_n('%s Comment', '%s Comments', $commentsCount), $commentsCount);
+                      printf(_n('%s Comment', '%s Comments', $commentsCount, 'quasarwp'), $commentsCount);
                       ?>
                 </a>
               </div>
@@ -34,7 +34,7 @@ include(get_template_directory() . '/components/header-functions.php');
             </div>
 
             <div class="text-caption qwp-post-author">
-              <?php _e('by') ?> <?php the_author(); ?>
+              <?php esc_attr_e('by', 'quasarwp') ?> <?php the_author(); ?>
             </div>
 
             <q-separator class="q-my-lg"></q-separator>

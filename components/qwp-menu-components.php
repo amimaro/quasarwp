@@ -9,21 +9,21 @@ function create_topics_nonhierarchical_taxonomy()
 {
 
   $labels = array(
-    'name' => __('QWP Menu Components'),
-    'singular_name' => __('Menu Component'),
-    'search_items' =>  __('Search Menu Components'),
-    'popular_items' => __('Popular Menu Components'),
-    'all_items' => __('All Menu Components'),
+    'name' => __('QWP Menu Components', 'quasarwp'),
+    'singular_name' => __('Menu Component', 'quasarwp'),
+    'search_items' =>  __('Search Menu Components', 'quasarwp'),
+    'popular_items' => __('Popular Menu Components', 'quasarwp'),
+    'all_items' => __('All Menu Components', 'quasarwp'),
     'parent_item' => null,
     'parent_item_colon' => null,
-    'edit_item' => __('Edit Menu Component'),
-    'update_item' => __('Update Menu Component'),
-    'add_new_item' => __('Add New Menu Component'),
-    'new_item_name' => __('New Menu Component Name'),
-    'separate_items_with_commas' => __('Separate menu components with commas'),
-    'add_or_remove_items' => __('Add or remove menu components'),
-    'choose_from_most_used' => __('Choose from the most used menu components'),
-    'menu_name' => __('Menu Components'),
+    'edit_item' => __('Edit Menu Component', 'quasarwp'),
+    'update_item' => __('Update Menu Component', 'quasarwp'),
+    'add_new_item' => __('Add New Menu Component', 'quasarwp'),
+    'new_item_name' => __('New Menu Component Name', 'quasarwp'),
+    'separate_items_with_commas' => __('Separate menu components with commas', 'quasarwp'),
+    'add_or_remove_items' => __('Add or remove menu components', 'quasarwp'),
+    'choose_from_most_used' => __('Choose from the most used menu components', 'quasarwp'),
+    'menu_name' => __('Menu Components', 'quasarwp'),
   );
 
   register_taxonomy('qwp_components', 'quasarwp', array(
@@ -103,23 +103,23 @@ function add_menus()
         $menu_ids[$key] = $menu_id;
         if ($key == 'header-menu' || $key == 'footer-menu') {
           wp_update_nav_menu_item($menu_id, 0, array(
-            'menu-item-title'   =>  __('QWPLogo'),
+            'menu-item-title'   =>  __('QWPLogo', 'quasarwp'),
             'menu-item-status'  => 'publish'
           ));
         }
         if ($key == 'header-menu') {
           wp_update_nav_menu_item($menu_id, 0, array(
-            'menu-item-title'   =>  __('QWPSpace'),
+            'menu-item-title'   =>  __('QWPSpace', 'quasarwp'),
             'menu-item-status'  => 'publish'
           ));
           wp_update_nav_menu_item($menu_id, 0, array(
-            'menu-item-title'   =>  __('QWPSearch'),
+            'menu-item-title'   =>  __('QWPSearch', 'quasarwp'),
             'menu-item-status'  => 'publish'
           ));
         }
         if ($key == 'left-menu') {
           wp_update_nav_menu_item($menu_id, 0, array(
-            'menu-item-title' =>  '<q-icon name="home" size="md"></q-icon>&nbsp;' . __('Home'),
+            'menu-item-title' =>  '<q-icon name="home" size="md"></q-icon>&nbsp;' . __('Home', 'quasarwp'),
             'menu-item-url' => '/', 
             'menu-item-status' => 'publish',
             'menu-item-type' => 'custom',

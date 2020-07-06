@@ -3,10 +3,10 @@
 $wp_customize->add_section(
   'quasarwp_layout_tabs',
   array(
-    'title'       => __('Tabs'),
+    'title'       => __('Tabs', 'quasarwp'),
     'priority'    => 107.1,
     'capability'  => 'edit_theme_options',
-    'description' => __('Allows you to customize tabs layout for QuasarWP.'),
+    'description' => __('Allows you to customize tabs layout for QuasarWP.', 'quasarwp'),
     'panel'  => 'quasarwp',
   )
 );
@@ -22,7 +22,7 @@ $wp_customize->add_setting(
   )
 );
 $wp_customize->add_control('quasarwp_layout_tabs_enabled', array(
-  'label' => __('Enabled'),
+  'label' => __('Enabled', 'quasarwp'),
   'section' => 'quasarwp_layout_tabs',
   'settings' => 'layout_tabs_enabled',
   'type' => 'checkbox',
@@ -43,7 +43,7 @@ $wp_customize->add_control(new WP_Customize_Color_Control(
   $wp_customize,
   'quasarwp_layout_tabs_backgroundcolor',
   array(
-    'label'      => __('Background Color'),
+    'label'      => __('Background Color', 'quasarwp'),
     'settings'   => 'layout_tabs_backgroundcolor',
     'priority'   => 2,
     'section'    => 'quasarwp_layout_tabs',
@@ -61,7 +61,7 @@ $wp_customize->add_setting(
   )
 );
 $wp_customize->add_control('quasarwp_layout_tabs_align', array(
-  'label' => __('Align Items'),
+  'label' => __('Align Items', 'quasarwp'),
   'section' => 'quasarwp_layout_tabs',
   'settings' => 'layout_tabs_align',
   'type' => 'radio',

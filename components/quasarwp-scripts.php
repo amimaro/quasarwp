@@ -145,12 +145,12 @@ if ($iconSet != 'material')
         };
         console.log(data, 1)
         <?php if (is_user_logged_in()) {
-          $successMessage = __('Done');
+          $successMessage = __('Done', 'quasarwp');
         ?>
           data['author_name'] = '<?php echo wp_get_current_user()->display_name; ?>'
           data['author_email'] = '<?php echo wp_get_current_user()->user_email; ?>'
         <?php } else {
-          $successMessage = __('Your comment is awaiting moderation.');
+          $successMessage = __('Your comment is awaiting moderation.', 'quasarwp');
         ?>
           if (evt.target.author) data['author_name'] = evt.target.author.value
           if (evt.target.email) data['author_email'] = evt.target.email.value

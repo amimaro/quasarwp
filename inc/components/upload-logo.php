@@ -8,7 +8,7 @@ $wp_customize->add_control(new WP_Customize_Image_Control(
   $wp_customize,
   'quasarwp_theme_logo',
   array(
-    'label' => _('Logo'),
+    'label' => __('Logo'),
     'section' => 'title_tagline',
     'priority'   => 1,
     'settings' => 'quasarwp_theme_logo',
@@ -28,7 +28,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
   'quasarwp_theme_logo_class',
   array(
-    'label' => __('Spacing Class'),
+    'label' => __('Spacing Class', 'quasarwp'),
     'section' => 'title_tagline',
     'settings' => 'theme_logo_class',
     'type' => 'text',

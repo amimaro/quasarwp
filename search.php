@@ -32,9 +32,9 @@ include(get_template_directory() . '/components/header-functions.php');
 
             <q-card class="q-my-md">
               <q-card-section>
-                <p class="text-h4 text-weight-light q-pt-md"><?php echo __('Search Results') . ': "' . $search_query['s'] . '"' ?></p>
+                <p class="text-h4 text-weight-light q-pt-md"><?php echo __('Search Results', 'quasarwp') . ': "' . $search_query['s'] . '"' ?></p>
                 <q-separator></q-separator>
-                <p class="text-caption q-pt-md text-right"><?php printf(_n('%d result found.', '%d results found.', $the_query->found_posts), $the_query->found_posts); ?></p>
+                <p class="text-caption q-pt-md text-right"><?php printf(_n('%d result found.', '%d results found.', $the_query->found_posts, 'quasarwp'), $the_query->found_posts); ?></p>
               </q-card-section>
             </q-card>
             <?php if ($the_query->have_posts()) : ?>
@@ -45,7 +45,7 @@ include(get_template_directory() . '/components/header-functions.php');
             <?php else : ?>
               <q-card class="q-my-md">
                 <q-card-section>
-                  <p class="text-h5 text-weight-light q-pt-md"><?php _e('No results.') ?> :(</p>
+                  <p class="text-h5 text-weight-light q-pt-md"><?php esc_attr_e('No results.', 'quasarwp') ?> :(</p>
                 </q-card-section>
               </q-card>
             <?php endif; ?>

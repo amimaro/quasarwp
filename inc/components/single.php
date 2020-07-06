@@ -3,10 +3,10 @@
 $wp_customize->add_section(
   'quasarwp_layout_single',
   array(
-    'title'       => __('Post Page'),
+    'title'       => __('Post Page', 'quasarwp'),
     'priority'    => 108.1,
     'capability'  => 'edit_theme_options',
-    'description' => __('Allows you to customize single page layout for QuasarWP.'),
+    'description' => __('Allows you to customize single page layout for QuasarWP.', 'quasarwp'),
     'panel'  => 'quasarwp',
   )
 );
@@ -22,7 +22,7 @@ $wp_customize->add_setting(
   )
 );
 $wp_customize->add_control('quasarwp_layout_single_author', array(
-  'label' => __('Show Author\'s Name'),
+  'label' => __('Show Author\'s Name', 'quasarwp'),
   'section' => 'quasarwp_layout_single',
   'settings' => 'layout_single_author',
   'type' => 'checkbox',
@@ -40,7 +40,7 @@ $wp_customize->add_setting(
   )
 );
 $wp_customize->add_control('quasarwp_layout_single_postdate', array(
-  'label' => __('Show Post Date'),
+  'label' => __('Show Post Date', 'quasarwp'),
   'section' => 'quasarwp_layout_single',
   'settings' => 'layout_single_postdate',
   'type' => 'checkbox',
@@ -58,7 +58,7 @@ $wp_customize->add_setting(
   )
 );
 $wp_customize->add_control('quasarwp_layout_single_commentcounter', array(
-  'label' => __('Show Comments Counter'),
+  'label' => __('Show Comments Counter', 'quasarwp'),
   'section' => 'quasarwp_layout_single',
   'settings' => 'layout_single_commentcounter',
   'type' => 'checkbox',
@@ -76,7 +76,7 @@ $wp_customize->add_setting(
   )
 );
 $wp_customize->add_control('quasarwp_layout_single_featured_image', array(
-  'label' => __('Show Featured Image'),
+  'label' => __('Show Featured Image', 'quasarwp'),
   'section' => 'quasarwp_layout_single',
   'settings' => 'layout_single_featured_image',
   'type' => 'checkbox',
@@ -94,7 +94,7 @@ $wp_customize->add_setting(
   )
 );
 $wp_customize->add_control('quasarwp_layout_single_social', array(
-  'label' => __('Show Social Icons'),
+  'label' => __('Show Social Icons', 'quasarwp'),
   'section' => 'quasarwp_layout_single',
   'settings' => 'layout_single_social',
   'type' => 'checkbox',
@@ -112,7 +112,7 @@ $wp_customize->add_setting(
   )
 );
 $wp_customize->add_control('quasarwp_layout_single_comments', array(
-  'label' => __('Show Comments'),
+  'label' => __('Show Comments', 'quasarwp'),
   'section' => 'quasarwp_layout_single',
   'settings' => 'layout_single_comments',
   'type' => 'checkbox',

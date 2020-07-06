@@ -18,10 +18,10 @@ $socialMediasClasses = array(
 $wp_customize->add_section(
   'quasarwp_layout_social',
   array(
-    'title'       => __('Social Icons'),
+    'title'       => __('Social Icons', 'quasarwp'),
     'priority'    => 109.1,
     'capability'  => 'edit_theme_options',
-    'description' => __('Allows you to customize social icons layout for QuasarWP.'),
+    'description' => __('Allows you to customize social icons layout for QuasarWP.', 'quasarwp'),
     'panel'  => 'quasarwp',
   )
 );
@@ -37,7 +37,7 @@ foreach ($socialMedias as $i => $socialMedia) {
     )
   );
   $wp_customize->add_control('quasarwp_social_' . $socialMedia . '_enabled', array(
-    'label' => __(ucfirst($socialMedia)),
+    'label' => __(ucfirst($socialMedia), 'quasarwp'),
     'section' => 'quasarwp_layout_social',
     'settings' => 'social_' . $socialMedia . '_enabled',
     'type' => 'checkbox',
@@ -57,7 +57,7 @@ foreach ($socialMedias as $i => $socialMedia) {
   $wp_customize->add_control(
     'quasarwp_social_' . $socialMedia . '_class',
     array(
-      'label' => __(ucfirst($socialMedia) . ' icon class'),
+      'label' => __(ucfirst($socialMedia), 'quasarwp'),
       'section' => 'quasarwp_layout_social',
       'settings' => 'social_' . $socialMedia . '_class',
       'type' => 'text',

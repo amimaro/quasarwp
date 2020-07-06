@@ -3,10 +3,10 @@
 $wp_customize->add_section(
   'quasarwp_theme_colors',
   array(
-    'title'       => __('Colors'),
+    'title'       => __('Colors', 'quasarwp'),
     'priority'    => 102.3,
     'capability'  => 'edit_theme_options',
-    'description' => __('Allows you to customize theme colors for QuasarWP.'),
+    'description' => __('Allows you to customize theme colors for QuasarWP.', 'quasarwp'),
   )
 );
 

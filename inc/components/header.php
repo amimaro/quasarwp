@@ -3,10 +3,10 @@
 $wp_customize->add_section(
   'quasarwp_layout_header',
   array(
-    'title'       => __('Header'),
+    'title'       => __('Header', 'quasarwp'),
     'priority'    => 103.1,
     'capability'  => 'edit_theme_options',
-    'description' => __('Allows you to customize header layout for QuasarWP.'),
+    'description' => __('Allows you to customize header layout for QuasarWP.', 'quasarwp'),
     'panel'  => 'quasarwp',
   )
 );
@@ -22,7 +22,7 @@ $wp_customize->add_setting(
   )
 );
 $wp_customize->add_control('quasarwp_layout_header_enabled', array(
-  'label' => __('Enabled'),
+  'label' => __('Enabled', 'quasarwp'),
   'section' => 'quasarwp_layout_header',
   'settings' => 'layout_header_enabled',
   'type' => 'checkbox',
@@ -40,7 +40,7 @@ $wp_customize->add_setting(
   )
 );
 $wp_customize->add_control('quasarwp_layout_header_reveal', array(
-  'label' => __('Header Reveal'),
+  'label' => __('Header Reveal', 'quasarwp'),
   'section' => 'quasarwp_layout_header',
   'settings' => 'layout_header_reveal',
   'type' => 'checkbox',
@@ -58,7 +58,7 @@ $wp_customize->add_setting(
   )
 );
 $wp_customize->add_control('quasarwp_layout_header_icon', array(
-  'label' => __('Show Header Icon'),
+  'label' => __('Show Header Icon', 'quasarwp'),
   'section' => 'quasarwp_layout_header',
   'settings' => 'layout_header_icon',
   'type' => 'checkbox',
@@ -76,7 +76,7 @@ $wp_customize->add_setting(
   )
 );
 $wp_customize->add_control('quasarwp_layout_header_blogname', array(
-  'label' => __('Show Header Blog Name'),
+  'label' => __('Show Header Blog Name', 'quasarwp'),
   'section' => 'quasarwp_layout_header',
   'settings' => 'layout_header_blogname',
   'type' => 'checkbox',
@@ -97,7 +97,7 @@ $wp_customize->add_control(new WP_Customize_Color_Control(
   $wp_customize,
   'quasarwp_layout_header_backgroundcolor',
   array(
-    'label'      => __('Background Color'),
+    'label'      => __('Background Color', 'quasarwp'),
     'settings'   => 'layout_header_backgroundcolor',
     'priority'   => 5,
     'section'    => 'quasarwp_layout_header',
@@ -115,7 +115,7 @@ $wp_customize->add_setting(
   )
 );
 $wp_customize->add_control('quasarwp_layout_header_separator', array(
-  'label' => __('Separator type'),
+  'label' => __('Separator type', 'quasarwp'),
   'section' => 'quasarwp_layout_header',
   'settings' => 'layout_header_separator',
   'type' => 'radio',

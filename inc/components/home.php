@@ -3,10 +3,10 @@
 $wp_customize->add_section(
   'quasarwp_layout_home',
   array(
-    'title'       => __('Home Page'),
+    'title'       => __('Home Page', 'quasarwp'),
     'priority'    => 108.1,
     'capability'  => 'edit_theme_options',
-    'description' => __('Allows you to customize home page layout for QuasarWP.'),
+    'description' => __('Allows you to customize home page layout for QuasarWP.', 'quasarwp'),
     'panel'  => 'quasarwp',
   )
 );
@@ -22,7 +22,7 @@ $wp_customize->add_setting(
   )
 );
 $wp_customize->add_control('quasarwp_layout_home_author', array(
-  'label' => __('Show Author\'s Name'),
+  'label' => __('Show Author\'s Name', 'quasarwp'),
   'section' => 'quasarwp_layout_home',
   'settings' => 'layout_home_author',
   'type' => 'checkbox',
@@ -40,7 +40,7 @@ $wp_customize->add_setting(
   )
 );
 $wp_customize->add_control('quasarwp_layout_home_excerpt', array(
-  'label' => __('Show Excerpt'),
+  'label' => __('Show Excerpt', 'quasarwp'),
   'section' => 'quasarwp_layout_home',
   'settings' => 'layout_home_excerpt',
   'type' => 'checkbox',
@@ -58,7 +58,7 @@ $wp_customize->add_setting(
   )
 );
 $wp_customize->add_control('quasarwp_layout_home_postdate', array(
-  'label' => __('Show Post Date'),
+  'label' => __('Show Post Date', 'quasarwp'),
   'section' => 'quasarwp_layout_home',
   'settings' => 'layout_home_postdate',
   'type' => 'checkbox',
@@ -76,7 +76,7 @@ $wp_customize->add_setting(
   )
 );
 $wp_customize->add_control('quasarwp_layout_home_commentcounter', array(
-  'label' => __('Show Comments Counter'),
+  'label' => __('Show Comments Counter', 'quasarwp'),
   'section' => 'quasarwp_layout_home',
   'settings' => 'layout_home_commentcounter',
   'type' => 'checkbox',
@@ -94,7 +94,7 @@ $wp_customize->add_setting(
   )
 );
 $wp_customize->add_control('quasarwp_layout_home_postlayout', array(
-  'label' => __('Post Layout'),
+  'label' => __('Post Layout', 'quasarwp'),
   'section' => 'quasarwp_layout_home',
   'settings' => 'layout_home_postlayout',
   'type' => 'radio',

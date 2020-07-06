@@ -11,12 +11,6 @@
   <meta name="msapplication-tap-highlight" content="no">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- <link rel="icon" type="image/png" sizes="128x128" href="statics/icons/favicon-128x128.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="statics/icons/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="statics/icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="statics/icons/favicon-16x16.png">
-  <link rel="icon" type="image/ico" href="statics/icons/favicon.ico"> -->
-
   <?php
   $components = get_option('quasarwp-settings');
 
@@ -43,3 +37,4 @@
 
   <?php wp_enqueue_style('style', get_stylesheet_uri()); ?>
 </head>
+

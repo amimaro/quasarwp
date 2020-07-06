@@ -8,7 +8,7 @@
 		<?php include(get_template_directory() . '/components/comments/btn-post.php'); ?>
 
 		<p class="q-pt-md text-h3 text-weight-light">
-			<?php _e('Comments') ?>
+			<?php esc_attr_e('Comments', 'quasarwp') ?>
 		</p>
 
 		<ul class="comment-list" style="list-style-type: none">
@@ -31,7 +31,7 @@
 
 	<?php if (!have_comments()) : ?>
 		<!-- <p class="q-py-md text-h6 text-weight-light">
-			<?php _e('No Comments') ?>
+			<?php esc_attr_e('No Comments', 'quasarwp') ?>
 		</p> -->
 
 		<q-separator class="q-my-xl"></q-separator>

@@ -6,7 +6,7 @@
     <div class="text-h6">
       <?php the_title(); ?>
       <div class="text-caption qwp-home-author">
-        <?php _e('by') ?> <?php the_author(); ?>
+        <?php esc_attr_e('by', 'quasarwp') ?> <?php the_author(); ?>
       </div>
     </div>
   </q-card-section>
@@ -19,9 +19,9 @@
   <q-card-actions align="between" class="absolute-bottom">
     <div class="text-caption qwp-home-commentcounter">
       <?php
-        $commentsText = __('Comments');
+        $commentsText = __('Comments', 'quasarwp');
         $commentsCount =  get_comments_number(get_post()->ID);
-        printf(_n('%s Comment', '%s Comments', $commentsCount), $commentsCount);
+        printf(_n('%s Comment', '%s Comments', $commentsCount, 'quasarwp'), $commentsCount);
         ?>
     </div>
     <div class="text-caption qwp-home-postdate">

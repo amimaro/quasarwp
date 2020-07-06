@@ -26,11 +26,11 @@ add_image_size('largest', 800, 800, true);
 
 register_nav_menus(
   array(
-    'header-menu' => __('Header Menu', 'theme'),
-    'footer-menu' => __('Footer Menu', 'theme'),
-    'tab-menu' => __('Tab Menu', 'theme'),
-    'left-menu' => __('Left Menu', 'theme'),
-    'right-menu' => __('Right Menu', 'theme'),
+    'header-menu' => __('Header Menu', 'quasarwp'),
+    'footer-menu' => __('Footer Menu', 'quasarwp'),
+    'tab-menu' => __('Tab Menu', 'quasarwp'),
+    'left-menu' => __('Left Menu', 'quasarwp'),
+    'right-menu' => __('Right Menu', 'quasarwp'),
   )
 );
 
@@ -91,3 +91,8 @@ include('components/qwp-menu-components.php');
 
 // Customizer additions.
 require get_template_directory() . '/inc/customizer.php';
+
+function my_theme_load_theme_textdomain() {
+  load_theme_textdomain( 'quasarwp', get_template_directory() . '/languages' );
+}
+add_action( 'after_setup_theme', 'my_theme_load_theme_textdomain' );

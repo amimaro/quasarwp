@@ -3,10 +3,10 @@
 $wp_customize->add_section(
   'quasarwp_layout_footer',
   array(
-    'title'       => __('Footer'),
+    'title'       => __('Footer', 'quasarwp'),
     'priority'    => 104.1,
     'capability'  => 'edit_theme_options',
-    'description' => __('Allows you to customize footer layout for QuasarWP.'),
+    'description' => __('Allows you to customize footer layout for QuasarWP.', 'quasarwp'),
     'panel'  => 'quasarwp',
   )
 );
@@ -22,7 +22,7 @@ $wp_customize->add_setting(
   )
 );
 $wp_customize->add_control('quasarwp_layout_footer_enabled', array(
-  'label' => __('Enabled'),
+  'label' => __('Enabled', 'quasarwp'),
   'section' => 'quasarwp_layout_footer',
   'settings' => 'layout_footer_enabled',
   'type' => 'checkbox',
@@ -40,7 +40,7 @@ $wp_customize->add_setting(
   )
 );
 $wp_customize->add_control('quasarwp_layout_footer_reveal', array(
-  'label' => __('Footer Reveal'),
+  'label' => __('Footer Reveal', 'quasarwp'),
   'section' => 'quasarwp_layout_footer',
   'settings' => 'layout_footer_reveal',
   'type' => 'checkbox',
@@ -58,7 +58,7 @@ $wp_customize->add_setting(
   )
 );
 $wp_customize->add_control('quasarwp_layout_footer_icon', array(
-  'label' => __('Show Footer Icon'),
+  'label' => __('Show Footer Icon', 'quasarwp'),
   'section' => 'quasarwp_layout_footer',
   'settings' => 'layout_footer_icon',
   'type' => 'checkbox',
@@ -76,7 +76,7 @@ $wp_customize->add_setting(
   )
 );
 $wp_customize->add_control('quasarwp_layout_footer_blogname', array(
-  'label' => __('Show Footer Blog Name'),
+  'label' => __('Show Footer Blog Name', 'quasarwp'),
   'section' => 'quasarwp_layout_footer',
   'settings' => 'layout_footer_blogname',
   'type' => 'checkbox',
@@ -97,7 +97,7 @@ $wp_customize->add_control(new WP_Customize_Color_Control(
   $wp_customize,
   'quasarwp_layout_footer_backgroundcolor',
   array(
-    'label'      => __('Background Color'),
+    'label'      => __('Background Color', 'quasarwp'),
     'settings'   => 'layout_footer_backgroundcolor',
     'priority'   => 5,
     'section'    => 'quasarwp_layout_footer',
@@ -115,7 +115,7 @@ $wp_customize->add_setting(
   )
 );
 $wp_customize->add_control('quasarwp_layout_footer_separator', array(
-  'label' => __('Separator type'),
+  'label' => __('Separator type', 'quasarwp'),
   'section' => 'quasarwp_layout_footer',
   'settings' => 'layout_footer_separator',
   'type' => 'radio',
