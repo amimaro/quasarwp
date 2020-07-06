@@ -57,6 +57,9 @@ if ($iconSet != 'material')
       if (this.qwpDataLoadingEnabled) {
         this.$q.loading.show()
       }
+
+      const s = new URL(window.location.href).searchParams.get("s")
+      if (s) this.qwpSearch = s
     },
     mounted() {
       if (this.qwpDataLoadingEnabled) {
