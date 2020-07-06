@@ -91,7 +91,8 @@ function add_menus()
 {
   $menu_names   = array(
     'header-menu' => 'Header Menu',
-    'footer-menu' => 'Footer Menu'
+    'footer-menu' => 'Footer Menu',
+    'left-menu' => 'Left Drawer Menu'
   );
   $menu_ids = array();
   foreach ($menu_names as $key => $menu_name) {
@@ -100,11 +101,12 @@ function add_menus()
       $menu_id = wp_create_nav_menu($menu_name);
       if ($menu_id > 0) {
         $menu_ids[$key] = $menu_id;
-        $page_args = array(
-          'menu-item-title'   =>  __('QWPLogo'),
-          'menu-item-status'  => 'publish'
-        );
-        wp_update_nav_menu_item($menu_id, 0, $page_args);
+        if ($key == 'header-menu' || $key == 'footer-menu') {
+          wp_update_nav_menu_item($menu_id, 0, array(
+            'menu-item-title'   =>  __('QWPLogo'),
+            'menu-item-status'  => 'publish'
+          ));
+        }
         if ($key == 'header-menu') {
           wp_update_nav_menu_item($menu_id, 0, array(
             'menu-item-title'   =>  __('QWPSpace'),
@@ -113,6 +115,14 @@ function add_menus()
           wp_update_nav_menu_item($menu_id, 0, array(
             'menu-item-title'   =>  __('QWPSearch'),
             'menu-item-status'  => 'publish'
+          ));
+        }
+        if ($key == 'left-menu') {
+          wp_update_nav_menu_item($menu_id, 0, array(
+            'menu-item-title' =>  '<q-icon name="home" size="md"></q-icon>&nbsp;' . __('Home'),
+            'menu-item-url' => '/', 
+            'menu-item-status' => 'publish',
+            'menu-item-type' => 'custom',
           ));
         }
       }
