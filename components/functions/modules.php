@@ -65,10 +65,6 @@
       <input name="quasarwp-settings[qco]" type="checkbox" value="1" <?php checked(isset($options['qco'])); ?> id="quasarwp-settings-qco" />
       Quasar Configure Object
     </label>
-    <label for="quasarwp-settings-minified-files" style="padding-right: 20px;">
-      <input name="quasarwp-settings[minified-files]" type="checkbox" value="1" <?php checked(isset($options['minified-files'])); ?> id="quasarwp-settings-minified-files" />
-      Minified files
-    </label>
     <label for="quasarwp-settings-rtl-css-support" style="padding-right: 20px;">
       <input name="quasarwp-settings[rtl-css-support]" type="checkbox" value="1" <?php checked(isset($options['rtl-css-support'])); ?> id="quasarwp-settings-rtl-css-support" />
       RTL CSS support

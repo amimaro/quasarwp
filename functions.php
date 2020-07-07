@@ -5,7 +5,6 @@ if (!get_option('quasarwp-settings')) {
     'roboto-font' => 1,
     'material-icons' => 1,
     'fontawesomev5' => 1,
-    'minified-files' => 1,
     'language' => 'en-us',
     'icon-set' => 'material',
   ));
