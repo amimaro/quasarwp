@@ -85,3 +85,6 @@ function quasarwp_load_theme_textdomain()
   load_theme_textdomain('quasarwp', get_template_directory() . '/languages');
 }
 add_action('after_setup_theme', 'quasarwp_load_theme_textdomain');
+
+
+require_once('inc/TGM/class-quasarwp-components-activation.php');
