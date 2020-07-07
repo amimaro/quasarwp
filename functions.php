@@ -74,9 +74,6 @@ function quasarwp_settings_page()
 <?php
 }
 
-// Setup menus
-include('components/qwp-menu-components.php');
-
 // Customizer additions.
 require get_template_directory() . '/inc/customizer.php';
 
