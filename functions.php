@@ -1,7 +1,5 @@
 <?php
 
-add_action('admin_menu', 'quasarwp_menu');
-
 if (!get_option('quasarwp-settings')) {
   add_option('quasarwp-settings', array(
     'roboto-font' => 1,
@@ -11,6 +9,12 @@ if (!get_option('quasarwp-settings')) {
     'language' => 'en-us',
     'icon-set' => 'material',
   ));
+}
+
+add_action('admin_init', 'update_quasarwp');
+function update_quasarwp()
+{
+  register_setting('quasarwp-settings', 'quasarwp-settings');
 }
 
 include('assets/helpers.php');
@@ -34,30 +38,15 @@ register_nav_menus(
   )
 );
 
-function update_quasarwp()
-{
-  register_setting('quasarwp-settings', 'quasarwp-settings');
+add_action('admin_menu', 'quasarwp_menu');
+function quasarwp_menu() {
+    add_theme_page('QuasarWP Settings', 'QuasarWP Settings', 'manage_options', 'quasarwp', 'quasarwp_settings_page');
 }
-
-function quasarwp_menu()
-{
-  add_menu_page('QuasarWP', 'QuasarWP', 'manage_options', 'quasarwp', 'quasarwp_settings_page', 'dashicons-editor-code', 90);
-  add_submenu_page(
-    'quasarwp',
-    'QuasarWP',
-    'QuasarWP',
-    'manage_options',
-    'quasarwp'
-  );
-  // add_submenu_page('quasarwp', 'Menu Components', 'Menu Components', 'edit_posts', 'edit-tags.php?taxonomy=qwp_components&post_type=qwp_components',false );
-  add_action('admin_init', 'update_quasarwp');
-}
-
 
 function quasarwp_settings_page()
 {
   if (!current_user_can('manage_options')) {
-    return;
+    wp_die( __('You do not have sufficient permissions to access this page.', 'quasarwp') );
   }
 
   include('data/languages.php');
@@ -92,7 +81,8 @@ include('components/qwp-menu-components.php');
 // Customizer additions.
 require get_template_directory() . '/inc/customizer.php';
 
-function my_theme_load_theme_textdomain() {
-  load_theme_textdomain( 'quasarwp', get_template_directory() . '/languages' );
+function quasarwp_load_theme_textdomain()
+{
+  load_theme_textdomain('quasarwp', get_template_directory() . '/languages');
 }
-add_action( 'after_setup_theme', 'my_theme_load_theme_textdomain' );
+add_action('after_setup_theme', 'quasarwp_load_theme_textdomain');
