@@ -10,14 +10,18 @@
 </script>
 
 <?php
+$setting = get_option('quasarwp-settings');
+$modernEs6 = isset($setting['modern-es6']) ? '.modern' : '';
+$language = $setting['language'];
+$iconSet = $setting['icon-set'];
 
-wp_enqueue_script('pollyfills', get_template_directory_uri() . '/vendor/quasar-1.12.8/package/dist/quasar.ie.polyfills.umd' . $minified . '.js');
-wp_enqueue_script('vue', get_template_directory_uri() . '/vendor/vue-2.6.11/package/dist/vue' . $minified . '.js');
-wp_enqueue_script('quasar', get_template_directory_uri() . '/vendor/quasar-1.12.8/package/dist/quasar.umd' . $modernEs6 . $minified . '.js');
+wp_enqueue_script('pollyfills', 'https://cdn.jsdelivr.net/npm/quasar@1.12.8/dist/quasar.ie.polyfills.umd.min.js', array(), null, true);
+wp_enqueue_script('vue', 'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js', array(), null, true);
+wp_enqueue_script('quasar', 'https://cdn.jsdelivr.net/npm/quasar@1.12.8/dist/quasar.umd' . $modernEs6 . '.min.js', array(), null, true);
 if ($language != 'en-us')
-  wp_enqueue_script($language, get_template_directory_uri() . '/vendor/quasar-1.12.8/package/dist/lang/' . $language . '.umd.min.js');
+  wp_enqueue_script($language, 'https://cdn.jsdelivr.net/npm/quasar@1.12.8/dist/lang/' . $language . '.umd' . '.js', array(), null, true);
 if ($iconSet != 'material')
-  wp_enqueue_script($iconSet, get_template_directory_uri() . '/vendor/quasar-1.12.8/package/dist/icon-set/' . $iconSet . '.umd.min.js');
+  wp_enqueue_script($iconSet, 'https://cdn.jsdelivr.net/npm/quasar@1.12.8/dist/icon-set/' . $iconSet . '.umd' . '.js', array(), null, true);
 
 wp_footer();
 ?>
