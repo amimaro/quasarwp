@@ -141,8 +141,8 @@ class Custom_Nav_Menu extends Walker_Nav_Menu
       $return .= isset($avatar->size) ? 'size="' . $avatar->size . '" ' : '';
       $return .= isset($avatar->rounded) ? 'rounded ' : '';
       $return .= '>';
-      $return .= isset($avatar->content) ? $avatar->content : '';;
-      $return .= isset($avatar->img) ? '<img src="' . $avatar->img . '">' : '';;
+      $return .= isset($avatar->content) ? $avatar->content : '';
+      $return .= isset($avatar->img) ? '<img src="' . $avatar->img . '">' : '';
       $return .= '</q-avatar>';
       $return .= '</q-item-section>';
     }
