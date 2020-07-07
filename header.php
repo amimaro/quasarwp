@@ -23,18 +23,17 @@
   $materialIconsSharp = isset($components['material-icons-sharp']) ? 'Material+Icons+Sharp|' : '';
 
   if (strlen($robotoFont . $materialIcons . $materialIconsOutlined . $materialIconsRound . $materialIconsSharp) > 0)
-    echo '<link href="https://fonts.googleapis.com/css?family=' . $robotoFont . $materialIcons . $materialIconsOutlined . $materialIconsRound . $materialIconsSharp . '" rel="stylesheet" type="text/css">';
-  if (isset($components['animate'])) echo '<link href="https://cdn.jsdelivr.net/npm/animate.css@^4.0.0/animate' . $minified . '.css" rel="stylesheet" type="text/css">';
-  if (isset($components['mdiv5'])) echo '<link href="https://cdn.jsdelivr.net/npm/@mdi/font@^5.0.0/css/materialdesignicons' . $minified . '.css" rel="stylesheet" type="text/css">';
-  if (isset($components['fontawesomev5'])) echo '<link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet" type="text/css">';
-  if (isset($components['ioniconsv4'])) echo '<link href="https://cdn.jsdelivr.net/npm/ionicons@^4.0.0/dist/css/ionicons' . $minified . '.css" rel="stylesheet" type="text/css">';
-  if (isset($components['eva-icons'])) echo '<link href="https://cdn.jsdelivr.net/npm/eva-icons@^1.0.0/style/eva-icons.css" rel="stylesheet" type="text/css">';
-  if (isset($components['themify'])) echo '<link href="https://themify.me/wp-content/themes/themify-v32/themify-icons/themify-icons.css" rel="stylesheet" type="text/css">';
-  if (isset($components['line-awesome'])) echo '<link href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all' . $minified . '.css" rel="stylesheet" type="text/css">';
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=' . $robotoFont . $materialIcons . $materialIconsOutlined . $materialIconsRound . $materialIconsSharp);
+  if (isset($components['animate'])) wp_enqueue_style('animate', 'https://cdn.jsdelivr.net/npm/animate.css@^4.0.0/animate' . $minified . '.css');
+  if (isset($components['mdiv5'])) wp_enqueue_style('mdiv5', 'https://cdn.jsdelivr.net/npm/@mdi/font@^5.0.0/css/materialdesignicons' . $minified . '.css');
+  if (isset($components['fontawesomev5'])) wp_enqueue_style('fontawesomev5', 'https://use.fontawesome.com/releases/v5.0.13/css/all.css');
+  if (isset($components['ioniconsv4'])) wp_enqueue_style('ioniconsv4', 'https://cdn.jsdelivr.net/npm/ionicons@^4.0.0/dist/css/ionicons' . $minified . '.css');
+  if (isset($components['eva-icons'])) wp_enqueue_style('eva-icons', 'https://cdn.jsdelivr.net/npm/eva-icons@^1.0.0/style/eva-icons.css');
+  if (isset($components['themify'])) wp_enqueue_style('themify', 'https://themify.me/wp-content/themes/themify-v32/themify-icons/themify-icons.css');
+  if (isset($components['line-awesome'])) wp_enqueue_style('line-awesome', 'https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all' . $minified . '.css');
 
-  echo '<link href="https://cdn.jsdelivr.net/npm/quasar@1.12.5/dist/quasar' . $rtl . $minified . '.css" rel="stylesheet" type="text/css">';
+  wp_enqueue_style('quasar', 'https://cdn.jsdelivr.net/npm/quasar@1.12.8/dist/quasar' . $rtl . $minified . '.css');
   ?>
 
   <?php wp_enqueue_style('style', get_stylesheet_uri()); ?>
 </head>
-
