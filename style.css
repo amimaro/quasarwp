@@ -1,3 +1,18 @@
+/*
+Theme Name: QuasarWP
+Author: Amir Zahlan
+Author URI: https://amimaro.com
+Description: Quasar Framework powered by Wordpress
+Tags: blog, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, rtl-language-support, theme-options, translation-ready, accessibility-ready
+Version: 1.0
+Requires PHP: 7.0
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: quasarwp
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
 @media (max-width: 800px) {
   .qwp-grid-3x3-container {
     display: flex;
@@ -28,7 +43,7 @@
   margin-bottom: 2%;
 }
 
-.qwp-stacked-qwp-post-featured-img  {
+.qwp-stacked-qwp-post-featured-img {
   width: 70vh !important;
 }
 
@@ -44,7 +59,7 @@
   margin-bottom: 2%;
 }
 
-.qwp-post-featured-img  {
+.qwp-post-featured-img {
   max-width: 900px;
   max-height: 300px;
 }
@@ -137,42 +152,62 @@ ul.children {
   padding: 0 0 0 20px;
 }
 
-#qwp-btn-left-menu{}
-#qwp-btn-right-menu{}
-.q-header {}
-.q-header .q-tabs {}
-.q-footer {}
-.q-drawer--left {}
-.q-drawer--right {}
-.qwp-home {}
-.qwp-logo {}
-.qwp-grid-3x3-container {}
-.qwp-grid-3x3-item {}
-.qwp-stacked-container {}
-.qwp-stacked-item {}
-.qwp-home-post-card {}
-.qwp-form-search {}
-.qwp-input-search {}
-.qwp-custom-component {}
-.qwp-simple-btn {}
-.qwp-label {}
-.qwp-separator {}
-.qwp-space {}
-.qwp-page {}
-.qwp-home-author
-.qwp-home-commentcounter
-.qwp-home-excerpt
-.qwp-home-postdate
-.qwp-stacked-qwp-post-featured-img 
-.qwp-home-featured-img
-.qwp-search
-.qwp-404
-.qwp-post {}
-.qwp-post-title {}
-.qwp-post-commentcounter {}
-.qwp-post-featured-img {}
-.qwp-post-postdate {}
-.qwp-post-social {}
-.qwp-post-content {}
-.qwp-post-comments {}
+#qwp-btn-left-menu {}
 
+#qwp-btn-right-menu {}
+
+.q-header {}
+
+.q-header .q-tabs {}
+
+.q-footer {}
+
+.q-drawer--left {}
+
+.q-drawer--right {}
+
+.qwp-home {}
+
+.qwp-logo {}
+
+.qwp-grid-3x3-container {}
+
+.qwp-grid-3x3-item {}
+
+.qwp-stacked-container {}
+
+.qwp-stacked-item {}
+
+.qwp-home-post-card {}
+
+.qwp-form-search {}
+
+.qwp-input-search {}
+
+.qwp-custom-component {}
+
+.qwp-simple-btn {}
+
+.qwp-label {}
+
+.qwp-separator {}
+
+.qwp-space {}
+
+.qwp-page {}
+
+.qwp-home-author .qwp-home-commentcounter .qwp-home-excerpt .qwp-home-postdate .qwp-stacked-qwp-post-featured-img .qwp-home-featured-img .qwp-search .qwp-404 .qwp-post {}
+
+.qwp-post-title {}
+
+.qwp-post-commentcounter {}
+
+.qwp-post-featured-img {}
+
+.qwp-post-postdate {}
+
+.qwp-post-social {}
+
+.qwp-post-content {}
+
+.qwp-post-comments {}
