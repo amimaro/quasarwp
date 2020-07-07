@@ -27,6 +27,9 @@ $wp_customize->add_section(
 );
 
 foreach ($socialMedias as $i => $socialMedia) {
+  
+  $formatedSocialMediaName = ucfirst($socialMedia);
+
   $wp_customize->add_setting(
     'social_' . $socialMedia . '_enabled',
     array(
@@ -37,7 +40,7 @@ foreach ($socialMedias as $i => $socialMedia) {
     )
   );
   $wp_customize->add_control('quasarwp_social_' . $socialMedia . '_enabled', array(
-    'label' => __(ucfirst($socialMedia), 'quasarwp'),
+    'label' => $formatedSocialMediaName,
     'section' => 'quasarwp_layout_social',
     'settings' => 'social_' . $socialMedia . '_enabled',
     'type' => 'checkbox',
@@ -57,7 +60,7 @@ foreach ($socialMedias as $i => $socialMedia) {
   $wp_customize->add_control(
     'quasarwp_social_' . $socialMedia . '_class',
     array(
-      'label' => __(ucfirst($socialMedia), 'quasarwp'),
+      'label' => $formatedSocialMediaName,
       'section' => 'quasarwp_layout_social',
       'settings' => 'social_' . $socialMedia . '_class',
       'type' => 'text',
