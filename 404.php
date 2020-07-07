@@ -2,7 +2,6 @@
 
 get_header();
 
-include(get_template_directory() . '/components/header-functions.php');
 ?>
 
 <body <?php body_class(); ?>>
