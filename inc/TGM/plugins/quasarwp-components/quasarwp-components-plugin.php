@@ -71,7 +71,7 @@ if (!function_exists('create_topics_nonhierarchical_taxonomy')) {
 			'menu_name' => __('Menu Components', 'quasarwp'),
 		);
 
-		register_taxonomy('qwp_components', 'quasarwp', array(
+		register_taxonomy('qwp_components', 'quasarwp', array( // phpcs:ignore WPThemeReview.PluginTerritory.ForbiddenFunctions.plugin_territory_register_taxonomy
 			'hierarchical' => false,
 			'labels' => $labels,
 			'show_ui' => false,
