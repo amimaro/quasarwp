@@ -45,7 +45,7 @@ function quasarwp_menu() {
 function quasarwp_settings_page()
 {
   if (!current_user_can('manage_options')) {
-    wp_die( __('You do not have sufficient permissions to access this page.', 'quasarwp') );
+    wp_die( esc_html(__('You do not have sufficient permissions to access this page.', 'quasarwp')) );
   }
 
   include('data/languages.php');
@@ -53,7 +53,7 @@ function quasarwp_settings_page()
   $options = get_option('quasarwp-settings');
 ?>
   <h1>QuasarWP Settings</h1>
-  <p><a href="<?php echo get_site_url() . '/wp-admin/customize.php'; ?>">Click here</a> to customize your theme.</p>
+  <p><a href="<?php echo esc_html(get_site_url()) . '/wp-admin/customize.php'; ?>">Click here</a> to customize your theme.</p>
   <form method="post" action="options.php">
     <?php settings_fields('quasarwp-settings'); ?>
     <?php do_settings_sections('quasarwp-settings'); ?>
