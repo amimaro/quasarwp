@@ -1,11 +1,14 @@
 <?php
 $commentsText = __('Comments', 'quasarwp');
 $commentsCount =  get_comments_number(get_post()->ID);
-$commentsCounter = sprintf(
-  /* translators: number of comments */
-  _n('%s Comment', '%s Comments', $commentsCount, 'quasarwp'),
-  $commentsCount
-);
+if ($commentsCount == 0)
+  $commentsCounter = '';
+else
+  $commentsCounter = sprintf(
+    /* translators: number of comments */
+    _n('%s Comment', '%s Comments', $commentsCount, 'quasarwp'),
+    $commentsCount
+  );
 ?>
 
 <q-card class="hover-scale qwp-home-post-card qwp-grid-3x3-item cursor-pointer" @click="quasarwpRouteTo('<?php the_permalink(); ?>')">
