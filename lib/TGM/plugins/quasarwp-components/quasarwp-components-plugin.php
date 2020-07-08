@@ -133,7 +133,7 @@ if (!function_exists('create_topics_nonhierarchical_taxonomy')) {
 
 if (!function_exists('add_menus')) {
 
-	add_action('after_switch_theme', 'add_menus');
+	register_activation_hook(__FILE__, 'add_menus');
 	/**
 	 * Setup an initial menu items if doesn't exist
 	 *
