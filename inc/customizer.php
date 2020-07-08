@@ -22,23 +22,25 @@ class QuasarWP_Customize
    public static function register($wp_customize)
    {
       $wp_customize->add_panel('quasarwp', array(
-         'priority'       => 104.1,
+         'priority'       => 104.5,
          'capability'     => 'edit_theme_options',
          'theme_supports' => '',
          'title'          => __('QuasarWP', 'quasarwp')
       ));
 
-      get_template_part('inc/customize', 'logo');
-      get_template_part('inc/customize', 'colors');
-      get_template_part('inc/customize', 'header');
-      get_template_part('inc/customize', 'footer');
-      get_template_part('inc/customize', 'ldrawer');
-      get_template_part('inc/customize', 'rdrawer');
-      get_template_part('inc/customize', 'tabs');
-      get_template_part('inc/customize', 'home');
-      get_template_part('inc/customize', 'single');
-      get_template_part('inc/customize', 'sharers');
-      get_template_part('inc/customize', 'layout');
+      // @codingStandardsIgnoreStart
+      include(get_template_directory() . '/inc/customize/logo.php');
+      include(get_template_directory() . '/inc/customize/colors.php');
+      include(get_template_directory() . '/inc/customize/header.php');
+      include(get_template_directory() . '/inc/customize/footer.php');
+      include(get_template_directory() . '/inc/customize/ldrawer.php');
+      include(get_template_directory() . '/inc/customize/rdrawer.php');
+      include(get_template_directory() . '/inc/customize/tabs.php');
+      include(get_template_directory() . '/inc/customize/home.php');
+      include(get_template_directory() . '/inc/customize/single.php');
+      include(get_template_directory() . '/inc/customize/sharers.php');
+      include(get_template_directory() . '/inc/customize/layout.php');
+      // @codingStandardsIgnoreEnd
    }
 
    public static function header_output()
