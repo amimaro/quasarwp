@@ -32,7 +32,9 @@
  * Plugin:
  * require_once dirname( __FILE__ ) . '/path/to/class-tgm-plugin-activation.php';
  */
-require_once get_template_directory() . '/inc/TGM/class-tgm-plugin-activation.php';
+
+// phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
+ require_once get_template_directory() . '/inc/TGM/class-tgm-plugin-activation.php';
 
 add_action('tgmpa_register', 'qwp_register_required_plugins');
 
