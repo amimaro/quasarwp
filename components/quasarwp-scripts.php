@@ -112,7 +112,7 @@
         this.qwpComment = null
         setTimeout(() => {
           this.$refs.qwpCommentForm.resetValidation()
-        }, 100)
+        }, 500)
       },
       qwpCommentFormOnSubmit(evt) {
         evt.preventDefault();

@@ -1,12 +1,12 @@
 <script>
-  document.documentElement.style.setProperty('--q-color-primary', '<?php echo get_theme_mod('theme_primary'); ?>');
-  document.documentElement.style.setProperty('--q-color-secondary', '<?php echo get_theme_mod('theme_secondary'); ?>');
-  document.documentElement.style.setProperty('--q-color-accent', '<?php echo get_theme_mod('theme_accent'); ?>');
-  document.documentElement.style.setProperty('--q-color-dark', '<?php echo get_theme_mod('theme_dark'); ?>');
-  document.documentElement.style.setProperty('--q-color-positive', '<?php echo get_theme_mod('theme_positive'); ?>');
-  document.documentElement.style.setProperty('--q-color-negative', '<?php echo get_theme_mod('theme_negative'); ?>');
-  document.documentElement.style.setProperty('--q-color-info', '<?php echo get_theme_mod('theme_info'); ?>');
-  document.documentElement.style.setProperty('--q-color-warning', '<?php echo get_theme_mod('theme_warning'); ?>');
+  document.documentElement.style.setProperty('--q-color-primary', '<?php echo esc_html(get_theme_mod('theme_primary')); ?>');
+  document.documentElement.style.setProperty('--q-color-secondary', '<?php echo esc_html(get_theme_mod('theme_secondary')); ?>');
+  document.documentElement.style.setProperty('--q-color-accent', '<?php echo esc_html(get_theme_mod('theme_accent')); ?>');
+  document.documentElement.style.setProperty('--q-color-dark', '<?php echo esc_html(get_theme_mod('theme_dark')); ?>');
+  document.documentElement.style.setProperty('--q-color-positive', '<?php echo esc_html(get_theme_mod('theme_positive')); ?>');
+  document.documentElement.style.setProperty('--q-color-negative', '<?php echo esc_html(get_theme_mod('theme_negative')); ?>');
+  document.documentElement.style.setProperty('--q-color-info', '<?php echo esc_html(get_theme_mod('theme_info')); ?>');
+  document.documentElement.style.setProperty('--q-color-warning', '<?php echo esc_html(get_theme_mod('theme_warning')); ?>');
 </script>
 
 <?php
@@ -26,5 +26,7 @@ if ($iconSet != 'material')
 wp_footer();
 ?>
 </body>
+
+<?php get_template_part('components/quasarwp', 'scripts'); ?>
 
 </html>

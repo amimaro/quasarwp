@@ -6,7 +6,7 @@ get_header();
   <div id="q-app">
     <q-layout :view="qwpDataLayoutView">
 
-      <?php include(get_template_directory() . '/components/quasarwp-layout.php'); ?>
+      <?php get_template_part('components/quasarwp', 'layout'); ?>
 
       <!-- %d result found. -->
       <!-- No results.
@@ -53,4 +53,4 @@ get_header();
   </div>
 
   <?php get_footer(); ?>
-  <?php include(get_template_directory() . '/components/quasarwp-scripts.php'); ?>
+  

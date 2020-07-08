@@ -6,7 +6,7 @@ get_header();
   <div id="q-app">
     <q-layout :view="qwpDataLayoutView">
 
-      <?php include(get_template_directory() . '/components/quasarwp-layout.php'); ?>
+      <?php get_template_part('components/quasarwp', 'layout'); ?>
 
       <q-page-container class="qwp-page">
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -18,4 +18,4 @@ get_header();
   </div>
 
   <?php get_footer(); ?>
-  <?php include(get_template_directory() . '/components/quasarwp-scripts.php'); ?>
+  
