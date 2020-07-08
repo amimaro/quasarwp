@@ -45,5 +45,5 @@ $tags = esc_html(comma_tags(get_the_tags(), false));
 <?php
 // @codingStandardsIgnoreEnd phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
-wp_enqueue_script('sharer', get_template_directory_uri() . '/vendor/sharer/sharer.min.js');
+wp_enqueue_script('sharer', get_template_directory_uri() . '/lib/sharer/sharer.min.js');
 ?>
