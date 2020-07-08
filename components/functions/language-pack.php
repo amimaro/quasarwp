@@ -4,7 +4,7 @@
     <select name="quasarwp-settings[language]" id="quasarwp-settings-language">
       <?php
       foreach ($languages as $key => &$lang) {
-        echo '<option value="' . $key . '" ' . selected($options['language'], $key) . '>' . $lang . '</option>';
+        echo '<option value="' . esc_html($key) . '" ' . selected($options['language'], $key) . '>' . esc_html($lang) . '</option>';
       }
       ?>
     </select>
