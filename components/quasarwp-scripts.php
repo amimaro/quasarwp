@@ -14,22 +14,22 @@
         qwpEmail: '',
         qwpComment: '',
         qwpSearch: '',
-        qwpDataHeaderReveal: '<?php echo get_theme_mod('layout_header_reveal'); ?>',
-        qwpDataHeaderSeparator: '<?php echo get_theme_mod('layout_header_separator'); ?>',
-        qwpDataFooterReveal: '<?php echo get_theme_mod('layout_footer_reveal'); ?>',
-        qwpDataFooterSeparator: '<?php echo get_theme_mod('layout_footer_separator'); ?>',
-        qwpDataLeftDrawerShowIfAbove: '<?php echo get_theme_mod('layout_ldrawer_show_if_above'); ?>',
-        qwpDataLeftDrawerOverlay: '<?php echo get_theme_mod('layout_ldrawer_overlay'); ?>',
-        qwpDataLeftDrawerSeparator: '<?php echo get_theme_mod('layout_ldrawer_separator'); ?>',
-        qwpDataLeftDrawerBehavior: '<?php echo get_theme_mod('layout_ldrawer_behavior'); ?>',
-        qwpDataRightDrawerShowIfAbove: '<?php echo get_theme_mod('layout_rdrawer_show_if_above'); ?>',
-        qwpDataRightDrawerOverlay: '<?php echo get_theme_mod('layout_rdrawer_overlay'); ?>',
-        qwpDataRightDrawerSeparator: '<?php echo get_theme_mod('layout_rdrawer_separator'); ?>',
-        qwpDataRightDrawerBehavior: '<?php echo get_theme_mod('layout_rdrawer_behavior'); ?>',
-        qwpDataTabsAlign: '<?php echo get_theme_mod('layout_tabs_align'); ?>',
-        qwpDataHomePostLayout: '<?php echo get_theme_mod('layout_home_postlayout'); ?>',
-        qwpDataLoadingEnabled: '<?php echo get_theme_mod('settings_loading_enabled'); ?>',
-        qwpDataLayoutView: '<?php echo get_theme_mod('settings_layout_view'); ?>',
+        qwpDataHeaderReveal: '<?php echo esc_html(get_theme_mod('layout_header_reveal')); ?>',
+        qwpDataHeaderSeparator: '<?php echo esc_html(get_theme_mod('layout_header_separator')); ?>',
+        qwpDataFooterReveal: '<?php echo esc_html(get_theme_mod('layout_footer_reveal')); ?>',
+        qwpDataFooterSeparator: '<?php echo esc_html(get_theme_mod('layout_footer_separator')); ?>',
+        qwpDataLeftDrawerShowIfAbove: '<?php echo esc_html(get_theme_mod('layout_ldrawer_show_if_above')); ?>',
+        qwpDataLeftDrawerOverlay: '<?php echo esc_html(get_theme_mod('layout_ldrawer_overlay')); ?>',
+        qwpDataLeftDrawerSeparator: '<?php echo esc_html(get_theme_mod('layout_ldrawer_separator')); ?>',
+        qwpDataLeftDrawerBehavior: '<?php echo esc_html(get_theme_mod('layout_ldrawer_behavior')); ?>',
+        qwpDataRightDrawerShowIfAbove: '<?php echo esc_html(get_theme_mod('layout_rdrawer_show_if_above')); ?>',
+        qwpDataRightDrawerOverlay: '<?php echo esc_html(get_theme_mod('layout_rdrawer_overlay')); ?>',
+        qwpDataRightDrawerSeparator: '<?php echo esc_html(get_theme_mod('layout_rdrawer_separator')); ?>',
+        qwpDataRightDrawerBehavior: '<?php echo esc_html(get_theme_mod('layout_rdrawer_behavior')); ?>',
+        qwpDataTabsAlign: '<?php echo esc_html(get_theme_mod('layout_tabs_align')); ?>',
+        qwpDataHomePostLayout: '<?php echo esc_html(get_theme_mod('layout_home_postlayout')); ?>',
+        qwpDataLoadingEnabled: '<?php echo esc_html(get_theme_mod('settings_loading_enabled')); ?>',
+        qwpDataLayoutView: '<?php echo esc_html(get_theme_mod('settings_layout_view')); ?>',
       }
     },
     created() {
@@ -126,8 +126,8 @@
         <?php if (is_user_logged_in()) {
           $successMessage = __('Done', 'quasarwp');
         ?>
-          data['author_name'] = '<?php echo wp_get_current_user()->display_name; ?>'
-          data['author_email'] = '<?php echo wp_get_current_user()->user_email; ?>'
+          data['author_name'] = '<?php echo esc_html(wp_get_current_user()->display_name); ?>'
+          data['author_email'] = '<?php echo esc_html(wp_get_current_user()->user_email); ?>'
         <?php } else {
           $successMessage = __('Your comment is awaiting moderation.', 'quasarwp');
         ?>
@@ -137,7 +137,7 @@
 
         data = JSON.stringify(data)
         console.log(data)
-        fetch('<?php echo get_site_url(); ?>/wp-json/wp/v2/comments', {
+        fetch('<?php echo esc_html(get_site_url()); ?>/wp-json/wp/v2/comments', {
             method: 'post',
             headers: {
               'Content-Type': 'application/json',
@@ -150,7 +150,7 @@
                 color: 'green-4',
                 textColor: 'white',
                 icon: 'cloud_done',
-                message: '<?php echo $successMessage; ?>'
+                message: '<?php echo esc_html($successMessage); ?>'
               })
               this.qwpHideCommentDialog()
               setTimeout(() => {
