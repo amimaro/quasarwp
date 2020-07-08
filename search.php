@@ -29,14 +29,23 @@ get_header();
 
             <q-card class="q-my-md">
               <q-card-section>
-                <p class="text-h4 text-weight-light q-pt-md"><?php echo __('Search Results', 'quasarwp') . ': "' . $search_query['s'] . '"' ?></p>
+                <p class="text-h4 text-weight-light q-pt-md"><?php echo esc_html(__('Search Results', 'quasarwp')) . ': "' . esc_html($search_query['s']) . '"' ?></p>
                 <q-separator></q-separator>
-                <p class="text-caption q-pt-md text-right"><?php printf(_n('%d result found.', '%d results found.', $the_query->found_posts, 'quasarwp'), $the_query->found_posts); ?></p>
+                <p class="text-caption q-pt-md text-right">
+                  <?php
+                  $escapedFoundedResult = sprintf(
+                    /* translators: number of results */
+                    _n('%d result found.', '%d results found.', $the_query->found_posts, 'quasarwp'),
+                    $the_query->found_posts
+                  );
+                  echo esc_html($escapedFoundedResult);
+                  ?>
+                </p>
               </q-card-section>
             </q-card>
             <?php if ($the_query->have_posts()) : ?>
               <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-                <?php include('components/post-layout/stacked.php'); ?>
+                <?php get_template_part('components/layout/posts', 'stacked'); ?>
               <?php endwhile; ?>
               <?php wp_reset_postdata(); ?>
             <?php else : ?>
@@ -53,4 +62,3 @@ get_header();
   </div>
 
   <?php get_footer(); ?>
-  
