@@ -34,7 +34,7 @@
  */
 
 // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
- require_once get_template_directory() . '/inc/TGM/class-tgm-plugin-activation.php';
+ require_once get_template_directory() . '/lib/TGM/class-tgm-plugin-activation.php';
 
 add_action('tgmpa_register', 'qwp_register_required_plugins');
 
@@ -67,7 +67,7 @@ function qwp_register_required_plugins()
 		array(
 			'name'               => 'QuasarWP Components', // The plugin name.
 			'slug'               => 'quasarwp-components', // The plugin slug (typically the folder name).
-			'source'             => get_template_directory() . '/inc/TGM/plugins/quasarwp-components.zip', // The plugin source.
+			'source'             => get_template_directory() . '/lib/TGM/plugins/quasarwp-components.zip', // The plugin source.
 			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
 			'version'            => '1.0.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
 			'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.

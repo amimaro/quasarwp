@@ -84,4 +84,4 @@ function quasarwp_load_theme_textdomain()
 add_action('after_setup_theme', 'quasarwp_load_theme_textdomain');
 
 
-require_once('inc/TGM/class-quasarwp-components-activation.php');
+require_once('lib/TGM/class-quasarwp-components-activation.php');
