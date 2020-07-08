@@ -14,7 +14,7 @@ get_header();
                         <?php
                         if (have_posts()) : while (have_posts()) : the_post();
                         ?>
-                                <?php include('components/post-layout/grid3x3.php'); ?>
+                                <?php get_template_part('components/layout/posts', 'grid3x3'); ?>
                         <?php
                             endwhile;
                         endif;
@@ -25,7 +25,7 @@ get_header();
                         <?php
                         if (have_posts()) : while (have_posts()) : the_post();
                         ?>
-                                <?php include('components/post-layout/stacked.php'); ?>
+                                <?php get_template_part('components/layout/posts', 'stacked'); ?>
                         <?php
                             endwhile;
                         endif;
