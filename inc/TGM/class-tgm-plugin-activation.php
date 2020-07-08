@@ -1,4 +1,5 @@
 <?php
+// phpcs:ignoreFile
 /**
  * Plugin installation and activation for WordPress themes.
  *
