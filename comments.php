@@ -1,11 +1,11 @@
-<?php include(get_template_directory() . '/components/comments/custom-comments.php'); ?>
+<?php get_template_part('components/comments/comment', 'custom'); ?>
 
 <div id="comments" class="comments-area">
 
 	<?php if (have_comments()) : ?>
 		<q-separator class="q-my-xl"></q-separator>
 
-		<?php include(get_template_directory() . '/components/comments/btn-post.php'); ?>
+		<?php get_template_part('components/comments/comment', 'ctabtn'); ?>
 
 		<p class="q-pt-md text-h3 text-weight-light">
 			<?php esc_attr_e('Comments', 'quasarwp') ?>
@@ -36,9 +36,9 @@
 
 		<q-separator class="q-my-xl"></q-separator>
 
-		<?php include(get_template_directory() . '/components/comments/btn-post.php'); ?>
+		<?php get_template_part('components/comments/comment', 'ctabtn'); ?>
 	<?php endif; ?>
 
-	<?php include(get_template_directory() . '/components/comments/form.php'); ?>
+	<?php get_template_part('components/comments/comment', 'form'); ?>
 
 </div>
