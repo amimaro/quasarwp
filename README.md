@@ -3,13 +3,17 @@
 
 > Wordpress theme with Quasar Framework
 
-This is a wordpress theme that has the [Quasar Framework](https://quasar.dev) incorporated with all its features.
+This is a wordpress theme that has the [Quasar Framework](https://quasar.dev) incorporated with most of its features.
 
-The theme comes with a basic layout, the same way when you install a project using Quasar. However, you lots of customization tools available.
+The theme comes with a basic layout, the same way when you install a project using Quasar. 
 
-The theme already has some basic blog features, such as sharing buttons and posting comments via dialog.
+However, you have a lot of customization settings available to start with.
 
-But a cherry on the cake is that you can include code in Vue.js in your posts and pages. Check out more at https://amimaro.github.io/quasarwp.
+Besides posting which is inherited by Wordpress, the theme already has some basic blog features, such as sharing buttons and posting comments via dialog.
+
+But a cherry on the cake is that you can include your Vue.js code in your posts and pages as mixins.
+
+Check out more at https://amimaro.github.io/quasarwp.
 
 ![](screenshot.png)
 
