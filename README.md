@@ -15,7 +15,7 @@ But a cherry on the cake is that you can include code in Vue.js in your posts an
 
 ## Installation
 
-1. Download the latest release.
+1. Download the [latest release](https://github.com/amimaro/quasarwp/releases/latest).
 2. Login to your wp-admin Dashboard.
 3. Next, go to the Appearance > Themes page and select Add New button.
 4. Then, upload the downloaded package to install the theme.
