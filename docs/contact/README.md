@@ -2,9 +2,9 @@
 title: Contact
 meta:
   - name: description
-    content: Page description
+    content: QuasarWP Menu Component
   - name: keywords
-    content: js vuejs vuepress
+    content: js vuejs vuepress quasar-framework wordpress theme wordpress-theme
 ---
 
 # Contact

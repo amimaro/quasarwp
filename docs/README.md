@@ -2,7 +2,7 @@
 title: Home
 meta:
   - name: description
-    content: Page description
+    content: QuasarWP homepage
   - name: keywords
     content: js vuejs vuepress quasar-framework wordpress theme wordpress-theme
 ---
