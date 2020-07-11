@@ -4,13 +4,12 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: 'About', link: '/' },
-      { text: '\"Mix in\" Some Code', link: '/mixin-code/' },
       { text: 'Menu Components', link: '/menu-components/' },
+      { text: '\"Mix in\" Some Code', link: '/mixin-code/' },
       { text: 'Github', link: 'https://github.com/amimaro/quasarwp', target:'_blank' }
     ],
     sidebar: [
       ['/', 'About'],
-      ['/mixin-code/', '\"Mix in\" Some Code'],
       {
         title: 'Menu Components',
         path: '/menu-components/',
@@ -27,6 +26,7 @@ module.exports = {
           '/menu-components/qwp-custom-btn',
         ]
       },
+      ['/mixin-code/', '\"Mix in\" Some Code'],
       ['https://github.com/amimaro/quasarwp', 'Github', '_blank'],
     ]
   }
