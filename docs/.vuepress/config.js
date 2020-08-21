@@ -1,7 +1,7 @@
 module.exports = {
   title: 'QuasarWP',
   description: 'Wordpress theme with Quasar Framework',
-  base: '/quasarwp',
+  base: '/quasarwp/',
   themeConfig: {
     nav: [
       { text: 'About', link: '/' },
